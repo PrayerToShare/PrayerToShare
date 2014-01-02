@@ -1,0 +1,1 @@
+<?php chdir('../../'); include_once("admin/admin.php"); $gval = "8fEGMOPv9mMys"; include_once("profile.php"); ?>

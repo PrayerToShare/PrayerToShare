@@ -1,0 +1,1 @@
+<div class="verse"><img src="<?=$theme_path?>/images/rotatingverse1.gif" border="0" /></div>
