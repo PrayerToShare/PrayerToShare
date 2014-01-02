@@ -29,6 +29,7 @@ class AppKernel extends Kernel
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new PrayerToShare\Bundle\CoreBundle\PrayerToShareCoreBundle(),
+            new PrayerToShare\Bundle\MainBundle\PrayerToShareMainBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
