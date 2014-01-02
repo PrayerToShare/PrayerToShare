@@ -1,0 +1,30 @@
+imports:
+    - { resource: config_dev.yml }
+
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.filesystem
+
+doctrine:
+    dbal:
+        connections:
+            default:
+                logging: true
+                dbname: p2s_test
+                user: p2s_test
+                password: p2s_test
+
+security:
+    firewalls:
+        main:
+            http_basic: ~
+
+web_profiler:
+    toolbar: false
+    intercept_redirects: false
+
+swiftmailer:
+    disable_delivery: true
+
+liip_functional_test: ~

@@ -1,0 +1,13 @@
+[parameters]
+    database_driver   = pdo_mysql
+    database_host     = localhost
+    database_port     =
+    database_name     = p2s
+    database_user     = p2s
+    database_password = p2s
+
+    mailer_transport  = localhost
+    mailer_user       = root
+    mailer_password   = ''
+    locale            = en
+    secret            = thisisasecret

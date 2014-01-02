@@ -23,6 +23,9 @@
         "sonata-project/core-bundle": "*",
         "jms/security-extra-bundle": "*",
         "jms/di-extra-bundle": "*",
+        "friendsofsymfony/user-bundle": "*",
+        "knplabs/knp-menu-bundle": "~2.0@dev",
+        "knplabs/knp-menu": "~2.0@dev",
         "monolog/monolog": "*",
         "liip/functional-test-bundle": "dev-master",
         "fzaninotto/faker": "~1.2"
