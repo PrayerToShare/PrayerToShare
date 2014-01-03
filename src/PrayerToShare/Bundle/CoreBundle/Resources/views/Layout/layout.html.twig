@@ -19,15 +19,15 @@
         </div>
         <div class="header_links">
         	<ul>
-            	<li><a href="<?= $absolute_url ?>" class="lvl1">Home</a></li>
-                <li><a href="<?= $absolute_url ?>!u/<?= $_SESSION['user']['folder'] != '' ? $_SESSION['user']['folder'] : '' ?>" class="lvl1">Profile</a></li>
+                <li><a href="{{ path('home') }}" class="lvl1">Home</a></li>
+                <li><a href="{{ path('profile') }}" class="lvl1">Profile</a></li>
                 <li>
-                	<a href="<?= $absolute_url ?>admin.php?uid=<?= $secure_uid ?>" class="lvl1">Account</a>
+                <a href="{{ path('account') }}" class="lvl1">Account</a>
                     <div class="menu">
                     	<?php if (isset($_SESSION['user']['id'])) { ?>
-                    	<a href="<?= $absolute_url ?>settings.php">Account Settings</a>
-                        <a href="<?= $absolute_url ?>privacy.php">Privacy Settings</a>
-                        <a href="<?= $absolute_url ?>dispatcher.php?logout=true">Logout</a>
+                        <a href="{{ path('settings') }}">Account Settings</a>
+                        <a href="{{ path('privacy') }}">Privacy Settings</a>
+                        <a href="{{ path('logout') }}">Logout</a>
                         <div class="sep"></div>
 						<? } ?>
                         <a href="<?= $absolute_url ?>help.php">Help</a>
@@ -40,7 +40,7 @@
         {% block content %}Default Content{% endblock %}
     </div>
     <div id="footer">
-    	<div class="bottom-verse"><img src="<?= $absolute_url.$theme_path ?>/images/bottomverse.jpg" border="0" alt="1 John 5:14-15" title="1 John 5:14-15" /></div>
+        <div class="bottom-verse"><img src="{{ asset('imag/bottomverse.jpg') }}" border="0" alt="1 John 5:14-15" title="1 John 5:14-15" /></div>
     	<div class="affiliates">
         	<div class="title-sm">Affiliates</div>
         	<div class="badges">
