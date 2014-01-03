@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{% block title %}Prayer to Share{% endblock %}</title>
+    <meta name="description" content="Prayer to Share" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% stylesheets 'css/main.less' filter='less' output='compiled/css/main.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}">
+    {% endstylesheets %}
+</head>
+<body>
+<div id="container">
+	<div id="header">
+        <div class="logo">
+            <a href="/">
+                <img src="{{ asset('/img/logo.jpg') }}" border="0" alt="Prayer to Share" title="Prayer to Share" />
+            </a>
+        </div>
+        <div class="header_links">
+        	<ul>
+            	<li><a href="<?= $absolute_url ?>" class="lvl1">Home</a></li>
+                <li><a href="<?= $absolute_url ?>!u/<?= $_SESSION['user']['folder'] != '' ? $_SESSION['user']['folder'] : '' ?>" class="lvl1">Profile</a></li>
+                <li>
+                	<a href="<?= $absolute_url ?>admin.php?uid=<?= $secure_uid ?>" class="lvl1">Account</a>
+                    <div class="menu">
+                    	<?php if (isset($_SESSION['user']['id'])) { ?>
+                    	<a href="<?= $absolute_url ?>settings.php">Account Settings</a>
+                        <a href="<?= $absolute_url ?>privacy.php">Privacy Settings</a>
+                        <a href="<?= $absolute_url ?>dispatcher.php?logout=true">Logout</a>
+                        <div class="sep"></div>
+						<? } ?>
+                        <a href="<?= $absolute_url ?>help.php">Help</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="body">
+        {% block content %}Default Content{% endblock %}
+    </div>
+    <div id="footer">
+    	<div class="bottom-verse"><img src="<?= $absolute_url.$theme_path ?>/images/bottomverse.jpg" border="0" alt="1 John 5:14-15" title="1 John 5:14-15" /></div>
+    	<div class="affiliates">
+        	<div class="title-sm">Affiliates</div>
+        	<div class="badges">
+            	<a href="http://www.allgraceoutreach.com/" target="_blank"><img src="<?= $absolute_url.$theme_path ?>/images/ago.jpg" border="0" alt="All Grace Outreach" title="All Grace Outreach" /></a>
+            </div>
+        </div>
+        <div class="copyright">&copy; 2012 Prayer-To-Share.com. All rights reserved.</div>
+    </div>
+</div>
+</body>
+</html>
