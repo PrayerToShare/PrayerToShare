@@ -1,3 +1,0 @@
-[06-Jun-2012 21:11:52] PHP Warning:  include(themes/default/tpl/variables.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/dnyer11/public_html/admin/admin.php on line 31
-[06-Jun-2012 21:11:52] PHP Warning:  include(themes/default/tpl/variables.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/dnyer11/public_html/admin/admin.php on line 31
-[06-Jun-2012 21:11:52] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'themes/default/tpl/variables.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/dnyer11/public_html/admin/admin.php on line 31
