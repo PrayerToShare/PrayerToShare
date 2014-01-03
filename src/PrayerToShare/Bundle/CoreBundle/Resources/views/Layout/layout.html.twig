@@ -24,13 +24,13 @@
                 <li>
                 <a href="{{ path('account') }}" class="lvl1">Account</a>
                     <div class="menu">
-                    	<?php if (isset($_SESSION['user']['id'])) { ?>
-                        <a href="{{ path('settings') }}">Account Settings</a>
-                        <a href="{{ path('privacy') }}">Privacy Settings</a>
-                        <a href="{{ path('logout') }}">Logout</a>
-                        <div class="sep"></div>
-						<? } ?>
-                        <a href="<?= $absolute_url ?>help.php">Help</a>
+                        {% if is_granted('ROLE_USER') %}
+                            <a href="{{ path('settings') }}">Account Settings</a>
+                            <a href="{{ path('privacy') }}">Privacy Settings</a>
+                            <a href="{{ path('logout') }}">Logout</a>
+                            <div class="sep"></div>
+                        {% endif %}
+                        <a href="{{ path('help') }}">Help</a>
                     </div>
                 </li>
             </ul>
@@ -40,7 +40,7 @@
         {% block content %}Default Content{% endblock %}
     </div>
     <div id="footer">
-        <div class="bottom-verse"><img src="{{ asset('imag/bottomverse.jpg') }}" border="0" alt="1 John 5:14-15" title="1 John 5:14-15" /></div>
+        <div class="bottom-verse"><img src="{{ asset('img/bottomverse.jpg') }}" border="0" alt="1 John 5:14-15" title="1 John 5:14-15" /></div>
     	<div class="affiliates">
         	<div class="title-sm">Affiliates</div>
         	<div class="badges">
