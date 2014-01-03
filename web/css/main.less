@@ -1,22 +1,39 @@
 /** Site Styles **/
 html {
-background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4d788c), to(#274b5e));
-background: -webkit-linear-gradient(top, #274b5e, #4d788c);
-background: -moz-linear-gradient(top, #274b5e, #4d788c);
-background: -ms-linear-gradient(top, #274b5e, #4d788c);
-background: -o-linear-gradient(top, #274b5e, #4d788c);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4d788c), to(#274b5e));
+    background: -webkit-linear-gradient(top, #274b5e, #4d788c);
+    background: -moz-linear-gradient(top, #274b5e, #4d788c);
+    background: -ms-linear-gradient(top, #274b5e, #4d788c);
+    background: -o-linear-gradient(top, #274b5e, #4d788c);
 }
-body {margin:0; padding:0; position:relative; font-family:Verdana, Arial, Geneva, sans-serif; font-size:13px; background: url(../images/bg.jpg) repeat-x 0 0;}
-a {color:#000; text-decoration:none;}
-a:hover {text-decoration:underline;}
+body {
+    margin:0;
+    padding:0;
+    position:relative;
+    font-family:Verdana, Arial, Geneva, sans-serif;
+    font-size:13px;
+    background: url(/img/bg.jpg) repeat-x 0 0;
+}
+a {
+    color:#000;
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:underline;
+}
 
 /** Shell Styles **/
 #container {width:960px; position:relative; margin:0 auto;}
 
-#header {width:960px; height:164px; background:url(../images/headerbg.jpg) no-repeat 0 100%; position:relative;}
+#header {
+    width:960px;
+    height:164px;
+    background:url(/img/headerbg.jpg) no-repeat 0 100%;
+    position:relative;
+}
 #header .logo {position:absolute; top:30px; left:0;}
 #header .header_links {padding-left:30px; position:absolute; top:0; right:5px;}
-#header .header_links ul {margin:0; padding:0; list-style:none; float:left; display:inline; border:1px solid #8088AA; border-top:0; background:url(../images/headerlinkbg.jpg) repeat-x 0 0;}
+#header .header_links ul {margin:0; padding:0; list-style:none; float:left; display:inline; border:1px solid #8088AA; border-top:0; background:url(/img/headerlinkbg.jpg) repeat-x 0 0;}
 #header .header_links ul li {float:left; display:inline; position:relative;}
 #header .header_links ul li a {float:left; display:inline; font-size:10px; font-weight:bold; color:#fff; text-decoration:none; padding:5px 0; width:85px; text-align:center; border-left:1px solid #79A8B6;}
 #header .header_links ul li:first-child a {border-left:none;}
@@ -27,7 +44,7 @@ a:hover {text-decoration:underline;}
 #header .header_links ul li .menu {position:absolute; top:24px; right:-1px; border:1px solid #79A8B6; padding:0; display:none; padding:10px 0; width:180px; background:#055166; opacity:0.9;}
 #header .header_links ul li .menu a {padding:5px 10px; margin:0 10px; display:block; font-size:10px; font-weight:bold; color:#fff; background:#055166; width:auto; float:none; border:none; text-align:right;}
 #header .header_links ul li .menu a:hover {background:#79A8B6;}
-#header .header_links ul li .menu .sep {height:11px; background:url(../images/sep.gif) repeat-x 0 50%; margin:0 10px;}
+#header .header_links ul li .menu .sep {height:11px; background:url(/img/sep.gif) repeat-x 0 50%; margin:0 10px;}
 
 
 #body {width:960px; border-top:1px solid #875e22; background:#fff; overflow:hidden;}
@@ -48,7 +65,7 @@ a:hover {text-decoration:underline;}
 #body .left_side .prayer_book .following_cnt a:hover, 
 #body .left_side .prayer_book .followers_cnt a:hover,
 #body .left_side .prayer_book .notebook_cnt a:hover {text-decoration:underline;}
-#body .left_side .prayer_book .notebook_cnt {font-weight:bold; font-size:11px; color:#000; padding:3px 0 3px 20px; background:url(../images/notepadicon2.jpg) no-repeat 0 50%; margin-left:15px;}
+#body .left_side .prayer_book .notebook_cnt {font-weight:bold; font-size:11px; color:#000; padding:3px 0 3px 20px; background:url(/img/notepadicon2.jpg) no-repeat 0 50%; margin-left:15px;}
 #body .left_side .recent_prayer {padding:12px; border-right:1px solid #075267; border-bottom:1px solid #075267; background:#F4F0EB;}
 #body .left_side .recent_prayer .recent_post {padding:0 12px 12px; position:relative; font-size:10px; color:#000;}
 #body .left_side .archives {padding:12px;}
@@ -74,7 +91,7 @@ a:hover {text-decoration:underline;}
 #body .right_side .post_area {padding:0 15px 35px; overflow:hidden;}
 #body .right_side .post_area .post_textarea {border:1px solid #C3AF97; padding:8px 10px; height:70px; width:722px; margin-bottom:6px; font-family:Verdana, Geneva, sans-serif; font-size:11px;-moz-box-shadow:0 0 7px #E2DED3 inset; -webkit-box-shadow:0 0 7px #E2DED3 inset; box-shadow:0 0 7px #E2DED3 inset;}
 #body .right_side .post_area .post_textarea.off {font-weight:bold; color:#C3AF97; font-family:Georgia, "Times New Roman", Times, serif; font-weight:bold; font-style:italic; font-size:14px;}
-#body .right_side .post_area .post_button {border:1px solid #C3AF97; font:bold 10px Verdana, Geneva, sans-serif; color:#fff; padding:8px 0; width:114px; text-align:center; background:url(../images/buttonbg.jpg) repeat-x 0 0; float:right; display:inline; margin:9px 0 0; cursor:pointer;}
+#body .right_side .post_area .post_button {border:1px solid #C3AF97; font:bold 10px Verdana, Geneva, sans-serif; color:#fff; padding:8px 0; width:114px; text-align:center; background:url(/img/buttonbg.jpg) repeat-x 0 0; float:right; display:inline; margin:9px 0 0; cursor:pointer;}
 #body .right_side .requests_feed {padding:0 15px 35px; overflow:hidden;}
 #body .right_side .requests_feed label {display:block; padding:5px 3px; color:#BFAA90; font-weight:normal; font-size:10px;}
 #body .right_side .requests_feed .requests {border:1px solid #E5DFD8; padding:12px;}
@@ -88,13 +105,13 @@ a:hover {text-decoration:underline;}
 #body .right_side .requests_feed .req .post .n a {color:#085368; font-weight:bold; text-decoration:none;}
 #body .right_side .requests_feed .req .post .n a:hover {text-decoration:underline;}
 #body .right_side .requests_feed .req .post .t {position:relative; padding:0 18px;}
-#body .right_side .requests_feed .req .post .t .oq {background:url(../images/quotesopen.jpg) no-repeat 0 0; width:10px; height:10px; position:absolute; top:0; left:0;}
-#body .right_side .requests_feed .req .post .t .cq {background:url(../images/quotesclose.jpg) no-repeat 0 0; width:10px; height:10px; position:absolute; bottom:0; right:0;}
+#body .right_side .requests_feed .req .post .t .oq {background:url(/img/quotesopen.jpg) no-repeat 0 0; width:10px; height:10px; position:absolute; top:0; left:0;}
+#body .right_side .requests_feed .req .post .t .cq {background:url(/img/quotesclose.jpg) no-repeat 0 0; width:10px; height:10px; position:absolute; bottom:0; right:0;}
 #body .right_side .requests_feed .req .post .d {text-align:right; font-size:10px; padding:10px 0;}
 
 
 #footer {width:960px; position:relative; background:#fff;}
-#footer .affiliates {padding:7px; background:url(../images/bodybot.jpg) repeat-x 0 100%;}
+#footer .affiliates {padding:7px; background:url(/img/bodybot.jpg) repeat-x 0 100%;}
 #footer .affiliates .title-sm {color:#BFAA90; font-size:10px; padding:3px;}
 #footer .affiliates .badges {padding:20px; background:#fff; border:1px solid #BFAA90;}
 #footer .copyright {color:#fff; background:#20677B; padding:5px; font-size:11px;}
@@ -105,15 +122,15 @@ a:hover {text-decoration:underline;}
 
 /** Login/Register Styles **/
 .login_register {padding:24px 26px; overflow:hidden;}
-.login_register .login {padding:15px 18px; float:left; display:inline; width:298px; background:url(../images/blockbg.jpg) repeat-x 0 0; border:1px solid #C3AF97; height:252px;}
+.login_register .login {padding:15px 18px; float:left; display:inline; width:298px; background:url(/img/blockbg.jpg) repeat-x 0 0; border:1px solid #C3AF97; height:252px;}
 .login_register .login.retrieve_password {height:180px;}
 .login_register .login label, .login_register .register label {font-size:11px; color:#BFAA90; font-weight:bold; padding:3px 5px; display:block;}
-.login_register .login_input {background:url(../images/inputbg1.jpg) repeat-x 0 0; padding:10px 10px 9px; font-size:16px; border:1px solid #C3AF97; margin-bottom:10px; width:276px;}
-.login_register .register {padding:15px 18px; float:right; display:inline; width:505px; background:url(../images/blockbg.jpg) repeat-x 0 0; border:1px solid #C3AF97; overflow:hidden; height:252px;}
+.login_register .login_input {background:url(/img/inputbg1.jpg) repeat-x 0 0; padding:10px 10px 9px; font-size:16px; border:1px solid #C3AF97; margin-bottom:10px; width:276px;}
+.login_register .register {padding:15px 18px; float:right; display:inline; width:505px; background:url(/img/blockbg.jpg) repeat-x 0 0; border:1px solid #C3AF97; overflow:hidden; height:252px;}
 .login_register .register .left {float:left; display:inline; width:245px;}
 .login_register .register .right {float:right; display:inline; width:245px;}
-.login_register .register_input {background:url(../images/inputbg2.jpg) repeat-x 0 0; padding:6px 10px; font-size:16px; border:1px solid #C3AF97; margin-bottom:7px; width:222px;}
-.login_register .login_submit {border:1px solid #C3AF97; font:bold 11px Verdana, Geneva, sans-serif; color:#fff; padding:9px 0; width:114px; text-align:center; background:url(../images/buttonbg.jpg) repeat-x 0 0; float:right; display:inline; margin:9px 0 0; cursor:pointer;}
+.login_register .register_input {background:url(/img/inputbg2.jpg) repeat-x 0 0; padding:6px 10px; font-size:16px; border:1px solid #C3AF97; margin-bottom:7px; width:222px;}
+.login_register .login_submit {border:1px solid #C3AF97; font:bold 11px Verdana, Geneva, sans-serif; color:#fff; padding:9px 0; width:114px; text-align:center; background:url(/img/buttonbg.jpg) repeat-x 0 0; float:right; display:inline; margin:9px 0 0; cursor:pointer;}
 .login_register .register .login_submit {margin-top:30px;}
 .login_register .forgot_password {float:left; display:inline; margin-top:42px;}
 .login_register .forgot_password a {color:#075267; font-size:10px; text-decoration:underline;}
