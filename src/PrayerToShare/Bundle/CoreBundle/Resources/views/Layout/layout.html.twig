@@ -10,15 +10,15 @@
     {% endstylesheets %}
 </head>
 <body>
-<div id="container">
-	<div id="header">
+<div id="header">
+    <div class="header-inner">
         <div class="logo">
             <a href="/">
                 <img src="{{ asset('/img/logo.jpg') }}" border="0" alt="Prayer to Share" title="Prayer to Share" />
             </a>
         </div>
         <div class="header_links">
-        	<ul>
+            <ul>
                 <li><a href="{{ path('home') }}" class="lvl1">Home</a></li>
                 <li><a href="{{ path('fos_user_profile_edit') }}" class="lvl1">Profile</a></li>
                 <li>
@@ -36,14 +36,18 @@
             </ul>
         </div>
     </div>
+</div>
+<div id="container">
     <div id="body">
         {% block content %}Default Content{% endblock %}
     </div>
-    <div id="footer">
+</div>
+<div id="footer">
+    <div class="footer-inner">
         <div class="bottom-verse"><img src="{{ asset('img/bottomverse.jpg') }}" border="0" alt="1 John 5:14-15" title="1 John 5:14-15" /></div>
-    	<div class="affiliates">
-        	<div class="title-sm">Affiliates</div>
-        	<div class="badges">
+        <div class="affiliates">
+            <div class="title-sm">Affiliates</div>
+            <div class="badges">
                 <a href="http://www.allgraceoutreach.com/" target="_blank"><img src="{{ asset('img/ago.jpg') }}" border="0" alt="All Grace Outreach" title="All Grace Outreach" /></a>
             </div>
         </div>
