@@ -1,9 +1,16 @@
+@import "global-vars.less";
+
+*, *:before, *:after {
+-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
 html {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4d788c), to(#274b5e));
+    .gradient(#4d788c, #274b5e);
+    /*background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4d788c), to(#274b5e));
     background: -webkit-linear-gradient(top, #274b5e, #4d788c);
     background: -moz-linear-gradient(top, #274b5e, #4d788c);
     background: -ms-linear-gradient(top, #274b5e, #4d788c);
-    background: -o-linear-gradient(top, #274b5e, #4d788c);
+    background: -o-linear-gradient(top, #274b5e, #4d788c);*/
 }
 body {
     margin: 0;
@@ -21,13 +28,13 @@ body {
     }
 
     #container {
-        width: 960px;
+        width: 1070px;
         position: relative;
         margin: 0 auto;
     }
 
     #header {
-        width: 960px;
+        width: 1070px;
         height: 164px;
         background: url('/img/headerbg.jpg') no-repeat 0 100%;
         position: relative;
@@ -118,7 +125,7 @@ body {
         }
     }
     #body {
-        width: 960px;
+        width: 1070px;
         border-top: 1px solid #875e22;
         background: #fff;
         overflow: hidden;
@@ -426,7 +433,7 @@ body {
         }
     }
     #footer {
-        width: 960px;
+        width: 1070px;
         position: relative;
         background: #fff;
         overflow: hidden;
@@ -469,76 +476,62 @@ body {
     .login_register {
         padding: 24px 26px;
         overflow: hidden;
-        .login {
+        .block {
+            display: inline-block;
+            padding: 0 10px;
+        }
+        .register {
+            .block {
+                &:first-child {
+                    width: 50%;
+                    margin-right: 20px;
+                }
+            }
+        }
+        .login, .register {
             padding: 15px 18px;
-            float: left; 
-            display: inline;
-            width: 298px;
+            display: inline-block;
             background: url('/img/blockbg.jpg') repeat-x 0 0;
             border: 1px solid #C3AF97;
-            height:252px;
-        }
-        .login label, .register label {
-            font-size: 11px;
-            color: #BFAA90;
-            font-weight: bold;
-            padding: 3px 5px;
-            display: block;
+            overflow: hidden;
+            min-height: 360px;
+            label {
+                #font .pair;
+                color: #BFAA90;
+                font-weight: bold;
+                padding: 3px 5px;
+                display: block;
+            }
+            .login_submit {
+                border: none;
+                font: bold 11px Verdana, Geneva, sans-serif;
+                color: #fff;
+                padding: 15px 30px;
+                text-transform: uppercase;
+                text-align: center;
+                .gradient(#4d788c, #274b5e);
+                display: inline-block;
+                cursor: pointer;
+                margin-top: 15px;
+                width: 150px;
+            }
+            input {
+                .boxShadowInset(0, 3px, 7px, 0, #ddd);
+                padding: 10px;
+                #font .straight;
+                border: 1px solid #C3AF97;
+                margin-bottom: 10px;
+                width: 100%;
+                &.login_submit {
+                    .boxShadow(0, 2px, 3px, 0, #ededed);
+                }
+            }
         }
         .login.retrieve_password {
             height: 180px;
         }
-        .login_input {
-            background: url('/img/inputbg1.jpg') repeat-x 0 0;
-            padding: 10px 10px 9px; 
-            font-size: 16px;
-            border: 1px solid #C3AF97;
-            margin-bottom: 10px;
-            width: 276px;
-        }
-        .register {
-            padding: 15px 18px;
-            float: right;
-            display: inline;
-            width: 505px;
-            background: url('/img/blockbg.jpg') repeat-x 0 0;
-            border: 1px solid #C3AF97;
-            overflow: hidden;
-            height: 252px;
-            .left {
-                float: left;
-                display: inline;
-                width: 245px;
-            }
-            .right {
-                float: right;
-                display: inline;
-                width: 245px;
-            }
-            .login_submit {
-                margin-top: 30px;
-            }
-        }
-        .register_input {
-            background: url('/img/inputbg2.jpg') repeat-x 0 0;
-            padding: 6px 10px;
-            font-size: 16px;
-            border: 1px solid #C3AF97;
-            margin-bottom: 7px;
-            width: 222px;
-        }
-        .login_submit {
-            border: 1px solid #C3AF97;
-            font: bold 11px Verdana, Geneva, sans-serif;
-            color: #fff;
-            padding: 9px 0;
-            width: 114px;
-            text-align: center;
-            background: url('/img/buttonbg.jpg') repeat-x 0 0;
-            float: right;
-            display: inline;
-            margin: 9px 0 0;
-            cursor: pointer;
+        .reg-container {
+            padding-left: 24px;
         }
         .forgot_password {
             float: left;
@@ -558,7 +551,7 @@ body {
     h2.box_headline {
         font-size: 24px;
         color: #075267;
-        margin: 0 0 25px;
+        margin: 0 0 15px;
     }
 }
 
