@@ -43,11 +43,18 @@
     -ms-box-shadow:     inset @x @y @blur @color;
     box-shadow:         inset @x @y @blur @color;
 }
+.border-radius (@radius) {
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -o-border-radius:      @radius;
+    -ms-border-radius:     @radius;
+    border-radius:         @radius;
+}
 .gradient (@color1: #1a82f7, @color2: #2F2727) {
-  background-color: @color1;
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@color1), to(@color2));
-  background: -webkit-linear-gradient(top, @color2, @color1);
-  background: -moz-linear-gradient(top, @color2, @color1);
-  background: -ms-linear-gradient(top, @color2, @color1);
-  background: -o-linear-gradient(top, @color2, @color1);
+    background-color: @color1;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@color1), to(@color2));
+    background: -webkit-linear-gradient(top, @color2, @color1);
+    background: -moz-linear-gradient(top, @color2, @color1);
+    background: -ms-linear-gradient(top, @color2, @color1);
+    background: -o-linear-gradient(top, @color2, @color1);
 }
