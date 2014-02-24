@@ -28,7 +28,7 @@ body {
     #header {
         .gradient(#3c2918, #604329);
         position: relative;
-        height: 220px;
+        height: 125px;
         padding-top: 40px;
         border-bottom: 1px solid #604329;
         .boxShadow(0, 3px, 17px, 0, #3c2918);
@@ -51,19 +51,18 @@ body {
                 right: 5px;
                 ul {
                     margin: 0;
-                    padding: 0;
+                    padding: 0 10px;
                     list-style: none;
                     float: left;
                     display: inline;
-                    border: 1px solid #79A8B6;
-                    border-top: 0;
-                    .gradient(#274b5e, #4d788c);
+                    .gradient(#4d788c, #274b5e);
+                    .border-radius(0 0 5px 5px);
+                    .boxShadow(0, 3px, 17px, 0, #3c2918);
                     li {
                         float: left;
                         display: inline;
                         position: relative;
                         height: 26px;
-                        border-left: 1px solid #79A8B6;
                         &:first-child {
                             border-left: 0;
                         }
@@ -93,7 +92,6 @@ body {
                             position: absolute;
                             top: 26px;
                             right: -1px;
-                            border: 1px solid #79A8B6;
                             display: none;
                             padding: 10px 0;
                             width: 220px;
@@ -127,7 +125,7 @@ body {
     }
     #body {
         width: 1070px;
-        margin-top: -105px;
+        margin-top: -15px;
         background: #fff;
         overflow: hidden;
         .comingsoon {
@@ -548,9 +546,10 @@ body {
             padding-left: 24px;
         }
         .forgot_password {
-            float: left;
+            float: right;
             display: inline;
-            margin-top: 42px;
+            margin-top: 5px;
+            padding-right: 10px;
             a {
                 color: #075267;
                 font-size: 10px;
@@ -567,7 +566,7 @@ body {
         color: #2d2d2d;
         margin: 0 0 15px;
         padding-left: 10px;
-        font: normal 24px "Times New Roman", Georgia, serif;
+        font: normal 24px Georgia, "Times New Roman", serif;
     }
 }
 
