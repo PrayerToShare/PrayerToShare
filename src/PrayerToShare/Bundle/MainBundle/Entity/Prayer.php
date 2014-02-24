@@ -7,9 +7,9 @@ use PrayerToShare\Bundle\CoreBundle\Entity\User;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="prayer_requests")
+ * @ORM\Table(name="prayers")
  */
-class PrayerRequest
+class Prayer
 {
     /**
      * @ORM\Id
@@ -19,7 +19,7 @@ class PrayerRequest
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="PrayerToShare\Bundle\CoreBundle\Entity\User", inversedBy="prayerRequests")
+     * @ORM\ManyToOne(targetEntity="PrayerToShare\Bundle\CoreBundle\Entity\User", inversedBy="prayers")
      */
     protected $user;
 

@@ -2,8 +2,8 @@
 
 namespace PrayerToShare\Bundle\MainBundle\Controller;
 
-use PrayerToShare\Bundle\MainBundle\Entity\PrayerRequest;
-use PrayerToShare\Bundle\MainBundle\Form\PrayerRequestFormType;
+use PrayerToShare\Bundle\MainBundle\Entity\Prayer;
+use PrayerToShare\Bundle\MainBundle\Form\PrayerFormType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
@@ -15,15 +15,15 @@ class HomepageController extends BaseController
      */
     public function indexAction()
     {
-        $form = $this->getPrayerRequestForm();
+        $form = $this->getPrayerForm();
 
         return array(
             'form' => $form->createView(),
         );
     }
 
-    protected function getPrayerRequestForm(PrayerRequest $prayerRequest = null)
+    protected function getPrayerForm(Prayer $prayer = null)
     {
-        return $this->createForm(new PrayerRequestFormType(), $prayerRequest);
+        return $this->createForm(new PrayerFormType(), $prayer);
     }
 }

@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class PrayerRequestFormType extends AbstractType
+class PrayerFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -18,12 +18,12 @@ class PrayerRequestFormType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'PrayerToShare\Bundle\MainBundle\Entity\PrayerRequest',
+            'data_class' => 'PrayerToShare\Bundle\MainBundle\Entity\Prayer',
         ));
     }
 
     public function getName()
     {
-        return 'prayer_request';
+        return 'prayer';
     }
 }
