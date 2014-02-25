@@ -22,6 +22,7 @@ class User extends BaseUser
 
     /**
      * @ORM\OneToMany(targetEntity="PrayerToShare\Bundle\MainBundle\Entity\Prayer", mappedBy="user")
+     * @ORM\OrderBy({"createdAt" = "ASC"})
      */
     protected $prayers;
 
@@ -48,6 +49,11 @@ class User extends BaseUser
     public function getPrayers()
     {
         return $this->prayers;
+    }
+
+    public function getMostRecentPrayer()
+    {
+        return $this->prayers->first();
     }
 
     public function addPrayerGroup(GroupMember $group)

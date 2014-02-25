@@ -17,7 +17,6 @@ class PrayerController extends BaseController
      * @Route("/", name="prayer_create")
      * @Secure(roles="ROLE_USER")
      * @Method({"POST"})
-     * @Template
      */
     public function createAction()
     {
@@ -31,8 +30,6 @@ class PrayerController extends BaseController
             $this->getEntityManager()->flush();
         }
 
-        return array(
-            'form' => $form->createView(),
-        );
+        return $this->redirect($this->generateUrl('dashboard_index'));
     }
 }

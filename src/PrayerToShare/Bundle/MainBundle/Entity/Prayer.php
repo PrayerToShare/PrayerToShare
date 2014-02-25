@@ -28,9 +28,15 @@ class Prayer
      */
     protected $text;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $createdAt;
+
     public function __construct(User $user)
     {
         $this->user = $user;
+        $this->createdAt = new \DateTime();
     }
 
     public function getId()
@@ -41,5 +47,20 @@ class Prayer
     public function getUser()
     {
         return $this->user;
+    }
+
+    public function setText($text)
+    {
+        $this->text = $text;
+    }
+
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
     }
 }

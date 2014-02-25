@@ -3,6 +3,7 @@
 namespace PrayerToShare\Bundle\MainBundle\Controller;
 
 use PrayerToShare\Bundle\CoreBundle\Controller\CoreController;
+use PrayerToShare\Bundle\MainBundle\Entity\Prayer;
 use PrayerToShare\Bundle\MainBundle\Form\PrayerFormType;
 
 class BaseController extends CoreController
