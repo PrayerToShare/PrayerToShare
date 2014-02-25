@@ -4,14 +4,14 @@
     <h2>My Prayer Groups</h2>
     <ol>
         {% for group in groups %}
-            <li>{{ group.name }}</li>
+            <li><a href="{{ path('group_view', {id: group.id}) }}">{{ group.name }}</a></li>
         {% endfor %}
     </ol>
 
     <h3>Public Prayer Groups</h3>
     <ul>
         {% for group in publicGroups %}
-            <li>{{ group.name }}</li>
+            <li><a href="{{ path('group_view', {id: group.id}) }}">{{ group.name }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

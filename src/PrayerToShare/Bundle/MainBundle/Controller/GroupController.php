@@ -3,6 +3,7 @@
 namespace PrayerToShare\Bundle\MainBundle\Controller;
 
 use JMS\SecurityExtraBundle\Annotation\Secure;
+use PrayerToShare\Bundle\CoreBundle\Entity\PrayerGroup;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -26,6 +27,18 @@ class GroupController extends BaseController
         return array(
             'groups' => $user->getPrayerGroups(),
             'publicGroups' => $publicGroups,
+        );
+    }
+
+    /**
+     * @Route("/view/{id}", name="group_view")
+     * @Method({"GET"})
+     * @Template
+     */
+    public function viewAction(PrayerGroup $group)
+    {
+        return array(
+            'group' => $group,
         );
     }
 }
