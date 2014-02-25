@@ -28,14 +28,14 @@ class Prayer
      */
     protected $text;
 
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+
     public function getId()
     {
         return $this->id;
-    }
-
-    public function setUser(User $user)
-    {
-        $this->user = $user;
     }
 
     public function getUser()
