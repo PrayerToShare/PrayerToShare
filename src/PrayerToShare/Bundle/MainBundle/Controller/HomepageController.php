@@ -16,9 +16,11 @@ class HomepageController extends BaseController
     public function indexAction()
     {
         $form = $this->getPrayerForm();
+        $regForm = $this->getRegistrationForm();
 
         return array(
             'form' => $form->createView(),
+            'regForm' => $regForm->createView(),
             'auth_csrf_token' => $this->getAuthCsrfToken(),
         );
     }

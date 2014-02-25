@@ -27,7 +27,7 @@
                         {% if is_granted('ROLE_USER') %}
                             <a href="{{ path('settings') }}">Account Settings</a>
                             <a href="{{ path('privacy') }}">Privacy Settings</a>
-                            <a href="{{ path('logout') }}">Logout</a>
+                            <a href="/logout">Logout</a>
                             <div class="sep"></div>
                         {% endif %}
                         <a href="{{ path('help') }}">Help</a>

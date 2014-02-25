@@ -10,4 +10,9 @@ class CoreController extends Controller
     {
         return $this->get('form.csrf_provider')->generateCsrfToken('authenticate');
     }
+
+    protected function getRegistrationForm()
+    {
+        return $this->get('fos_user.registration.form.factory')->createForm();
+    }
 }

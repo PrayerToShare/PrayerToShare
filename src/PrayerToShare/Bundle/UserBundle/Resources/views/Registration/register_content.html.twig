@@ -1,15 +1,15 @@
-<form method="post" action="">
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="post" role="form">
     <div class="block twelve left">
-        <label for="email">Email</label>
-        <input type="text" name="email" class="register_input" />
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email, {attr: {class: "register_input"}}) }}
     </div>
     <div class="block six left">
-        <label for="password">Password</label>
-        <input type="password" name="password" class="register_input" />
+        {{ form_label(form.plainPassword.first) }}
+        {{ form_widget(form.plainPassword.first, {attr: {class: "register_input"}}) }}
     </div>
     <div class="block six left">
-        <label for="pwconfirm">Re-enter Password</label>
-        <input type="text" name="pwconfirm" class="register_input" />
+        {{ form_label(form.plainPassword.second, 'Re-enter Password') }}
+        {{ form_widget(form.plainPassword.second, {attr: {class: "register_input"}}) }}
     </div>
     <div class="block six left">
         <label for="fname">First Name</label>
@@ -23,4 +23,5 @@
         <input type="submit" name="submit" value="Sign Up" class="login_submit right" />
     </div>
     <input type="hidden" name="pts_action" value="register" />
+    {{ form_rest(form) }}
 </form>
