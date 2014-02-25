@@ -19,6 +19,7 @@ class HomepageController extends BaseController
 
         return array(
             'form' => $form->createView(),
+            'auth_csrf_token' => $this->getAuthCsrfToken(),
         );
     }
 

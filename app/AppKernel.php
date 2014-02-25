@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new PrayerToShare\Bundle\CoreBundle\PrayerToShareCoreBundle(),
             new PrayerToShare\Bundle\MainBundle\PrayerToShareMainBundle(),
+            new PrayerToShare\Bundle\UserBundle\PrayerToShareUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
