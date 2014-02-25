@@ -25,11 +25,17 @@ class User extends BaseUser
      */
     protected $prayers;
 
+    /**
+     * @ORM\OneToMany(targetEntity="PrayerGroupMember", mappedBy="user")
+     */
+    protected $prayerGroups;
+
     public function __construct()
     {
         parent::__construct();
 
         $this->prayers = new ArrayCollection();
+        $this->prayerGroups = new ArrayCollection();
     }
 
     public function addPrayer(Prayer $prayer)
@@ -42,5 +48,15 @@ class User extends BaseUser
     public function getPrayers()
     {
         return $this->prayers;
+    }
+
+    public function addPrayerGroup(GroupMember $group)
+    {
+        $this->prayerGroups->add($group);
+    }
+
+    public function getPrayerGroups()
+    {
+        return $this->prayerGroups;
     }
 }
