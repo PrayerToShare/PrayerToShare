@@ -13,7 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class GroupController extends BaseController
 {
     /**
-     * @Route("/list", name="groups_list")
+     * @Route("/list", name="group_list")
      * @Secure(roles="ROLE_USER")
      * @Method({"GET"})
      * @Template
@@ -21,9 +21,11 @@ class GroupController extends BaseController
     public function listAction()
     {
         $user = $this->getUser();
+        $publicGroups = $this->getRepository('PrayerToShareCoreBundle:PrayerGroup')->findAllPublicGroups();
 
         return array(
             'groups' => $user->getPrayerGroups(),
+            'publicGroups' => $publicGroups,
         );
     }
 }

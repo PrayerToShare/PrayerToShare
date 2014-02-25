@@ -22,6 +22,7 @@ SQL;
 CREATE TABLE prayer_groups (
     id INT AUTO_INCREMENT NOT NULL
   , name VARCHAR(64) NOT NULL
+  , public TINYINT(1) NOT NULL
   , PRIMARY KEY(id)
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB
 SQL;

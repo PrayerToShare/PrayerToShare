@@ -4,9 +4,10 @@ namespace PrayerToShare\Bundle\CoreBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="PrayerGroupRepository")
  * @ORM\Table(name="prayer_groups")
  */
 class PrayerGroup
@@ -20,6 +21,7 @@ class PrayerGroup
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Assert\NotBlank
      */
     protected $name;
 
@@ -27,6 +29,11 @@ class PrayerGroup
      * @ORM\OneToMany(targetEntity="PrayerGroupMember", mappedBy="group")
      */
     protected $members;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $public;
 
     public function __construct()
     {
