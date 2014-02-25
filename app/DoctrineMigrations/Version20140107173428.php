@@ -31,8 +31,8 @@ CREATE TABLE prayer_group_members (
     user_id INT NOT NULL
   , group_id INT NOT NULL
   , admin TINYINT(1) NOT NULL
-  , INDEX IDX_917FD7DBA76ED395 (user_id)
-  , INDEX IDX_917FD7DBFE54D947 (group_id)
+  , INDEX IDX_PRAYER_GROUP_MEMBERS_USER_ID (user_id)
+  , INDEX IDX_PRAYER_GROUP_MEMBERS_GROUP_ID (group_id)
   , PRIMARY KEY(user_id, group_id)
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB
 SQL;
@@ -43,8 +43,8 @@ SQL;
         $this->addSql("ALTER TABLE prayers ADD CONSTRAINT FK_PRAYERS_REF_USERS_USER_ID FOREIGN KEY (user_id) REFERENCES users (id)");
         $this->addSql(self::PRAYER_GROUPS);
         $this->addSql(self::PRAYER_GROUP_MEMBERS);
-        $this->addSql("ALTER TABLE prayer_group_members ADD CONSTRAINT FK_917FD7DBA76ED395 FOREIGN KEY (user_id) REFERENCES users (id)");
-        $this->addSql("ALTER TABLE prayer_group_members ADD CONSTRAINT FK_917FD7DBFE54D947 FOREIGN KEY (group_id) REFERENCES prayer_groups (id)");
+        $this->addSql("ALTER TABLE prayer_group_members ADD CONSTRAINT FK_PRAYER_GROUP_MEMBERS_REF_USERS_USER_ID FOREIGN KEY (user_id) REFERENCES users (id)");
+        $this->addSql("ALTER TABLE prayer_group_members ADD CONSTRAINT FK_PRAYER_GROUP_MEMBERS_REF_PRAYER_GROUPS_GROUP_ID FOREIGN KEY (group_id) REFERENCES prayer_groups (id)");
     }
 
     public function down(Schema $schema)
