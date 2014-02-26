@@ -1,29 +1,27 @@
 {% extends "PrayerToShareCoreBundle:Layout:layout.html.twig" %}
 
 {% block content %}
-    
-	<div class="login_register">
-		<div class="login four left">
-        	<h2 class="box_headline">Sign In</h2>
+    <div class="login_register">
+        <div class="login four left">
+            <h2 class="box_headline">Sign In</h2>
             <div class="login_form">
 
-            	{% include "PrayerToShareMainBundle:Homepage:_login-form.html.twig" %}
+                {% include "PrayerToShareMainBundle:Homepage:_login-form.html.twig" %}
 
             </div>
             <div class="forgot_password">
-            	<a href="forgot_password.php">Forgot Password?</a>
+                <a href="forgot_password.php">Forgot Password?</a>
             </div>
         </div>
         <div class="reg-container eight right">
-	        <div class="register twelve">
-	        	<h2 class="box_headline">Sign Up</h2>
-	            <div class="login_form">
+            <div class="register twelve">
+                <h2 class="box_headline">Sign Up</h2>
+                <div class="login_form">
 
-	            	{% include "PrayerToShareMainBundle:Homepage:_register-form.html.twig" %}
+                    {% include "PrayerToShareUserBundle:Registration:register_content.html.twig" with {form: regForm}%}
 
-	            </div>
-	        </div>
-	    </div>
-	</div>
-
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

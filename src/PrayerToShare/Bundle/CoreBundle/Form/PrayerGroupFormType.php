@@ -1,0 +1,32 @@
+<?php
+
+namespace PrayerToShare\Bundle\CoreBundle\Form;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
+class PrayerGroupFormType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('name', 'text')
+            ->add('public', 'checkbox', array(
+                'required' => false,
+            ))
+        ;
+    }
+
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'PrayerToShare\Bundle\CoreBundle\Entity\PrayerGroup',
+        ));
+    }
+
+    public function getName()
+    {
+        return 'prayergroup';
+    }
+}

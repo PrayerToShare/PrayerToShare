@@ -34,4 +34,20 @@ class TempController extends Controller
     {
         return array();
     }
+
+    /**
+     * @Route("/settings", name="settings")
+     */
+    public function settingsAction()
+    {
+        return array();
+    }
+
+    /**
+     * @Route("/privacy", name="privacy")
+     */
+    public function privacyAction()
+    {
+        return array();
+    }
 }

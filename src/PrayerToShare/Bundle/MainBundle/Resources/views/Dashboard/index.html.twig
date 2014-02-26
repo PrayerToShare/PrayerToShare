@@ -1,0 +1,38 @@
+{% extends "PrayerToShareCoreBundle:Layout:layout.html.twig" %}
+
+{% block content %}
+    <div class="left sidebar">
+        <h2><a href="#">Prayer Book</a></h2>
+        <p>
+            Following (0)<br>
+            Followers (0)
+        </p>
+
+        {% set prayer = app.user.mostRecentPrayer %}
+        {% if prayer %}
+            <h2>Recent Prayer</h2>
+            <p class="quoted">{{ prayer.text }}</p>
+        {% endif %}
+    </div>
+
+    <div class="right content">
+        <div class="profile">
+            <div class="info">
+                <img src="">
+                <a href="">(edit profile)</a>
+            </div>
+            <div class="groups">
+                {% for group in app.user.prayerGroups %}
+                    <p>{{ group.name }}</p>
+                {% endfor %}
+                <a href="{{ path('group_list') }}">View All Groups</a>
+            </div>
+        </div>
+        <div class="prayer-form">
+            <form action="{{ path('prayer_create') }}" method="post">
+                {{ form_widget(form) }}
+                <button type="submit">Send Prayer</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

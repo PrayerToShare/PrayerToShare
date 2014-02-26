@@ -1,0 +1,19 @@
+{% extends "PrayerToShareCoreBundle:Layout:layout.html.twig" %}
+
+{% block content %}
+    <h2>My Prayer Groups</h2>
+    <ol>
+        {% for group in groups %}
+            <li><a href="{{ path('group_view', {id: group.id}) }}">{{ group.name }}</a></li>
+        {% endfor %}
+    </ol>
+
+    <h3>Public Prayer Groups</h3>
+    <ul>
+        {% for group in publicGroups %}
+            <li><a href="{{ path('group_view', {id: group.id}) }}">{{ group.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ path('group_new') }}">Create a New Prayer Group</a>
+{% endblock %}

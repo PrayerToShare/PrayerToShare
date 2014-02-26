@@ -1,0 +1,27 @@
+{% extends "PrayerToShareCoreBundle:Layout:layout.html.twig" %}
+
+{% block content %}
+    <form action="{{ path('group_update', {id: prayerGroup.id}) }}" method="post">
+        {% include "PrayerToShareMainBundle:Group:form.html.twig" %}
+
+        <button type="submit">Update Prayer Group</button>
+    </form>
+
+    <h3>Group Members</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Admin</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in prayerGroup.members %}
+                <tr>
+                    <td>{{ member.user.username }}</td>
+                    <td>{{ member.admin ? 'Yes' : 'No' }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
