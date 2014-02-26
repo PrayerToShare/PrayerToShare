@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4fe3f4440c79e93b33e392a845159c1c",
+    "hash": "c9ad568c7dd458e5ff33ef93a5adfe41",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -426,12 +426,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "e84e0229bae89a57106abf17753e351e9e16874a"
+                "reference": "941a69c8414a29f603991cd58542afd3865e960f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/e84e0229bae89a57106abf17753e351e9e16874a",
-                "reference": "e84e0229bae89a57106abf17753e351e9e16874a",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/941a69c8414a29f603991cd58542afd3865e960f",
+                "reference": "941a69c8414a29f603991cd58542afd3865e960f",
                 "shasum": ""
             },
             "require": {
@@ -490,7 +490,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2014-02-03 21:03:15"
+            "time": "2014-02-25 18:05:38"
         },
         {
             "name": "doctrine/doctrine-fixtures-bundle",
@@ -997,12 +997,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Incenteev/ParameterHandler.git",
-                "reference": "143272a0a09c62616a3c8011fc165a10c6b35241"
+                "reference": "e4e191b96fb8af9cde738f439ec7fe69023e45f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Incenteev/ParameterHandler/zipball/143272a0a09c62616a3c8011fc165a10c6b35241",
-                "reference": "143272a0a09c62616a3c8011fc165a10c6b35241",
+                "url": "https://api.github.com/repos/Incenteev/ParameterHandler/zipball/e4e191b96fb8af9cde738f439ec7fe69023e45f9",
+                "reference": "e4e191b96fb8af9cde738f439ec7fe69023e45f9",
                 "shasum": ""
             },
             "require": {
@@ -1040,7 +1040,7 @@
             "keywords": [
                 "parameters management"
             ],
-            "time": "2013-12-07 10:10:39"
+            "time": "2014-02-25 11:14:12"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -1491,12 +1491,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "6b81ac8153be8ae33a877a79be3f61809f1448d9"
+                "reference": "0ac27c8089d0ec41728d96b5aa0dcad18fb0d459"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/6b81ac8153be8ae33a877a79be3f61809f1448d9",
-                "reference": "6b81ac8153be8ae33a877a79be3f61809f1448d9",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/0ac27c8089d0ec41728d96b5aa0dcad18fb0d459",
+                "reference": "0ac27c8089d0ec41728d96b5aa0dcad18fb0d459",
                 "shasum": ""
             },
             "require": {
@@ -1504,8 +1504,8 @@
                 "psr/log": "~1.0"
             },
             "require-dev": {
-                "aws/aws-sdk-php": "~2.4.8",
-                "doctrine/couchdb": "dev-master",
+                "aws/aws-sdk-php": "~2.4, >2.4.8",
+                "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
                 "phpunit/phpunit": "~3.7.0",
                 "raven/raven": "~0.5",
@@ -1550,7 +1550,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-02-23 15:06:45"
+            "time": "2014-02-26 12:30:17"
         },
         {
             "name": "phpoption/phpoption",
@@ -1908,21 +1908,20 @@
         },
         {
             "name": "symfony/icu",
-            "version": "1.2.x-dev",
+            "version": "1.0.x-dev",
             "target-dir": "Symfony/Component/Icu",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Icu.git",
-                "reference": "98e197da54df1f966dd5e8a4992135703569c987"
+                "reference": "fdba214b1e087c149843bde976263c53ac10c975"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Icu/zipball/98e197da54df1f966dd5e8a4992135703569c987",
-                "reference": "98e197da54df1f966dd5e8a4992135703569c987",
+                "url": "https://api.github.com/repos/symfony/Icu/zipball/fdba214b1e087c149843bde976263c53ac10c975",
+                "reference": "fdba214b1e087c149843bde976263c53ac10c975",
                 "shasum": ""
             },
             "require": {
-                "lib-icu": ">=4.4",
                 "php": ">=5.3.3",
                 "symfony/intl": "~2.3"
             },
@@ -1952,7 +1951,7 @@
                 "icu",
                 "intl"
             ],
-            "time": "2013-10-04 10:06:38"
+            "time": "2013-10-04 09:12:07"
         },
         {
             "name": "symfony/monolog-bundle",
