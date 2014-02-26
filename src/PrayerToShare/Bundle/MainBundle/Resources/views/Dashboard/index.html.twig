@@ -2,24 +2,31 @@
 
 {% block content %}
     <div class="left sidebar">
-        <h2><a href="#">Prayer Book</a></h2>
-        <p>
-            Following (0)<br>
-            Followers (0)
-        </p>
+        <h2 class="subtitle"><a href="#">Prayer Book</a></h2>
+        <div class="stats">
+            <div class="following">Following (<span>0</span>)</div>
+            <div class="followers">Followers (<span>0</span>)</div>
+        </div>
 
         {% set prayer = app.user.mostRecentPrayer %}
         {% if prayer %}
-            <h2>Recent Prayer</h2>
-            <p class="quoted">{{ prayer.text }}</p>
+            <h2 class="subtitle">Recent Prayer</h2>
+            <div class="quoted">{{ prayer.text }}</div>
         {% endif %}
     </div>
 
     <div class="left content">
         <div class="profile">
             <div class="info">
-                <img src="">
-                <a href="">(edit profile)</a>
+                <div class="profile-image">
+                    <img src="{{ asset('img/noprofileimage.jpg') }}" align="left">
+                </div>
+                <div>
+                    <div class="profile-name">
+                        <a href="#">Name Here</a>
+                    </div>
+                    <a href="#" class="profile-link">(edit profile)</a>
+                </div>
             </div>
             <div class="groups">
                 {% for membership in app.user.prayerGroups %}
@@ -28,11 +35,19 @@
                 <a href="{{ path('group_list') }}">View All Groups</a>
             </div>
         </div>
+
         <div class="prayer-form">
             <form action="{{ path('prayer_create') }}" method="post">
-                {{ form_widget(form) }}
-                <button type="submit">Send Prayer</button>
+                {{ form_label(form.NewPost) }}
+                {{ form_errors(form.NewPost) }}
+                {{ form_widget(form.NewPost, { attr: { 'class': 'new-post', 'placeholder': 'What is on your heart?' } }) }}
+                {{ form_widget(form.submit, { attr: { 'class': 'btn' } }) }}
             </form>
+        </div>
+
+        <div class="prayer-feed">
+            <label>Prayer Requests</label>
+            <div class="feed">No prayer requests</div>
         </div>
     </div>
 {% endblock %}

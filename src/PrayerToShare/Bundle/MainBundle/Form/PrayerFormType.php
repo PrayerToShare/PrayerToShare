@@ -11,7 +11,8 @@ class PrayerFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('text', 'textarea')
+            ->add('NewPost', 'textarea')
+            ->add('submit', 'submit')
         ;
     }
 

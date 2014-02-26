@@ -15,8 +15,9 @@ body {
     position: relative;
     font: normal 13px Arial, Helvetica, Sans-serif;
     background: #4d788c;
+    color: #2d2d2d;
     a {
-        color: #000;
+        color: #2d2d2d;
         text-decoration: none;
     }
     a:hover {
@@ -134,17 +135,121 @@ body {
         background: #fff;
         overflow: hidden;
         .sidebar {
-            width: 20%;
+            width: 190px;
+            background: #F4F0EB;
+            padding: 12px;
+            border-top: 1px solid #C3AF97;
+            h2.subtitle {
+                font: bold 14px Georgia, "Times New Roman", serif;
+                margin-top: 0;
+                a, a:hover {
+                    color: #274b5e;
+                }
+            }
             &.left {
-                padding-left: 24px;
+                margin-left: 24px;
             }
             &.right {
-                padding-right: 24px;
+                margin-right: 24px;
+            }
+            .stats {
+                padding-bottom: 12px;
+                > div {
+                    padding: 3px 0;
+                    font: bold 11px Arial, Helvetica, Sans-serif;
+                }
             }
         }
         .content {
-            width: 80%;
-            padding: 0 24px;
+            width: 832px;
+            margin-right: 24px;
+            border-top: 1px solid #C3AF97;
+            padding: 0;
+            .profile {
+                background: #E1E9EB;
+                padding: 12px 16px;
+                border-left: 1px solid #fff;
+                overflow: hidden;
+                .info, .groups {
+                    width: 50%;
+                    float: left;
+                    font: normal 11px Arial, Helvetica, Sans-serif;
+                    a, a:hover {
+                        font: bold 10px Arial, Helvetica, Sans-serif;
+                        color: #274b5e;
+                    }
+                    .profile-name {
+                        padding-top: 3px;
+                        a {
+                            font: bold 12px Georgia, "Times New Roman", serif;
+                        }
+                    }
+                    .profile-image {
+                        margin-right: 10px;
+                        border: 1px solid #fff;
+                        overflow: hidden;
+                        float: left;
+                        img {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            label {
+                font: bold 10px Arial, Helvetica, Sans-serif;
+                text-transform: uppercase;
+                padding: 0 3px;
+                color: #BFAA90;
+                display: block;
+            }
+            .prayer-form {
+                padding: 24px 16px;
+                overflow: hidden;
+                .new-post {
+                    width: 695px;
+                    padding: 10px 12px;
+                    border: 1px solid #C3AF97;
+                    .boxShadowInset(0, 0, 7px, 0, #E2DED3);
+                    height: 36px;
+                    font-size: 12px;
+                    color: #2d2d2d;
+                    vertical-align: bottom;
+                    display: inline-block;
+                }
+                .btn {
+                    margin-top: 0;
+                    display: inline-block;
+                    vertical-align: bottom;
+                    width: 100px;
+                    padding: 12px 0;
+                    text-align: center;
+                }
+            }
+            .prayer-feed {
+                padding: 0 16px 24px;
+                overflow: hidden;
+                color: #2d2d2d;
+                .feed {
+                    border: 1px solid #E5DFD8;
+                    padding: 12px;
+                    font-size: 11px;
+                }
+            }
+        }
+        .btn {
+            border: none;
+            color: #fff;
+            padding: 12px 30px;
+            text-transform: uppercase;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+            margin-top: 15px;
+            margin-bottom: 0;
+            font: normal 11px Arial, Helvetica, Sans-serif;
+            width: auto;
+            .gradient(#4d788c, #274b5e);
+            .border-radius(3px);
         }
         .comingsoon {
             height: 267px;
