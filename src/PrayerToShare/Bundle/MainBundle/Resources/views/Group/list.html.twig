@@ -3,8 +3,8 @@
 {% block content %}
     <h2>My Prayer Groups</h2>
     <ol>
-        {% for group in groups %}
-            <li><a href="{{ path('group_view', {id: group.id}) }}">{{ group.name }}</a></li>
+        {% for membership in groups %}
+            <li><a href="{{ path('group_view', {id: membership.prayerGroup.id}) }}">{{ membership.prayerGroup.name }}</a></li>
         {% endfor %}
     </ol>
 
