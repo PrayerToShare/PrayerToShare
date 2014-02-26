@@ -5,6 +5,10 @@
 -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
+html {
+    background: #274b5e;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -490,14 +494,6 @@ body {
             display: inline-block;
             padding: 0 10px;
         }
-        .register {
-            .block {
-                &:first-child {
-                    width: 50%;
-                    margin-right: 20px;
-                }
-            }
-        }
         .login, .register {
             padding: 15px 18px;
             display: inline-block;
@@ -538,6 +534,14 @@ body {
                 &.login_submit {
                     .boxShadow(0, 2px, 3px, 0, #ededed);
                 }
+            }
+            .remember-me {
+                margin: 0;
+                margin-left: 5px;
+                width: auto;
+                display: inline;
+                float: none;
+                vertical-align: bottom;
             }
         }
         .login.retrieve_password {
