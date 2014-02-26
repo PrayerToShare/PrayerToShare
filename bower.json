@@ -3,6 +3,10 @@
     "version": "0.0.1",
     "dependencies": {
         "jquery": "latest",
-        "bootstrap": "3.*"
+        "bootstrap": "3.*",
+        "requirejs": "latest",
+        "backbone": "latest",
+        "backbone.marionette": "latest",
+        "underscore": "latest"
     }
 }
