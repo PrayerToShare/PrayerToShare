@@ -23,7 +23,6 @@
             </div>
             <div class="groups">
                 {% for membership in app.user.prayerGroups %}
-                    {{ dump(membership.prayerGroup) }}
                     <p>{{ membership.prayerGroup.name }}</p>
                 {% endfor %}
                 <a href="{{ path('group_list') }}">View All Groups</a>
