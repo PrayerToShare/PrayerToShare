@@ -14,4 +14,6 @@
             <li><a href="{{ path('group_view', {id: group.id}) }}">{{ group.name }}</a></li>
         {% endfor %}
     </ul>
+
+    <a href="{{ path('group_new') }}">Create a New Prayer Group</a>
 {% endblock %}

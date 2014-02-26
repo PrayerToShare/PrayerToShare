@@ -10,6 +10,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  */
 class CoreController extends Controller
 {
+    protected function getPrayerGroupManager()
+    {
+        return $this->get('prayergroup_manager');
+    }
+
     /**
      * getEntityManager
      *

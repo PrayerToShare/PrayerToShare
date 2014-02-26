@@ -1,0 +1,9 @@
+{% extends "PrayerToShareCoreBundle:Layout:layout.html.twig" %}
+
+{% block content %}
+    <form action="{{ path('group_update', {id: prayerGroup.id}) }}" method="post">
+        {% include "PrayerToShareMainBundle:Group:form.html.twig" %}
+
+        <button type="submit">Update Prayer Group</button>
+    </form>
+{% endblock %}

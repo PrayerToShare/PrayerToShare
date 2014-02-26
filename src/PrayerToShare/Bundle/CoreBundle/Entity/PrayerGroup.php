@@ -80,4 +80,14 @@ class PrayerGroup
             return $member->getUser() == $user;
         });
     }
+
+    public function setPublic($public)
+    {
+        $this->public = $public;
+    }
+
+    public function isPublic()
+    {
+        return $this->public;
+    }
 }
