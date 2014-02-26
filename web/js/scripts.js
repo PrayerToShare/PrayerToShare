@@ -1,7 +1,7 @@
 /** AUTO GROW PLUGIN **/
 (function($) {
     $.fn.autogrow = function(options) {
-        this.filter('textarea').each(function() {    
+        this.filter('textarea').each(function() {
             var $this       = $(this),
                 minHeight   = $this.height(),
                 lineHeight  = $this.css('lineHeight');
@@ -22,12 +22,12 @@
                                     .replace(/\n/g, '<br/>');
                 shadow.html(val);
                 $(this).css('height', Math.max(shadow.height(), minHeight));
-            }
+            };
             $(this).change(update).keyup(update).keydown(update);
             update.apply(this);
         });
         return this;
-}})(jQuery);
+};})(jQuery);
 
 
 $(document).ready(function() {
