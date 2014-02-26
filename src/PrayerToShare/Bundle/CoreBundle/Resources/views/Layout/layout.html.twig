@@ -57,5 +57,11 @@
     </div>
 </div>
 <script data-main="/js/main" src="/components/requirejs/require.js"></script>
+<!-- TODO - Revisit how we want to setup pages -->
+<script>
+    require(['main'], function(main) {
+        require([{% block requirejs %}'pages/homepage'{% endblock %}]);
+    });
+</script>
 </body>
 </html>

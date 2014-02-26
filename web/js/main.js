@@ -1,3 +1,4 @@
+// This is the overall configuration that will get loaded for all pages/resources
 requirejs.config({
     paths: {
         'jquery': '/components/jquery/dist/jquery',
@@ -19,6 +20,5 @@ requirejs.config({
     }
 });
 
-require(['app'], function(App){
-    App.initialize();
-});
+// Make these libs available on ALL pages
+require(['jquery'], function() {});
