@@ -51,8 +51,7 @@ class GroupController extends BaseController
     public function newAction()
     {
         $user = $this->getUser();
-        $prayerGroup = $this->getPrayerGroupManager()->createPrayerGroup($user);
-        $form = $this->getPrayerGroupForm($prayerGroup);
+        $form = $this->getPrayerGroupForm();
 
         return array(
             'form' => $form->createView(),
@@ -69,10 +68,18 @@ class GroupController extends BaseController
     {
         $user = $this->getUser();
         $prayerGroup = $this->getPrayerGroupManager()->createPrayerGroup($user);
+
         $form = $this->getPrayerGroupForm($prayerGroup);
         $form->bind($this->getRequest());
 
         if ($form->isValid()) {
+            // The prayer group has to be flushed first
+            $this->getEntityManager()->flush();
+
+            // Create a membership for the user and make then an admin
+            $prayerGroupMember = $this->getPrayerGroupManager()->createPrayerGroupMember($user, $prayerGroup);
+            $prayerGroupMember->setAdmin(true);
+
             $this->getEntityManager()->flush();
 
             return $this->redirect($this->generateUrl('group_edit', array(

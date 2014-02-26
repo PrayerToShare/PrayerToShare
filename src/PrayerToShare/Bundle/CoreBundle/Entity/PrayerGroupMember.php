@@ -20,18 +20,19 @@ class PrayerGroupMember
     /**
      * @ORM\Id
      * @ORM\ManyToOne(targetEntity="PrayerGroup", inversedBy="members")
+     * @ORM\JoinColumn(name="prayer_group_id", referencedColumnName="id")
      */
-    protected $group;
+    protected $prayerGroup;
 
     /**
      * @ORM\Column(type="boolean")
      */
     protected $admin;
 
-    public function __construct(User $user, Group $group)
+    public function __construct(User $user, PrayerGroup $prayerGroup)
     {
         $this->user = $user;
-        $this->group = $group;
+        $this->prayerGroup = $prayerGroup;
     }
 
     public function getUser()
@@ -39,9 +40,9 @@ class PrayerGroupMember
         return $this->user;
     }
 
-    public function getGroup()
+    public function getPrayerGroup()
     {
-        return $this->group;
+        return $this->prayerGroup;
     }
 
     public function setAdmin($admin)

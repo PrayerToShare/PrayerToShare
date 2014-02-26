@@ -26,7 +26,7 @@ class PrayerGroup
     protected $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="PrayerGroupMember", mappedBy="group")
+     * @ORM\OneToMany(targetEntity="PrayerGroupMember", mappedBy="prayerGroup")
      */
     protected $members;
 

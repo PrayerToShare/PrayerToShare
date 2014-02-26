@@ -6,6 +6,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use JMS\DiExtraBundle\Annotation as DI;
 use PrayerToShare\Bundle\CoreBundle\Entity\User;
 use PrayerToShare\Bundle\CoreBundle\Entity\PrayerGroup;
+use PrayerToShare\Bundle\CoreBundle\Entity\PrayerGroupMember;
 
 /**
  * @DI\Service("prayergroup_manager")
@@ -26,10 +27,17 @@ class PrayerGroupManager
 
     public function createPrayerGroup(User $user)
     {
-        //TODO
-        $prayer = new PrayerGroup($user);
-        $this->om->persist($prayer);
+        $prayerGroup = new PrayerGroup();
+        $this->om->persist($prayerGroup);
 
-        return $prayer;
+        return $prayerGroup;
+    }
+
+    public function createPrayerGroupMember(User $user, PrayerGroup $prayerGroup)
+    {
+        $prayerGroupMember = new PrayerGroupMember($user, $prayerGroup);
+        $this->om->persist($prayerGroupMember);
+
+        return $prayerGroupMember;
     }
 }
