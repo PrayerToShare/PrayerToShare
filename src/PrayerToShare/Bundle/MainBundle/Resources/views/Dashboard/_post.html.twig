@@ -1,7 +1,7 @@
 <form action="{{ path('prayer_create') }}" method="post">
-    {{ form_label(form.NewPost, 'New Prayer Request') }}
-    {{ form_errors(form.NewPost) }}
-    {{ form_widget(form.NewPost, { attr: { 'class': 'new-post', 'placeholder': 'What is on your heart?' } }) }}
+    {{ form_label(form.text, 'New Prayer Request') }}
+    {{ form_errors(form.text) }}
+    {{ form_widget(form.text, { attr: { 'class': 'new-post', 'placeholder': 'What is on your heart?' } }) }}
     <div class="actions is-hidden">
         {{ form_widget(form.submit, { attr: { 'class': 'btn' } }) }}
     </div>
