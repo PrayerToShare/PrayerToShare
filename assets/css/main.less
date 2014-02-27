@@ -108,6 +108,7 @@ a:hover {
                         padding: 10px 0;
                         width: 190px;
                         background: #055166;
+                        .boxShadow(0, 12px, 8px, -10px, #5c4938);
                         a {
                             padding: 5px 10px;
                             margin: 0 10px;
@@ -161,11 +162,31 @@ a:hover {
         .stats {
             padding: 0;
             margin-bottom: 12px;
-            border: 1px solid #E5DFD8;
+            border: 1px solid #fff;
             background: #f7f4f1;
+            .boxShadow(0, 12px, 8px, -10px, #5c4938);
             > div {
-                padding: 5px 8px;
-                font: normal 16px Arial, Helvetica, Sans-serif;
+                padding: 0;
+                border-top: 1px solid #fff;
+                overflow: hidden;
+                &:first-child {
+                    border-top: 0;
+                }
+                > span {
+                    width: 50%;
+                    float: left;
+                    padding: 5px 8px;
+                    text-align: left;
+                    font: bold 11px/20px Arial, Helvetica, Sans-serif;
+                    color: #000;
+                    .boxShadowInset(0, 0, 5px, 0, #E2DED3);
+                    &.count {
+                        font: bold 14px/20px Georgia, "Times New Roman", serif;
+                        background: #E1E9EB;
+                        border-left: 1px solid #fff;
+                        text-align: center;
+                    }
+                }
             }
         }
     }
@@ -226,14 +247,13 @@ a:hover {
                 width: 100%;
                 padding: 10px 12px;
                 border: 1px solid #C3AF97;
-                .boxShadowInset(0, 0, 7px, 0, #E2DED3);
                 min-height: 54px;
                 font-size: 12px;
                 line-height: 16px;
                 color: #2d2d2d;
                 vertical-align: bottom;
                 display: inline-block;
-                .boxShadow(0, 7px, 10px, -7px, #5c4938);
+                .boxShadow(0, 9px, 10px, -7px, #5c4938);
                 &.active {
                     min-height: 84px;
                     .boxShadow(0, 0, 0, 0, #fff);
@@ -253,7 +273,7 @@ a:hover {
                 padding: 5px;
                 background: #F4F0EB;
                 text-align: right;
-                .boxShadow(0, 7px, 10px, -7px, #5c4938);
+                .boxShadow(0, 9px, 10px, -7px, #5c4938);
             }
         }
         .prayer-feed {

@@ -1,7 +1,13 @@
 <h2 class="subtitle"><a href="#">Prayer Book</a></h2>
 <div class="stats">
-    <div class="following">Following (<span>0</span>)</div>
-    <div class="followers">Followers (<span>0</span>)</div>
+    <div class="following">
+    	<span class="label">Following</span>
+		<span class="count">0</span>
+	</div>
+    <div class="followers">
+    	<span class="label">Followers</span>
+		<span class="count">0</span>
+    </div>
 </div>
 
 {% set prayer = app.user.mostRecentPrayer %}
