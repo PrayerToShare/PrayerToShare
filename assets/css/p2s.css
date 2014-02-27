@@ -5964,6 +5964,7 @@ a:hover {
   text-decoration: none;
   padding: 7px 0;
   width: 100px;
+  height: 26px;
   text-align: center;
 }
 #header .header-inner .header_links ul li a:hover,
@@ -5974,7 +5975,7 @@ a:hover {
 #header .header-inner .header_links ul li .menu {
   position: absolute;
   top: 26px;
-  right: -1px;
+  right: 0px;
   display: none;
   padding: 10px 0;
   width: 190px;
@@ -5984,6 +5985,11 @@ a:hover {
   -o-box-shadow: 0 12px 8px -10px #5c4938;
   -ms-box-shadow: 0 12px 8px -10px #5c4938;
   box-shadow: 0 12px 8px -10px #5c4938;
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
 }
 #header .header-inner .header_links ul li .menu a {
   padding: 5px 10px;
