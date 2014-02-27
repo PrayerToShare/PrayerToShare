@@ -22,7 +22,7 @@ class User extends BaseUser
 
     /**
      * @ORM\OneToMany(targetEntity="PrayerToShare\Bundle\MainBundle\Entity\Prayer", mappedBy="user")
-     * @ORM\OrderBy({"createdAt" = "ASC"})
+     * @ORM\OrderBy({"createdAt" = "DESC"})
      */
     protected $prayers;
 
