@@ -43,7 +43,7 @@ define(['jquery', 'domReady', 'modules/Prayer'], function($, domReady, Prayer) {
             $(element).css('height', height + 'px');
         },
 
-        initMenuSlide: function() { 
+        initMenuSlide: function() {
             $('.header_links li').hover(function() {
                 $('.menu',this).slideDown(200);
                 $(this).addClass('hover');
