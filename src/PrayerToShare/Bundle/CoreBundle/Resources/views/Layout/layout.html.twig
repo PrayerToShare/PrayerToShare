@@ -8,6 +8,7 @@
     {% stylesheets 'css/main.less' filter='less' output='compiled/css/main.css' %}
         <link rel="stylesheet" href="{{ asset_url }}">
     {% endstylesheets %}
+    {% block requirejs '' %}
 </head>
 <body>
 <div id="header">
@@ -56,12 +57,5 @@
         <div class="copyright">&copy; 2012 Prayer-To-Share.com. All rights reserved.</div>
     </div>
 </div>
-<script data-main="/js/main" src="/components/requirejs/require.js"></script>
-<!-- TODO - Revisit how we want to setup pages -->
-<script>
-    require(['main'], function(main) {
-        require([{% block requirejs %}'pages/homepage'{% endblock %}]);
-    });
-</script>
 </body>
 </html>
