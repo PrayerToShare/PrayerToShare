@@ -10,7 +10,7 @@ define([
     });
 
     var initialize = function() {
-        var appRouter = new AppRouter;
+        var appRouter = new AppRouter();
 
         appRouter.on('defaultAction', function(actions) {
             alert(actions);

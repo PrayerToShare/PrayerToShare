@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'web/js/*.js'],
+      files: ['Gruntfile.js', 'web/js/{,*/}*.js'],
       options: {
         // options here to override JSHint defaults
         globals: {
@@ -32,6 +32,26 @@ module.exports = function(grunt) {
           document: true
         }
       }
+    },
+    requirejs: {
+        compile: {
+            options: {
+                mainConfigFile: 'web/js/main.js',
+                appDir: "web",
+                baseUrl: "js",
+                dir: "web/compiled",
+                modules: [
+                    {
+                        name: "main",
+                        include: ['jquery']
+                    },
+                    {
+                        name: 'pages/homepage',
+                        exclude: ['main']
+                    }
+                ]
+            }
+        }
     },
     watch: {
       files: ['<%= jshint.files %>'],
