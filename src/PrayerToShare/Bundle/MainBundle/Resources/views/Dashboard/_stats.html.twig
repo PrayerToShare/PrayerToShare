@@ -1,0 +1,11 @@
+<h2 class="subtitle"><a href="#">Prayer Book</a></h2>
+<div class="stats">
+    <div class="following">
+    	<span class="label">Following</span>
+		<span class="count">{{ app.user.numFollowing|default(0) }}</span>
+	</div>
+    <div class="followers">
+    	<span class="label">Followers</span>
+		<span class="count">{{ app.user.numFollowers|default(0) }}</span>
+    </div>
+</div>

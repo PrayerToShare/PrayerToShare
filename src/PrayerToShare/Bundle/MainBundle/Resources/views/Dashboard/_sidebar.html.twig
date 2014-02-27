@@ -1,17 +1,3 @@
-<h2 class="subtitle"><a href="#">Prayer Book</a></h2>
-<div class="stats">
-    <div class="following">
-    	<span class="label">Following</span>
-		<span class="count">0</span>
-	</div>
-    <div class="followers">
-    	<span class="label">Followers</span>
-		<span class="count">0</span>
-    </div>
-</div>
+{% include "PrayerToShareMainBundle:Dashboard:_stats.html.twig" %}
 
-{% set prayer = app.user.mostRecentPrayer %}
-{% if prayer %}
-    <h2 class="subtitle">Recent Prayer</h2>
-    <div class="quoted">{{ prayer.text }}</div>
-{% endif %}
+{% include "PrayerToShareMainBundle:Dashboard:_recent.html.twig" %}
