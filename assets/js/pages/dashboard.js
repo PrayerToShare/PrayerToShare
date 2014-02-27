@@ -31,7 +31,7 @@ define(['jquery', 'domReady', 'modules/Prayer'], function($, domReady, Prayer) {
                 .replace(/\n/g, '<br/>');
             $(shadow).css({
                 'line-height': $(element).css('line-height'),
-                'padding': $(element).css('padding'),
+                'padding': '10px 12px',
                 'width': $(element).outerWidth() + 'px',
                 'font-size': $(element).css('font-size'),
                 'position': 'absolute',
