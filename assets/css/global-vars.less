@@ -18,26 +18,26 @@
 
 // Fonts
 #font {
-	.straight-flush { font-size: 30px; }
-	.four-of-a-kind { font-size: 24px; }
-	.full-house { font-size: 20px; }
-	.flush { font-size: 18px; }
-	.straight { font-size: 16px; }
-	.three-of-a-kind { font-size: 14px; }
-	.two-pair { font-size: 12px; }
-	.pair { font-size: 11px; }
-	.high-card { font-size: 10px; }
+    .straight-flush { font-size: 30px; }
+    .four-of-a-kind { font-size: 24px; }
+    .full-house { font-size: 20px; }
+    .flush { font-size: 18px; }
+    .straight { font-size: 16px; }
+    .three-of-a-kind { font-size: 14px; }
+    .two-pair { font-size: 12px; }
+    .pair { font-size: 11px; }
+    .high-card { font-size: 10px; }
 }
 
 .boxShadow (@x: 0, @y: 3px, @blur: 17px, @spread: 0, @color: #ddd) {
-	-moz-box-shadow:    @x @y @blur @color;
-    -webkit-box-shadow: @x @y @blur @color;
-    -o-box-shadow:      @x @y @blur @color;
-    -ms-box-shadow:     @x @y @blur @color;
-    box-shadow:         @x @y @blur @color;
+    -moz-box-shadow:    @x @y @blur @spread @color;
+    -webkit-box-shadow: @x @y @blur @spread @color;
+    -o-box-shadow:      @x @y @blur @spread @color;
+    -ms-box-shadow:     @x @y @blur @spread @color;
+    box-shadow:         @x @y @blur @spread @color;
 }
 .boxShadowInset (@x: 0, @y: 3px, @blur: 17px, @spread: 0, @color: #ddd) {
-	-moz-box-shadow:    inset @x @y @blur @color;
+    -moz-box-shadow:    inset @x @y @blur @color;
     -webkit-box-shadow: inset @x @y @blur @color;
     -o-box-shadow:      inset @x @y @blur @color;
     -ms-box-shadow:     inset @x @y @blur @color;

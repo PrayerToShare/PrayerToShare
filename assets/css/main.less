@@ -16,227 +16,651 @@ body {
     font: normal 13px Arial, Helvetica, Sans-serif;
     background: #4d788c;
     color: #2d2d2d;
-    a {
-        color: #2d2d2d;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
+}
+a {
+    color: #2d2d2d;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
 
-    #container {
+.is-hidden {
+    display: none !important;
+}
+
+#container {
+    width: 1070px;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+#header {
+    .gradient(#3c2918, #604329);
+    position: relative;
+    height: 102px;
+    padding-top: 12px;
+    border-bottom: 1px solid #604329;
+    .boxShadow(0, 3px, 17px, 0, #3c2918);
+    .header-inner {
         width: 1070px;
+        background: #fff;
         position: relative;
         margin: 0 auto;
-        padding-bottom: 20px;
-    }
-
-    #header {
-        .gradient(#3c2918, #604329);
-        position: relative;
-        height: 125px;
-        padding-top: 40px;
-        border-bottom: 1px solid #604329;
-        .boxShadow(0, 3px, 17px, 0, #3c2918);
-        .header-inner {
-            width: 1070px;
-            background: #fff;
-            position: relative;
-            margin: 0 auto;
-            height: 75px;
-            .border-radius(5px 5px 0 0);
-            .logo {
-                position: absolute;
-                top: 10px;
-                left: 8px;
-            }
-            .header_links {
-                padding-left: 30px;
-                position: absolute;
-                top: -40px;
-                right: 5px;
-                ul {
-                    margin: 0;
-                    padding: 0 10px;
-                    list-style: none;
+        height: 75px;
+        z-index: 3;
+        .border-radius(5px 5px 0 0);
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 8px;
+        }
+        .header_links {
+            padding-left: 30px;
+            position: absolute;
+            top: 0px;
+            right: 24px;
+            ul {
+                margin: 0;
+                padding: 0 10px;
+                list-style: none;
+                float: left;
+                display: inline;
+                .gradient(#4d788c, #274b5e);
+                .border-radius(0 0 5px 5px);
+                .boxShadow(0, 12px, 8px, -10px, #5c4938);
+                li {
                     float: left;
                     display: inline;
-                    .gradient(#4d788c, #274b5e);
-                    .border-radius(0 0 5px 5px);
-                    .boxShadow(0, 3px, 17px, 0, #3c2918);
-                    li {
-                        float: left;
-                        display: inline;
-                        position: relative;
-                        height: 26px;
-                        &:first-child {
-                            border-left: 0;
-                        }
-                        &:hover {
-                            text-decoration: none;
-                            background: #055166;
-                            .menu {
-                                display: block;
-                            }
-                        }
-                        a {
-                            float: left;
-                            display: inline;
-                            font: normal 10px Arial, Helvetica, Sans-serif;
-                            text-transform: uppercase;
-                            color: #fff;
-                            text-decoration: none;
-                            padding: 6px 0;
-                            width: 100px;
-                            text-align: center;
-                            &:hover, &:active {
-                                text-decoration: none;
-                                background: #055166;
-                            }
-                        }
+                    position: relative;
+                    height: 26px;
+                    &:first-child {
+                        border-left: 0;
+                    }
+                    &:hover {
+                        text-decoration: none;
+                        background: #055166;
                         .menu {
-                            position: absolute;
-                            top: 26px;
-                            right: -1px;
-                            display: none;
-                            padding: 10px 0;
-                            width: 220px;
-                            background: #055166;
-                            a {
-                                padding: 5px 10px;
-                                margin: 0 10px;
-                                display: block;
-                                font-size: 10px;
-                                font-weight: bold;
-                                color: #fff;
-                                background: #055166;
-                                width: auto;
-                                float: none;
-                                border: 0;
-                                text-align: right;
-                                &:hover {
-                                    background: #79A8B6;
-                                }
-                            }
-                            .sep {
-                                height: 11px;
-                                background: url('/img/sep.gif') repeat-x 0 50%;
-                                margin: 0 10px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    #body {
-        width: 1070px;
-        margin-top: -15px;
-        background: #fff;
-        overflow: hidden;
-        .sidebar {
-            width: 190px;
-            background: #F4F0EB;
-            padding: 12px;
-            border-top: 1px solid #C3AF97;
-            h2.subtitle {
-                font: bold 14px Georgia, "Times New Roman", serif;
-                margin-top: 0;
-                a, a:hover {
-                    color: #274b5e;
-                }
-            }
-            &.left {
-                margin-left: 24px;
-            }
-            &.right {
-                margin-right: 24px;
-            }
-            .stats {
-                padding-bottom: 12px;
-                > div {
-                    padding: 3px 0;
-                    font: bold 11px Arial, Helvetica, Sans-serif;
-                }
-            }
-        }
-        .content {
-            width: 832px;
-            margin-right: 24px;
-            border-top: 1px solid #C3AF97;
-            padding: 0;
-            .profile {
-                background: #E1E9EB;
-                padding: 12px 16px;
-                border-left: 1px solid #fff;
-                overflow: hidden;
-                .info, .groups {
-                    width: 50%;
-                    float: left;
-                    font: normal 11px Arial, Helvetica, Sans-serif;
-                    a, a:hover {
-                        font: bold 10px Arial, Helvetica, Sans-serif;
-                        color: #274b5e;
-                    }
-                    .profile-name {
-                        padding-top: 3px;
-                        a {
-                            font: bold 12px Georgia, "Times New Roman", serif;
-                        }
-                    }
-                    .profile-image {
-                        margin-right: 10px;
-                        border: 1px solid #fff;
-                        overflow: hidden;
-                        float: left;
-                        img {
                             display: block;
                         }
                     }
-                }
-            }
-            label {
-                font: bold 10px Arial, Helvetica, Sans-serif;
-                text-transform: uppercase;
-                padding: 0 3px;
-                color: #BFAA90;
-                display: block;
-            }
-            .prayer-form {
-                padding: 24px 16px;
-                overflow: hidden;
-                .new-post {
-                    width: 695px;
-                    padding: 10px 12px;
-                    border: 1px solid #C3AF97;
-                    .boxShadowInset(0, 0, 7px, 0, #E2DED3);
-                    height: 36px;
-                    font-size: 12px;
-                    color: #2d2d2d;
-                    vertical-align: bottom;
-                    display: inline-block;
-                }
-                .btn {
-                    margin-top: 0;
-                    display: inline-block;
-                    vertical-align: bottom;
-                    width: 100px;
-                    padding: 12px 0;
-                    text-align: center;
-                }
-            }
-            .prayer-feed {
-                padding: 0 16px 24px;
-                overflow: hidden;
-                color: #2d2d2d;
-                .feed {
-                    border: 1px solid #E5DFD8;
-                    padding: 12px;
-                    font-size: 11px;
+                    a {
+                        float: left;
+                        display: inline;
+                        font: normal 10px Arial, Helvetica, Sans-serif;
+                        text-transform: uppercase;
+                        color: #fff;
+                        text-decoration: none;
+                        padding: 7px 0;
+                        width: 100px;
+                        text-align: center;
+                        &:hover, &:active {
+                            text-decoration: none;
+                            background: #055166;
+                        }
+                    }
+                    .menu {
+                        position: absolute;
+                        top: 26px;
+                        right: -1px;
+                        display: none;
+                        padding: 10px 0;
+                        width: 190px;
+                        background: #055166;
+                        a {
+                            padding: 5px 10px;
+                            margin: 0 10px;
+                            display: block;
+                            font-size: 10px;
+                            font-weight: bold;
+                            color: #fff;
+                            width: auto;
+                            float: none;
+                            border: 0;
+                            text-align: right;
+                            &:hover {
+                                color: #79a8b6;
+                            }
+                        }
+                        .sep {
+                            height: 1px;
+                            margin: 5px 10px;
+                            background: #79a8b6;
+                        }
+                    }
                 }
             }
         }
-        .btn {
+    }
+}
+#body {
+    width: 1070px;
+    margin-top: -15px;
+    background: #fff;
+    overflow: hidden;
+    z-index: 2;
+    .sidebar {
+        width: 190px;
+        background: #F4F0EB;
+        padding: 12px;
+        border-top: 1px solid #C3AF97;
+        h2.subtitle {
+            font: bold 14px Georgia, "Times New Roman", serif;
+            margin-top: 0;
+            a, a:hover {
+                color: #274b5e;
+            }
+        }
+        &.left {
+            margin-left: 24px;
+        }
+        &.right {
+            margin-right: 24px;
+        }
+        .stats {
+            padding: 0;
+            margin-bottom: 12px;
+            border: 1px solid #E5DFD8;
+            background: #f7f4f1;
+            > div {
+                padding: 5px 8px;
+                font: normal 16px Arial, Helvetica, Sans-serif;
+            }
+        }
+    }
+    .content {
+        width: 832px;
+        margin-right: 24px;
+        border-top: 1px solid #C3AF97;
+        padding: 0;
+        .profile {
+            background: #E1E9EB;
+            padding: 12px 16px;
+            border-left: 1px solid #fff;
+            overflow: hidden;
+            .info, .groups {
+                width: 50%;
+                float: left;
+                font: normal 11px Arial, Helvetica, Sans-serif;
+                a, a:hover {
+                    font: bold 10px Arial, Helvetica, Sans-serif;
+                    color: #274b5e;
+                }
+                .profile-name {
+                    padding-top: 3px;
+                    a {
+                        font: bold 12px Georgia, "Times New Roman", serif;
+                    }
+                }
+                .profile-image {
+                    margin-right: 10px;
+                    border: 1px solid #fff;
+                    overflow: hidden;
+                    float: left;
+                    img {
+                        display: block;
+                    }
+                }
+            }
+        }
+        label {
+            font: bold 10px Arial, Helvetica, Sans-serif;
+            text-transform: uppercase;
+            padding: 0 3px;
+            color: #BFAA90;
+            display: block;
+        }
+        .prayer-form {
+            padding: 24px 16px 36px;
+            overflow: hidden;
+            border-bottom: 1px solid #E5DFD8;
+            border-left: 1px solid #fff;
+            margin-bottom: 36px;
+            label {
+                font: bold 14px Georgia, "Times New Roman", serif;
+                color: #274b5e;
+                text-transform: capitalize;
+            }
+            .new-post {
+                width: 100%;
+                padding: 10px 12px;
+                border: 1px solid #C3AF97;
+                .boxShadowInset(0, 0, 7px, 0, #E2DED3);
+                min-height: 54px;
+                font-size: 12px;
+                line-height: 16px;
+                color: #2d2d2d;
+                vertical-align: bottom;
+                display: inline-block;
+                .boxShadow(0, 7px, 10px, -7px, #5c4938);
+                &.active {
+                    min-height: 84px;
+                    .boxShadow(0, 0, 0, 0, #fff);
+                }
+            }
+            .btn {
+                display: inline-block;
+                vertical-align: bottom;
+                width: 90px;
+                padding: 8px 0;
+                text-align: center;
+                margin-top: 0;
+            }
+            .actions {
+                border: 1px solid #C3AF97;
+                border-top: 0;
+                padding: 5px;
+                background: #F4F0EB;
+                text-align: right;
+                .boxShadow(0, 7px, 10px, -7px, #5c4938);
+            }
+        }
+        .prayer-feed {
+            padding: 0 16px 24px;
+            overflow: hidden;
+            color: #2d2d2d;
+            .feed {
+                border: 1px solid #E5DFD8;
+                padding: 12px;
+                font-size: 11px;
+            }
+        }
+    }
+    .btn {
+        border: none;
+        color: #fff;
+        padding: 12px 30px;
+        text-transform: uppercase;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        margin-top: 15px;
+        margin-bottom: 0;
+        font: normal 11px Arial, Helvetica, Sans-serif;
+        width: auto;
+        .gradient(#4d788c, #274b5e);
+        .border-radius(3px);
+        &:hover {
+            background: #4d788c !important;
+        }
+    }
+    .comingsoon {
+        height: 267px;
+        text-align: center;
+    }
+    .left_side {
+        width: 186px;
+        float: left;
+        display: inline;
+        .prayer_book {
+            padding: 12px;
+            border-right: 1px solid #075267;
+            background: #F4F0EB;
+            .following_cnt, .followers_cnt {
+                font-weight: bold;
+                font-size: 11px;
+                color: #000;
+                padding: 3px 0;
+                margin-left: 15px;
+                span {
+                    color: #7C4F0D;
+                }
+                a {
+                    color: #7C4F0D;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .notebook_cnt {
+                font-weight: bold;
+                font-size: 11px;
+                color: #000;
+                padding: 3px 0 3px 20px;
+                background: url('/img/notepadicon2.jpg') no-repeat 0 50%;
+                margin-left: 15px;
+                span {
+                    color: #7C4F0D;
+                }
+                a {
+                    color: #7C4F0D;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+        }
+        .recent_prayer {
+            padding: 12px;
+            border-right: 1px solid #075267;
+            border-bottom: 1px solid #075267;
+            background: #F4F0EB;
+            .recent_post {
+                padding: 0 12px 12px;
+                position: relative;
+                font-size: 10px;
+                color: #000;
+            }
+        }
+        .archives {
+            padding: 12px;
+            .archive_links {
+                padding: 0 12px 12px;
+                font-size: 10px;
+                color: #000;
+                a {
+                    font-weight: bold;
+                }
+            }
+        }
+        .prayer_book, .recent_prayer, .archives {
+            .title {
+                font-size: 13px;
+                font-weight: bold;
+                color: #075267;
+                padding: 0 0 8px;
+            }
+        }
+    }
+    .right_side {
+        width: 774px;
+        float: right;
+        display: inline;
+        .profile_search {
+            padding: 8px;
+            background: #E1E9EB;
+            border-bottom: 1px solid #075267;
+            font-size: 10px;
+            overflow: hidden;
+            .profile {
+                overflow: hidden;
+                height: 52px;
+                float: left;
+                display: inline;
+                width: 300px;
+                .profile_img {
+                    float: left;
+                    display: inline;
+                    margin-right: 12px;
+                    border: 1px solid #075267;
+                    a {
+                        display: block;
+                        overflow: hidden;
+                    }
+                    img {
+                        float: left;
+                        display: inline;
+                    }
+                }
+                .profile_name {
+                    font-size: 12px;
+                    color: #075267;
+                    font-weight: bold;
+                    text-transform: capitalize;
+                    float: left;
+                    display: inline;
+                    span {
+                        font-size: 10px;
+                        font-weight: normal;
+                    }
+                    a {
+                        font-size: 10px;
+                        font-weight: normal;
+                        text-decoration: none;
+                        text-transform: lowercase;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .profile_search {
+                    .groups {
+                        float: left;
+                        display: inline;
+                        overflow: hidden;
+                        height: 52px;
+                        width: 190px;
+                        margin-left: 10px;
+                    }
+                    .search {
+                        float: right;
+                        display: inline;
+                        overflow: hidden;
+                        height: 52px;
+                        width: 228px;
+                        label {
+                            display: block;
+                            padding: 5px 3px 8px;
+                            color: #7C4F0D;
+                            font-weight: bold;
+                        }
+                        input {
+                            &.search_box {
+                                vertical-align: middle;
+                                border: 1px solid #145B6F;
+                                padding: 2px 8px 3px;
+                                font-size: 10px;
+                                width: 190px;
+                            }
+                            &.search_button {
+                                vertical-align: middle;
+                                border: 1px solid #145B6F;
+                                border-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .rotating_verses {
+            padding: 20px 10px;
+            overflow: hidden;
+            text-align: center;
+            height: 58px;
+        }
+        .post_area {
+            padding: 0 15px 35px;
+            overflow: hidden;
+            .post_textarea {
+                border: 1px solid #C3AF97;
+                padding: 8px 10px;
+                height: 70px;
+                width: 722px;
+                margin-bottom: 6px;
+                font-family: Verdana, Geneva, sans-serif;
+                font-size: 11px;
+                -moz-box-shadow: 0 0 7px #E2DED3 inset;
+                -webkit-box-shadow: 0 0 7px #E2DED3 inset;
+                box-shadow: 0 0 7px #E2DED3 inset;
+                &.off {
+                    font-weight: bold;
+                    color: #C3AF97;
+                    font-family: Georgia, "Times New Roman", Times, serif;
+                    font-weight: bold;
+                    font-style: italic;
+                    font-size: 14px;
+                }
+            }
+            .post_button {
+                border: 1px solid #C3AF97;
+                font: bold 10px Verdana, Geneva, sans-serif;
+                color: #fff;
+                padding: 8px 0;
+                width: 114px;
+                text-align: center;
+                background: url('/img/buttonbg.jpg') repeat-x 0 0;
+                float: right;
+                display: inline;
+                margin: 9px 0 0;
+                cursor: pointer;
+            }
+        }
+        .requests_feed {
+            padding:0 15px 35px;
+            overflow:hidden;
+            label {
+                display:block;
+                padding:5px 3px;
+                color:#BFAA90;
+                font-weight:normal;
+                font-size:10px;
+            }
+            .requests {
+                border: 1px solid #E5DFD8;
+                padding: 12px;
+            }
+            .req {
+                clear: both;
+                width: 100%;
+                overflow: hidden;
+                font-size: 11px;
+                padding-bottom: 25px;
+                border-bottom: 1px solid #E4E0D7;
+                margin-bottom: 12px;
+                &:last-child {
+                    border-bottom: 0;
+                    margin-bottom: 0;
+                    padding-bottom: 13px;
+                }
+                .i {
+                    float: left;
+                    display: inline;
+                    width: 50px;
+                    border: 1px solid #075267;
+                    margin-right: 12px;
+                    a {
+                        display: block;
+                        overflow: hidden;
+                    }
+                    img {
+                        float: left;
+                        display: inline;
+                    }
+                }
+                .post {
+                    float: left;
+                    display: inline;
+                    width: 654px;
+                    .n {
+                        color: #085368;
+                        font-weight: bold;
+                        padding-bottom: 10px;
+                        a {
+                            color: #085368;
+                            font-weight: bold;
+                            text-decoration: none;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                    .t {
+                        position: relative;
+                        padding: 0 18px;
+                        .oq {
+                            background: url('/img/quotesopen.jpg') no-repeat 0 0;
+                            width: 10px;
+                            height: 10px;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                        }
+                        .cq {
+                            background: url('/img/quotesclose.jpg') no-repeat 0 0;
+                            width: 10px;
+                            height: 10px;
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+                    }
+                    .d {
+                        text-align: right;
+                        font-size: 10px;
+                        padding: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+#footer {
+    position: relative;
+    background: #274b5e;
+    border-top: 1px solid #4d788c;
+    .boxShadow(0, -3px, 17px, 0, #274b5e);
+    .footer-inner {
+        width: 1070px;
+        position: relative;
+        overflow: hidden;
+        margin: -22px auto 0;
+        .affiliates {
+            padding: 7px;
+            background: #fff;
+            .border-radius(0 0 5px 5px);
+            .title-sm {
+                color: #BFAA90;
+                font-size: 10px;
+                padding: 3px;
+            }
+            .badges {
+                padding: 20px;
+                background: #fff;
+                border: 1px solid #BFAA90;
+            }
+        }
+        .copyright {
+            color: #fff;
+            background: #274b5e;
+            padding: 10px 5px 24px;
+            font-size: 11px;
+        }
+        .bottom-verse {
+            background: #fff;
+        }
+    }
+}
+.top-verse, .bottom-verse {
+    padding: 5px 0;
+    text-align: center;
+}
+.error_msg {
+    border: 1px solid #C3AF97;
+    margin: 24px 26px 0;
+    overflow: hidden;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #cc0000;
+}
+
+.login_register {
+    padding: 0 26px 24px;
+    overflow: hidden;
+    .block {
+        display: inline-block;
+        padding: 0 10px;
+    }
+    .login, .register {
+        padding: 15px 18px;
+        display: inline-block;
+        .gradient(#fff 20%, #f0ebe6);
+        border: 1px solid #C3AF97;
+        overflow: hidden;
+        min-height: 360px;
+        label {
+            #font .pair;
+            color: #274b5e;
+            font-weight: bold;
+            padding: 3px 0;
+            display: block;
+        }
+        .login_submit {
             border: none;
             color: #fff;
             padding: 12px 30px;
@@ -251,445 +675,53 @@ body {
             .gradient(#4d788c, #274b5e);
             .border-radius(3px);
         }
-        .comingsoon {
-            height: 267px;
-            text-align: center;
-        }
-        .left_side {
-            width: 186px;
-            float: left;
-            display: inline;
-            .prayer_book {
-                padding: 12px;
-                border-right: 1px solid #075267;
-                background: #F4F0EB;
-                .following_cnt, .followers_cnt {
-                    font-weight: bold;
-                    font-size: 11px;
-                    color: #000;
-                    padding: 3px 0;
-                    margin-left: 15px;
-                    span {
-                        color: #7C4F0D;
-                    }
-                    a {
-                        color: #7C4F0D;
-                        text-decoration: none;
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }
-                }
-                .notebook_cnt {
-                    font-weight: bold;
-                    font-size: 11px;
-                    color: #000;
-                    padding: 3px 0 3px 20px;
-                    background: url('/img/notepadicon2.jpg') no-repeat 0 50%;
-                    margin-left: 15px;
-                    span {
-                        color: #7C4F0D;
-                    }
-                    a {
-                        color: #7C4F0D;
-                        text-decoration: none;
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }
-                }
-
-            }
-            .recent_prayer {
-                padding: 12px;
-                border-right: 1px solid #075267;
-                border-bottom: 1px solid #075267;
-                background: #F4F0EB;
-                .recent_post {
-                    padding: 0 12px 12px;
-                    position: relative;
-                    font-size: 10px;
-                    color: #000;
-                }
-            }
-            .archives {
-                padding: 12px;
-                .archive_links {
-                    padding: 0 12px 12px;
-                    font-size: 10px;
-                    color: #000;
-                    a {
-                        font-weight: bold;
-                    }
-                }
-            }
-            .prayer_book, .recent_prayer, .archives {
-                .title {
-                    font-size: 13px;
-                    font-weight: bold;
-                    color: #075267;
-                    padding: 0 0 8px;
-                }
-            }
-        }
-        .right_side {
-            width: 774px;
-            float: right;
-            display: inline;
-            .profile_search {
-                padding: 8px;
-                background: #E1E9EB;
-                border-bottom: 1px solid #075267;
-                font-size: 10px;
-                overflow: hidden;
-                .profile {
-                    overflow: hidden;
-                    height: 52px;
-                    float: left;
-                    display: inline;
-                    width: 300px;
-                    .profile_img {
-                        float: left;
-                        display: inline;
-                        margin-right: 12px;
-                        border: 1px solid #075267;
-                        a {
-                            display: block;
-                            overflow: hidden;
-                        }
-                        img {
-                            float: left;
-                            display: inline;
-                        }
-                    }
-                    .profile_name {
-                        font-size: 12px;
-                        color: #075267;
-                        font-weight: bold;
-                        text-transform: capitalize;
-                        float: left;
-                        display: inline;
-                        span {
-                            font-size: 10px;
-                            font-weight: normal;
-                        }
-                        a {
-                            font-size: 10px;
-                            font-weight: normal;
-                            text-decoration: none;
-                            text-transform: lowercase;
-                            &:hover {
-                                text-decoration: underline;
-                            }
-                        }
-                    }
-                    .profile_search {
-                        .groups {
-                            float: left;
-                            display: inline;
-                            overflow: hidden;
-                            height: 52px;
-                            width: 190px;
-                            margin-left: 10px;
-                        }
-                        .search {
-                            float: right;
-                            display: inline;
-                            overflow: hidden;
-                            height: 52px;
-                            width: 228px;
-                            label {
-                                display: block;
-                                padding: 5px 3px 8px;
-                                color: #7C4F0D;
-                                font-weight: bold;
-                            }
-                            input {
-                                &.search_box {
-                                    vertical-align: middle;
-                                    border: 1px solid #145B6F;
-                                    padding: 2px 8px 3px;
-                                    font-size: 10px;
-                                    width: 190px;
-                                }
-                                &.search_button {
-                                    vertical-align: middle;
-                                    border: 1px solid #145B6F;
-                                    border-left: 0;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            .rotating_verses {
-                padding: 20px 10px;
-                overflow: hidden;
-                text-align: center;
-                height: 58px;
-            }
-            .post_area {
-                padding: 0 15px 35px;
-                overflow: hidden;
-                .post_textarea {
-                    border: 1px solid #C3AF97;
-                    padding: 8px 10px;
-                    height: 70px;
-                    width: 722px;
-                    margin-bottom: 6px;
-                    font-family: Verdana, Geneva, sans-serif;
-                    font-size: 11px;
-                    -moz-box-shadow: 0 0 7px #E2DED3 inset;
-                    -webkit-box-shadow: 0 0 7px #E2DED3 inset;
-                    box-shadow: 0 0 7px #E2DED3 inset;
-                    &.off {
-                        font-weight: bold;
-                        color: #C3AF97;
-                        font-family: Georgia, "Times New Roman", Times, serif;
-                        font-weight: bold;
-                        font-style: italic;
-                        font-size: 14px;
-                    }
-                }
-                .post_button {
-                    border: 1px solid #C3AF97;
-                    font: bold 10px Verdana, Geneva, sans-serif;
-                    color: #fff;
-                    padding: 8px 0;
-                    width: 114px;
-                    text-align: center;
-                    background: url('/img/buttonbg.jpg') repeat-x 0 0;
-                    float: right;
-                    display: inline;
-                    margin: 9px 0 0;
-                    cursor: pointer;
-                }
-            }
-            .requests_feed {
-                padding:0 15px 35px;
-                overflow:hidden;
-                label {
-                    display:block;
-                    padding:5px 3px;
-                    color:#BFAA90;
-                    font-weight:normal;
-                    font-size:10px;
-                }
-                .requests {
-                    border: 1px solid #E5DFD8;
-                    padding: 12px;
-                }
-                .req {
-                    clear: both;
-                    width: 100%;
-                    overflow: hidden;
-                    font-size: 11px;
-                    padding-bottom: 25px;
-                    border-bottom: 1px solid #E4E0D7;
-                    margin-bottom: 12px;
-                    &:last-child {
-                        border-bottom: 0;
-                        margin-bottom: 0;
-                        padding-bottom: 13px;
-                    }
-                    .i {
-                        float: left;
-                        display: inline;
-                        width: 50px;
-                        border: 1px solid #075267;
-                        margin-right: 12px;
-                        a {
-                            display: block;
-                            overflow: hidden;
-                        }
-                        img {
-                            float: left;
-                            display: inline;
-                        }
-                    }
-                    .post {
-                        float: left;
-                        display: inline;
-                        width: 654px;
-                        .n {
-                            color: #085368;
-                            font-weight: bold;
-                            padding-bottom: 10px;
-                            a {
-                                color: #085368;
-                                font-weight: bold;
-                                text-decoration: none;
-                                &:hover {
-                                    text-decoration: underline;
-                                }
-                            }
-                        }
-                        .t {
-                            position: relative;
-                            padding: 0 18px;
-                            .oq {
-                                background: url('/img/quotesopen.jpg') no-repeat 0 0;
-                                width: 10px;
-                                height: 10px;
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                            }
-                            .cq {
-                                background: url('/img/quotesclose.jpg') no-repeat 0 0;
-                                width: 10px;
-                                height: 10px;
-                                position: absolute;
-                                bottom: 0;
-                                right: 0;
-                            }
-                        }
-                        .d {
-                            text-align: right;
-                            font-size: 10px;
-                            padding: 10px 0;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    #footer {
-        position: relative;
-        background: #274b5e;
-        border-top: 1px solid #4d788c;
-        .boxShadow(0, -3px, 17px, 0, #274b5e);
-        .footer-inner {
-            width: 1070px;
-            position: relative;
-            overflow: hidden;
-            margin: -22px auto 0;
-            .affiliates {
-                padding: 7px;
-                background: #fff;
-                .border-radius(0 0 5px 5px);
-                .title-sm {
-                    color: #BFAA90;
-                    font-size: 10px;
-                    padding: 3px;
-                }
-                .badges {
-                    padding: 20px;
-                    background: #fff;
-                    border: 1px solid #BFAA90;
-                }
-            }
-            .copyright {
-                color: #fff;
-                background: #274b5e;
-                padding: 10px 5px 24px;
-                font-size: 11px;
-            }
-            .bottom-verse {
-                background: #fff;
-            }
-        }
-    }
-    .top-verse, .bottom-verse {
-        padding: 5px 0;
-        text-align: center;
-    }
-    .error_msg {
-        border: 1px solid #C3AF97;
-        margin: 24px 26px 0;
-        overflow: hidden;
-        padding: 10px;
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
-        color: #cc0000;
-    }
-
-    .login_register {
-        padding: 0 26px 24px;
-        overflow: hidden;
-        .block {
-            display: inline-block;
-            padding: 0 10px;
-        }
-        .login, .register {
-            padding: 15px 18px;
-            display: inline-block;
-            .gradient(#fff 20%, #f0ebe6);
+        input {
+            .boxShadowInset(0, 3px, 7px, 0, #ddd);
+            padding: 10px;
+            #font .straight;
             border: 1px solid #C3AF97;
-            overflow: hidden;
-            min-height: 360px;
-            label {
-                #font .pair;
-                color: #274b5e;
-                font-weight: bold;
-                padding: 3px 0;
-                display: block;
-            }
-            .login_submit {
-                border: none;
-                color: #fff;
-                padding: 12px 30px;
-                text-transform: uppercase;
-                text-align: center;
-                display: inline-block;
-                cursor: pointer;
-                margin-top: 15px;
-                margin-bottom: 0;
-                font: normal 11px Arial, Helvetica, Sans-serif;
-                width: auto;
-                .gradient(#4d788c, #274b5e);
-                .border-radius(3px);
-            }
-            input {
-                .boxShadowInset(0, 3px, 7px, 0, #ddd);
-                padding: 10px;
-                #font .straight;
-                border: 1px solid #C3AF97;
-                margin-bottom: 10px;
-                width: 100%;
-                .border-radius(3px);
-                &.login_submit {
-                    .boxShadow(0, 2px, 3px, 0, #ededed);
-                }
-            }
-            .remember-me {
-                margin: 0;
-                margin-left: 5px;
-                width: auto;
-                display: inline;
-                float: none;
-                vertical-align: bottom;
+            margin-bottom: 10px;
+            width: 100%;
+            .border-radius(3px);
+            &.login_submit {
+                .boxShadow(0, 2px, 3px, 0, #ededed);
             }
         }
-        .login.retrieve_password {
-            height: 180px;
-        }
-        .reg-container {
-            padding-left: 24px;
-        }
-        .forgot_password {
-            float: right;
+        .remember-me {
+            margin: 0;
+            margin-left: 5px;
+            width: auto;
             display: inline;
-            margin-top: 5px;
-            padding-right: 10px;
-            a {
-                color: #075267;
-                font-size: 10px;
-                text-decoration: underline;
-                &:hover {
-                    text-decoration: none;
-                }
-            }
+            float: none;
+            vertical-align: bottom;
         }
     }
-
-    h2.box_headline {
-        font-size: 24px;
-        color: #2d2d2d;
-        margin: 0 0 15px;
-        padding-left: 10px;
-        font: normal 24px Georgia, "Times New Roman", serif;
+    .login.retrieve_password {
+        height: 180px;
+    }
+    .reg-container {
+        padding-left: 24px;
+    }
+    .forgot_password {
+        float: right;
+        display: inline;
+        margin-top: 5px;
+        padding-right: 10px;
+        a {
+            color: #075267;
+            font-size: 10px;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 }
 
+h2.box_headline {
+    font-size: 24px;
+    color: #2d2d2d;
+    margin: 0 0 15px;
+    padding-left: 10px;
+    font: normal 24px Georgia, "Times New Roman", serif;
+}

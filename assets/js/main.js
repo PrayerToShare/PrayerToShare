@@ -5,6 +5,7 @@ requirejs.config({
         'jquery': '../vendor/jquery/dist/jquery',
         'backbone': '../vendor/backbone/backbone',
         'underscore': '../vendor/underscore/underscore',
+        'domReady': '../vendor/requirejs-domready/domReady'
     },
     shim: {
         'backbone': {
