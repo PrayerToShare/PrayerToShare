@@ -3,11 +3,13 @@
 namespace PrayerToShare\Bundle\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serialize;
 use PrayerToShare\Bundle\CoreBundle\Entity\User;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="prayers")
+ * @Serialize\ExclusionPolicy("all")
  */
 class Prayer
 {
@@ -15,21 +17,25 @@ class Prayer
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Serialize\Expose
      */
     protected $id;
 
     /**
      * @ORM\ManyToOne(targetEntity="PrayerToShare\Bundle\CoreBundle\Entity\User", inversedBy="prayers")
+     * @Serialize\Expose
      */
     protected $user;
 
     /**
      * @ORM\Column
+     * @Serialize\Expose
      */
     protected $text;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Serialize\Expose
      */
     protected $createdAt;
 

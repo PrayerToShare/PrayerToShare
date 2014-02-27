@@ -46,6 +46,11 @@ class CoreController extends Controller
         return $this->get('session');
     }
 
+    protected function getSerializer()
+    {
+        return $this->get('jms_serializer');
+    }
+
     protected function getFlashBag()
     {
         return $this->getSession()->getFlashBag();

@@ -23,6 +23,7 @@
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "jms/security-extra-bundle": "*",
         "jms/di-extra-bundle": "*",
+        "jms/serializer-bundle": "*",
         "friendsofsymfony/user-bundle": "*",
         "fzaninotto/faker": "~1.2"
     },

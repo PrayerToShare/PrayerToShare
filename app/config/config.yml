@@ -66,3 +66,10 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: PrayerToShare\Bundle\CoreBundle\Entity\User
+
+jms_serializer:
+    metadata:
+        directories:
+            fosuserbundle:
+                namespace_prefix: "FOS\\UserBundle"
+                path: "%kernel.root_dir%/serializer/FOSUserBundle"
