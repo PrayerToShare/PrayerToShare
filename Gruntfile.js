@@ -1,27 +1,14 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        concat: {
-            options: {
-                separator: ';'
-            },
-            dist: {
-                src: ['src/**/*.js'],
-                dest: 'dist/<%= pkg.name %>.js'
-            }
-        },
-        uglify: {
-            options: {
-            banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-            },
-            dist: {
-                files: {
-                'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
-                }
-            }
-        },
+
+        // vars
+        srcDir: 'assets',
+        webDir: 'web',
+        targetDir: '<%= webDir %>/<%= srcDir %>',
+
         jshint: {
-            files: ['Gruntfile.js', 'web/js/{}*.js'],
+            files: ['Gruntfile.js', '<%= targetDir %>/js/**/*.js'],
             options: {
                 // options here to override JSHint defaults
                 globals: {
@@ -35,10 +22,10 @@ module.exports = function(grunt) {
         requirejs: {
             compile: {
                 options: {
-                    mainConfigFile: 'web/js/main.js',
-                    appDir: "web",
-                    baseUrl: "js",
-                    dir: "web/compiled",
+                    mainConfigFile: '<%= targetDir %>/js/main.js',
+                    appDir: '<%= srcDir %>',
+                    baseUrl: './js',
+                    dir: '<%= targetDir %>',
                     modules: [
                         {
                             name: "main",
@@ -47,8 +34,14 @@ module.exports = function(grunt) {
                         {
                             name: 'pages/homepage',
                             exclude: ['main']
+                        },
+                        {
+                            name: 'pages/dashboard',
+                            exclude: ['main']
                         }
-                    ]
+                    ],
+                    optimize: "none",
+                    optimizeCss: "none"
                 }
             }
         },
@@ -57,10 +50,15 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        src: ['assets/**'],
-                        dest: 'web'
+                        src: ['<%= srcDir %>/**'],
+                        dest: '<%= webDir %>'
                     }
                 ]
+            }
+        },
+        clean: {
+            build: {
+                src: ['<%= targetDir %>/**']
             }
         },
         less: {
@@ -75,12 +73,12 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ['assets/vendor/**'],
-                tasks: ['copy', 'jshint']
+                files: ['assets/js/**'],
+                tasks: ['jshint', 'copy:assets']
             },
             less: {
                 files: 'assets/css/*.less',
-                tasks: ['less', 'copy'],
+                tasks: ['less', 'copy:assets'],
                 options: {
                     spawn: true
                 }
@@ -88,14 +86,15 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('default', ['jshint']);
+
+    grunt.registerTask('copy:assets', ['clean:build', 'copy']);
 };

@@ -1,9 +1,10 @@
 // This is the overall configuration that will get loaded for all pages/resources
 requirejs.config({
+    baseUrl: '/assets/js',
     paths: {
-        'jquery': '/components/jquery/dist/jquery',
-        'backbone': '/components/backbone/backbone',
-        'underscore': '/components/underscore/underscore',
+        'jquery': '../vendor/jquery/dist/jquery',
+        'backbone': '../vendor/backbone/backbone',
+        'underscore': '../vendor/underscore/underscore',
     },
     shim: {
         'backbone': {
