@@ -1,0 +1,4 @@
+{% for membership in app.user.prayerGroups %}
+    <p>{{ membership.prayerGroup.name }}</p>
+{% endfor %}
+<a href="{{ path('group_list') }}">View All Groups</a>

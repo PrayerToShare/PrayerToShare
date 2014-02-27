@@ -1,0 +1,27 @@
+<div id="header">
+    <div class="header-inner">
+        <div class="logo">
+            <a href="/">
+                <img src="{{ asset('/img/logo.png') }}" border="0" alt="Prayer to Share" title="Prayer to Share" />
+            </a>
+        </div>
+        <div class="header_links">
+            <ul>
+                <li><a href="{{ path('home') }}" class="lvl1">Home</a></li>
+                <li><a href="{{ path('fos_user_profile_edit') }}" class="lvl1">Profile</a></li>
+                <li>
+                    <a href="{{ path('account') }}" class="lvl1">Account</a>
+                    <div class="menu">
+                        {% if is_granted('ROLE_USER') %}
+                            <a href="{{ path('settings') }}">Account Settings</a>
+                            <a href="{{ path('privacy') }}">Privacy Settings</a>
+                            <a href="/logout">Logout</a>
+                            <div class="sep"></div>
+                        {% endif %}
+                        <a href="{{ path('help') }}">Help</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

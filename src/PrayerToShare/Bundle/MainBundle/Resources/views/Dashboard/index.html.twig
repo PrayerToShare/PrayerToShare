@@ -2,52 +2,25 @@
 
 {% block content %}
     <div class="left sidebar">
-        <h2 class="subtitle"><a href="#">Prayer Book</a></h2>
-        <div class="stats">
-            <div class="following">Following (<span>0</span>)</div>
-            <div class="followers">Followers (<span>0</span>)</div>
-        </div>
-
-        {% set prayer = app.user.mostRecentPrayer %}
-        {% if prayer %}
-            <h2 class="subtitle">Recent Prayer</h2>
-            <div class="quoted">{{ prayer.text }}</div>
-        {% endif %}
+        {% include "PrayerToShareMainBundle:Dashboard:_sidebar.html.twig" %}
     </div>
 
     <div class="left content">
         <div class="profile">
             <div class="info">
-                <div class="profile-image">
-                    <img src="{{ asset('img/noprofileimage.jpg') }}" align="left">
-                </div>
-                <div>
-                    <div class="profile-name">
-                        <a href="#">Name Here</a>
-                    </div>
-                    <a href="#" class="profile-link">(edit profile)</a>
-                </div>
+                {% include "PrayerToShareMainBundle:Dashboard:_profile.html.twig" %}
             </div>
             <div class="groups">
-                {% for membership in app.user.prayerGroups %}
-                    <p>{{ membership.prayerGroup.name }}</p>
-                {% endfor %}
-                <a href="{{ path('group_list') }}">View All Groups</a>
+                {% include "PrayerToShareMainBundle:Dashboard:_groups.html.twig" %}
             </div>
         </div>
 
         <div class="prayer-form">
-            <form action="{{ path('prayer_create') }}" method="post">
-                {{ form_label(form.NewPost) }}
-                {{ form_errors(form.NewPost) }}
-                {{ form_widget(form.NewPost, { attr: { 'class': 'new-post', 'placeholder': 'What is on your heart?' } }) }}
-                {{ form_widget(form.submit, { attr: { 'class': 'btn' } }) }}
-            </form>
+            {% include "PrayerToShareMainBundle:Dashboard:_post.html.twig" %}
         </div>
 
         <div class="prayer-feed">
-            <label>Prayer Requests</label>
-            <div class="feed">No prayer requests</div>
+            {% include "PrayerToShareMainBundle:Dashboard:_feed.html.twig" %}
         </div>
     </div>
 {% endblock %}
