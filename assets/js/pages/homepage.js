@@ -20,11 +20,11 @@ define(['jquery', 'domReady', 'modules/Prayer'], function($, domReady, Prayer) {
         },
 
         init: function() {
-        	domReady(function() {
+            domReady(function() {
                 page.initFormSlide();
-        	});
+            });
         }
     };
 
-    init: page.init();
+    page.init();
 });
