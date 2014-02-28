@@ -3,6 +3,7 @@
 namespace PrayerToShare\Bundle\CoreBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Put any commonly used methods here
@@ -69,5 +70,10 @@ class CoreController extends Controller
     protected function getRegistrationForm()
     {
         return $this->get('fos_user.registration.form.factory')->createForm();
+    }
+
+    protected function returnJson($data)
+    {
+        return new JsonResponse($data);
     }
 }
