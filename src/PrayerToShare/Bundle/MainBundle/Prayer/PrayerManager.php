@@ -31,4 +31,14 @@ class PrayerManager
 
         return $prayer;
     }
+
+    public function getNetworkPrayers(User $user)
+    {
+        return $this->getPrayerRepository()->findNetworkPrayers($user);
+    }
+
+    protected function getPrayerRepository()
+    {
+        return $this->om->getRepository('PrayerToShareMainBundle:Prayer');
+    }
 }

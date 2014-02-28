@@ -22,11 +22,15 @@ class DashboardController extends BaseController
     public function indexAction()
     {
         $user = $this->getUser();
+        $prayers = $this->getPrayerManager()->getNetworkPrayers($user);
+        $serializedPrayers = $this->getSerializer()->serialize($prayers, 'json');
 
         $form = $this->getPrayerForm();
 
         return array(
             'form' => $form->createView(),
+            'prayers' => $prayers,
+            'serializedPrayers' => $serializedPrayers,
         );
     }
 }

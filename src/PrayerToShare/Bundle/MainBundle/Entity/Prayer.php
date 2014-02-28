@@ -7,7 +7,7 @@ use JMS\Serializer\Annotation as Serialize;
 use PrayerToShare\Bundle\CoreBundle\Entity\User;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="PrayerRepository")
  * @ORM\Table(name="prayers")
  * @Serialize\ExclusionPolicy("all")
  */

@@ -5,11 +5,13 @@ namespace PrayerToShare\Bundle\CoreBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
+use JMS\Serializer\Annotation as Serialize;
 use PrayerToShare\Bundle\MainBundle\Entity\Prayer;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="users")
+ * @Serialize\ExclusionPolicy("all")
  */
 class User extends BaseUser
 {
