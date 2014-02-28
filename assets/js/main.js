@@ -3,22 +3,7 @@ requirejs.config({
     baseUrl: '/assets/js',
     paths: {
         'jquery': '../vendor/jquery/dist/jquery',
-        'backbone': '../vendor/backbone/backbone',
-        'underscore': '../vendor/underscore/underscore',
         'domReady': '../vendor/requirejs-domready/domReady'
-    },
-    shim: {
-        'backbone': {
-            deps: ['underscore', 'jquery'],
-            exports: 'Backbone'
-        },
-        'underscore': {
-            exports: '_'
-        },
-        'marionette' : {
-            deps : ['jquery', 'underscore', 'backbone'],
-            exports : 'Marionette'
-        }
     }
 });
 

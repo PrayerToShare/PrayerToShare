@@ -1,13 +1,10 @@
 {
     "name": "Prayer To Share",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "dependencies": {
         "jquery": "latest",
         "bootstrap": "3.*",
         "requirejs": "latest",
-        "backbone": "latest",
-        "backbone.marionette": "latest",
-        "underscore": "latest",
         "requirejs-domready": "latest"
     }
 }
