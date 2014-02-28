@@ -7,14 +7,21 @@
         <label for="password">Password</label>
         <input type="password" name="_password" class="login_input" tabindex="2" />
     </div>
-    <div class="block twelve">
+    <div class="block six left">
         <label class="checkbox">
             Remember me
             <input type="checkbox" name="_remember_me" value="on" class="remember-me">
         </label>
     </div>
-    <div class="block twelve">
+    <div class="block six left">
         <input type="submit" name="_submit" value="Sign In" class="login_submit right" tabindex="3" />
+    </div>
+    <div class="forgot_password clear">
+        <a href="forgot_password.php">Forgot Password?</a>
+    </div>
+    <div class="block twelve log-in">
+        {# change link to use path('login') #}
+        Not a member? <a href="/register" class="toggle-register">Sign Up</a>.
     </div>
     <input type="hidden" name="pts_action" value="log_in" />
     <input type="hidden" name="_csrf_token" value="{{ auth_csrf_token }}" />

@@ -662,11 +662,30 @@ a:hover {
 }
 
 .login_register {
-    padding: 0 26px 24px;
+    padding: 0 0 24px;
+    margin: 0 26px;
     overflow: hidden;
+    height: 384px;
+    position: relative;
+    .slide-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2036px;
+        > div {
+            width: 1018px;
+        }
+    }
     .block {
         display: inline-block;
         padding: 0 10px;
+        &.log-in {
+            padding: 24px 10px;
+            font: bold 14px Georgia, "Times New Roman", serif;
+            a {
+                color: #4d788c;
+            }
+        }
     }
     .login, .register {
         padding: 15px 18px;

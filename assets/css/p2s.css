@@ -40,6 +40,9 @@
 .right {
   float: right;
 }
+.clear {
+  clear: both;
+}
 #font .straight-flush {
   font-size: 30px;
 }
@@ -6580,12 +6583,31 @@ a:hover {
   color: #cc0000;
 }
 .login_register {
-  padding: 0 26px 24px;
+  padding: 0 0 24px;
+  margin: 0 26px;
   overflow: hidden;
+  height: 384px;
+  position: relative;
+}
+.login_register .slide-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2036px;
+}
+.login_register .slide-container > div {
+  width: 1018px;
 }
 .login_register .block {
   display: inline-block;
   padding: 0 10px;
+}
+.login_register .block.log-in {
+  padding: 24px 10px;
+  font: bold 14px Georgia, "Times New Roman", serif;
+}
+.login_register .block.log-in a {
+  color: #4d788c;
 }
 .login_register .login,
 .login_register .register {
