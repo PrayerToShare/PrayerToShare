@@ -74,11 +74,15 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ['assets/js/**'],
-                tasks: ['jshint', 'copy:assets']
+                tasks: ['clean:build', 'jshint', 'copy'],
+                options: {
+                    spawn: true
+                }
+
             },
             less: {
                 files: 'assets/css/*.less',
-                tasks: ['less', 'copy:assets'],
+                tasks: ['clean:build', 'less', 'copy'],
                 options: {
                     spawn: true
                 }
