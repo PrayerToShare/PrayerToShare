@@ -2,4 +2,23 @@
 
 {% block content %}
     <h2>{{ group.name }} (<a href="{{ path('group_edit', {id: group.id}) }}">edit</a>)</h2>
+
+    <h3>Members</h3>
+    <ul>
+        {% for member in group.members %}
+            <li>{{ member.user.username }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="#">Invite Members</a></p>
+
+    <h3>Group Prayers</h3>
+    <ul>
+        {% for prayer in group.prayers %}
+            <li>{{ prayer.text }}</li>
+        {% endfor %}
+    </ul>
+
+    <form action="{{ path('prayer_create_group', {id: group.id}) }}" method="post">
+        {{ form_widget(form) }}
+    </form>
 {% endblock %}

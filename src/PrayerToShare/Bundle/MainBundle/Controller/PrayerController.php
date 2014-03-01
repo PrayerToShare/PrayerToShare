@@ -3,6 +3,7 @@
 namespace PrayerToShare\Bundle\MainBundle\Controller;
 
 use JMS\SecurityExtraBundle\Annotation\Secure;
+use PrayerToShare\Bundle\CoreBundle\Entity\PrayerGroup;
 use PrayerToShare\Bundle\MainBundle\Entity\Prayer;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -31,6 +32,28 @@ class PrayerController extends BaseController
         }
 
         return $this->redirect($this->generateUrl('dashboard_index'));
+    }
+
+    /**
+     * @Route("/group/{id}", name="prayer_create_group")
+     * @Secure(roles="ROLE_USER")
+     * @Method({"POST"})
+     */
+    public function createGroupPrayerAction(PrayerGroup $prayerGroup)
+    {
+        $user = $this->getUser();
+        $prayer = $this->getPrayerManager()->createPrayer($user, $prayerGroup);
+
+        $form = $this->getPrayerForm($prayer);
+        $form->bind($this->getRequest());
+
+        if ($form->isValid()) {
+            $this->getEntityManager()->flush();
+        }
+
+        return $this->redirect($this->generateUrl('group_view', array(
+            'id' => $prayerGroup->getId(),
+        )));
     }
 
     /**

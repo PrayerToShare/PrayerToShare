@@ -4,6 +4,7 @@ namespace PrayerToShare\Bundle\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serialize;
+use PrayerToShare\Bundle\CoreBundle\Entity\PrayerGroup;
 use PrayerToShare\Bundle\CoreBundle\Entity\User;
 
 /**
@@ -28,6 +29,13 @@ class Prayer
     protected $user;
 
     /**
+     * @ORM\ManyToOne(targetEntity="PrayerToShare\Bundle\CoreBundle\Entity\PrayerGroup", inversedBy="prayers")
+     * @ORM\JoinColumn(name="prayer_group_id", referencedColumnName="id", nullable=true)
+     * @Serialize\Expose
+     */
+    protected $prayerGroup;
+
+    /**
      * @ORM\Column
      * @Serialize\Expose
      */
@@ -39,9 +47,10 @@ class Prayer
      */
     protected $createdAt;
 
-    public function __construct(User $user)
+    public function __construct(User $user, PrayerGroup $prayerGroup = null)
     {
         $this->user = $user;
+        $this->prayerGroup = $prayerGroup;
         $this->createdAt = new \DateTime();
     }
 
@@ -53,6 +62,11 @@ class Prayer
     public function getUser()
     {
         return $this->user;
+    }
+
+    public function getPrayerGroup()
+    {
+        return $this->prayerGroup;
     }
 
     public function setText($text)

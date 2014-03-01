@@ -4,6 +4,7 @@ namespace PrayerToShare\Bundle\MainBundle\Prayer;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use JMS\DiExtraBundle\Annotation as DI;
+use PrayerToShare\Bundle\CoreBundle\Entity\PrayerGroup;
 use PrayerToShare\Bundle\CoreBundle\Entity\User;
 use PrayerToShare\Bundle\MainBundle\Entity\Prayer;
 
@@ -24,9 +25,9 @@ class PrayerManager
         $this->om = $om;
     }
 
-    public function createPrayer(User $user)
+    public function createPrayer(User $user, PrayerGroup $prayerGroup = null)
     {
-        $prayer = new Prayer($user);
+        $prayer = new Prayer($user, $prayerGroup);
         $this->om->persist($prayer);
 
         return $prayer;

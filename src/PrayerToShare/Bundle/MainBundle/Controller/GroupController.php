@@ -35,10 +35,15 @@ class GroupController extends BaseController
      * @Method({"GET"})
      * @Template
      */
-    public function viewAction(PrayerGroup $group)
+    public function viewAction(PrayerGroup $prayerGroup)
     {
+        $user = $this->getUser();
+        $prayer = $this->getPrayerManager()->createPrayer($user, $prayerGroup);
+        $form = $this->getPrayerForm($prayer);
+
         return array(
-            'group' => $group,
+            'group' => $prayerGroup,
+            'form' => $form->createView(),
         );
     }
 
