@@ -12,8 +12,8 @@ doctrine:
             default:
                 logging: true
                 dbname: p2s_test
-                user: p2s_test
-                password: p2s_test
+                user: travis
+                password: ~
 
 security:
     firewalls:
