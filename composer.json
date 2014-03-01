@@ -20,12 +20,13 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "doctrine/doctrine-bundle": "~1",
         "doctrine/doctrine-migrations-bundle": "dev-master",
-        "doctrine/doctrine-fixtures-bundle": "dev-master",
+        "doctrine/doctrine-fixtures-bundle": "~2",
         "jms/security-extra-bundle": "*",
         "jms/di-extra-bundle": "*",
         "jms/serializer-bundle": "*",
         "friendsofsymfony/user-bundle": "*",
-        "fzaninotto/faker": "~1.2"
+        "fzaninotto/faker": "~1.2",
+        "willdurand/faker-bundle": "@stable"
     },
     "config": {
         "bin-dir": "bin"

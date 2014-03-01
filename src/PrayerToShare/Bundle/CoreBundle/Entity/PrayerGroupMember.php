@@ -27,7 +27,7 @@ class PrayerGroupMember
     /**
      * @ORM\Column(type="boolean")
      */
-    protected $admin;
+    protected $admin = false;
 
     public function __construct(User $user, PrayerGroup $prayerGroup)
     {
