@@ -76,4 +76,9 @@ class CoreController extends Controller
     {
         return new JsonResponse($data);
     }
+
+    protected function redirectToRoute($route, array $params = array())
+    {
+        return $this->redirect($this->generateUrl($route, $params));
+    }
 }

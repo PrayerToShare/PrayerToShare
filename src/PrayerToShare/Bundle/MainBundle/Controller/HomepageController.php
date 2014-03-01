@@ -14,6 +14,10 @@ class HomepageController extends BaseController
      */
     public function indexAction()
     {
+        if ($this->getUser()) {
+            return $this->redirectToRoute('dashboard_index');
+        }
+
         $regForm = $this->getRegistrationForm();
 
         return array(
