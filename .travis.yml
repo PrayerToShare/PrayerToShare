@@ -1,0 +1,17 @@
+language: php
+
+php:
+  - 5.5
+  - 5.4
+
+before_install:
+    - composer self-update
+    - cp app/config/parameters.yml.dist app/config/parameters.yml
+
+before_script:
+    - composer install
+    - app/console doctrine:migrations:migrate --no-interaction --env=test
+
+script:
+    - phpunit -c app --exclude-group=functional
+    - phpunit -c app --group=functional
