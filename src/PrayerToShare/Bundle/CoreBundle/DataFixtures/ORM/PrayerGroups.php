@@ -11,6 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class PrayerGroups extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
 {
+    const NUM_PRAYER_GROUPS = 10;
+
     /**
      * @var ContainerInterface
      */
@@ -41,7 +43,7 @@ class PrayerGroups extends AbstractFixture implements OrderedFixtureInterface, C
         $manager->persist($johnDoe);
 
         $miscGroups = array();
-        foreach (range(1, 10) as $idx) {
+        foreach (range(1, self::NUM_PRAYER_GROUPS) as $idx) {
             $g = new PrayerGroup();
             $g->setName($faker->company);
             if ($idx % 2 == 0) {
@@ -63,7 +65,7 @@ class PrayerGroups extends AbstractFixture implements OrderedFixtureInterface, C
         $prayerGroupManager->createPrayerGroupMember($this->getReference('user-jnye'), $firstBaptist);
         foreach (range(1, 50) as $idx) {
             $prayerGroupManager->createPrayerGroupMember($this->getReference(sprintf('user-misc-%d', $idx)), $firstBaptist);
-            $prayerGroupManager->createPrayerGroupMember($this->getReference(sprintf('user-misc-%d', $idx)), $this->getReference(sprintf('group-misc-%d', rand(1, 10))));
+            $prayerGroupManager->createPrayerGroupMember($this->getReference(sprintf('user-misc-%d', $idx)), $this->getReference(sprintf('group-misc-%d', rand(1, self::NUM_PRAYER_GROUPS))));
             if ($idx % 5 == 0) {
                 $prayerGroupManager->createPrayerGroupMember($this->getReference(sprintf('user-misc-%d', $idx)), $johnDoe);
             }

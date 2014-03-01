@@ -11,6 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class Users extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
 {
+    const NUM_USERS = 50;
+
     /**
      * @var ContainerInterface
      */
@@ -65,7 +67,7 @@ class Users extends AbstractFixture implements OrderedFixtureInterface, Containe
         $manager->persist($admin);
 
         $miscUsers = array();
-        foreach (range(1, 50) as $idx) {
+        foreach (range(1, self::NUM_USERS) as $idx) {
             $u = new User();
             $u->setUsername($faker->userName);
             $u->setEmail($faker->email);
