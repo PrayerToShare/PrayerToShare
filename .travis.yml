@@ -7,6 +7,7 @@ php:
 before_install:
     - composer self-update
     - cp app/config/parameters.yml.dist app/config/parameters.yml
+    - mysql -e 'create database p2s_test;'
 
 before_script:
     - composer install

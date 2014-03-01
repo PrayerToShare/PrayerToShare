@@ -34,10 +34,6 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
         }
 
-        if ('test' == $this->getEnvironment()) {
-            $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
-        }
-
         return $bundles;
     }
 
