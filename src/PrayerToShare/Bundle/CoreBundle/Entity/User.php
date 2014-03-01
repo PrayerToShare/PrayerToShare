@@ -58,7 +58,7 @@ class User extends BaseUser
         return $this->prayers->first();
     }
 
-    public function addPrayerGroup(GroupMember $group)
+    public function addPrayerGroup(PrayerGroupMember $group)
     {
         $this->prayerGroups->add($group);
     }

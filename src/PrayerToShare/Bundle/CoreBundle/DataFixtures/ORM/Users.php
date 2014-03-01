@@ -27,6 +27,7 @@ class Users extends AbstractFixture implements OrderedFixtureInterface, Containe
     public function load(ObjectManager $manager)
     {
         $userManager = $this->container->get('fos_user.user_manager');
+        $faker = \Faker\Factory::create();
 
         $user = new User();
         $user->setUsername('user');
@@ -62,6 +63,22 @@ class Users extends AbstractFixture implements OrderedFixtureInterface, Containe
         $manager->persist($jsuggs);
         $manager->persist($jnye);
         $manager->persist($admin);
+
+        $miscUsers = array();
+        foreach (range(1, 50) as $idx) {
+            $u = new User();
+            $u->setUsername($faker->userName);
+            $u->setEmail($faker->email);
+            $u->setPlainPassword('password');
+            $u->setEnabled(true);
+
+            $userManager->updateUser($u);
+            $manager->persist($u);
+            $this->addReference(sprintf('user-misc-%d', $idx), $u);
+
+            $miscUsers[] = $u;
+        }
+
         $manager->flush();
 
         $this->addReference('user-user', $user);
