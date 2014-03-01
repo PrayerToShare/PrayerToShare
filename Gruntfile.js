@@ -71,6 +71,12 @@ module.exports = function(grunt) {
                 }
             }
         },
+        phplint: {
+            options: {
+                swapPath: '/tmp'
+            },
+            all: ['src/**/*.php']
+        },
         watch: {
             scripts: {
                 files: ['assets/js/**'],
@@ -86,6 +92,13 @@ module.exports = function(grunt) {
                 options: {
                     spawn: true
                 }
+            },
+            php: {
+                files: 'src/**/*.php',
+                tasks: ['phplint'],
+                options: {
+                    spawn: true
+                }
             }
         }
     });
@@ -96,6 +109,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks("grunt-phplint");
 
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('default', ['jshint']);
