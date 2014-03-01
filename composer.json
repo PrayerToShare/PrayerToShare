@@ -25,7 +25,8 @@
         "jms/di-extra-bundle": "*",
         "jms/serializer-bundle": "*",
         "friendsofsymfony/user-bundle": "*",
-        "fzaninotto/faker": "~1.2"
+        "fzaninotto/faker": "~1.2",
+        "willdurand/faker-bundle": "@stable"
     },
     "config": {
         "bin-dir": "bin"
