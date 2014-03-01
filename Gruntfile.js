@@ -77,6 +77,16 @@ module.exports = function(grunt) {
             },
             all: ['src/**/*.php']
         },
+        phpcs: {
+            application: {
+                dir: ['src/**/*.php']
+            },
+            options: {
+                standard: 'Symfony2',
+                errorSeverity: 0,
+                extensions: 'php'
+            }
+        },
         watch: {
             scripts: {
                 files: ['assets/js/**'],
@@ -95,7 +105,7 @@ module.exports = function(grunt) {
             },
             php: {
                 files: 'src/**/*.php',
-                tasks: ['phplint'],
+                tasks: ['phplint', 'phpcs'],
                 options: {
                     spawn: true
                 }
@@ -110,6 +120,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks("grunt-phplint");
+    grunt.loadNpmTasks("grunt-phpcs");
 
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('default', ['jshint']);
