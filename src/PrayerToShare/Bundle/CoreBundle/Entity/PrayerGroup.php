@@ -44,7 +44,7 @@ class PrayerGroup
      * @ORM\Column(type="boolean")
      * @Serialize\Expose
      */
-    protected $public;
+    protected $public = false;
 
     public function __construct()
     {
