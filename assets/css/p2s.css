@@ -6594,6 +6594,8 @@ a:hover {
   top: 0;
   right: 0;
   width: 2036px;
+  border-top: 1px solid #C3AF97;
+  border-bottom: 1px solid #C3AF97;
 }
 .login_register .slide-container > div {
   width: 1018px;
@@ -6609,6 +6611,11 @@ a:hover {
 .login_register .block.log-in a {
   color: #4d788c;
 }
+.login_register .login-copy,
+.login_register .register-copy {
+  background: #E1E9EB;
+  min-height: 360px;
+}
 .login_register .login,
 .login_register .register {
   padding: 15px 18px;
@@ -6619,7 +6626,6 @@ a:hover {
   background: -moz-linear-gradient(top, #f0ebe6, #ffffff 20%);
   background: -ms-linear-gradient(top, #f0ebe6, #ffffff 20%);
   background: -o-linear-gradient(top, #f0ebe6, #ffffff 20%);
-  border: 1px solid #C3AF97;
   overflow: hidden;
   min-height: 360px;
 }
