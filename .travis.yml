@@ -9,7 +9,7 @@ before_install:
     - cp app/config/parameters.yml.dist app/config/parameters.yml
     - mysql -e 'CREATE DATABASE p2s_test;'
     - mysql -e "CREATE USER 'p2s_test'@'localhost' IDENTIFIED BY 'p2s_test';"
-    - mysql -e "GRANT USAGE ON *.* to p2s_test@localhost IDENTIFIED BY 'p2s_test'"
+    - mysql -e "GRANT USAGE ON p2s_test.* to p2s_test@localhost IDENTIFIED BY 'p2s_test'"
     - mysql -e 'GRANT ALL PRIVILEGES ON p2s_test.* to p2s_test@localhost '
 
 before_script:
