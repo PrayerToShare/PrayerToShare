@@ -23,14 +23,12 @@ class DashboardController extends BaseController
     {
         $user = $this->getUser();
         $prayers = $this->getPrayerManager()->getNetworkPrayers($user);
-        $serializedPrayers = $this->getSerializer()->serialize($prayers, 'json');
 
         $form = $this->getPrayerForm();
 
         return array(
             'form' => $form->createView(),
             'prayers' => $prayers,
-            'serializedPrayers' => $serializedPrayers,
         );
     }
 }
