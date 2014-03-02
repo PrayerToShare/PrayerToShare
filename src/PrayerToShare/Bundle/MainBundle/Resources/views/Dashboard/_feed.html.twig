@@ -1,2 +1,12 @@
 <label>Prayer Requests</label>
-<div class="feed">No prayer requests</div>
+<div class="feed">
+    {% if prayers|length %}
+        <ol class="prayer-list">
+            {% for prayer in prayers %}
+                {% include "PrayerToShareMainBundle:Dashboard:_prayer.html.twig" %}
+            {% endfor %}
+        </ol>
+    {% else %}
+        No prayer requests
+    {% endif %}
+</div>
