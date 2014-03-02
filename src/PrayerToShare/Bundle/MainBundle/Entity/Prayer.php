@@ -36,7 +36,7 @@ class Prayer
     protected $prayerGroup;
 
     /**
-     * @ORM\Column
+     * @ORM\Column(type="text")
      * @Serialize\Expose
      */
     protected $text;
