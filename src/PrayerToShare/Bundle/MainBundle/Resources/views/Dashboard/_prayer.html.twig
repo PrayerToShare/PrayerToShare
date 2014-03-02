@@ -1,16 +1,27 @@
 <li class="prayer">
-    <div class="prayer-text">
-        {{ prayer.text }}
+    <div class="one left">
+        <a href="#">
+            {# if prayer.user.image %}
+                <img src="{{ asset('img/noprofileimage.jpg') }}" align="left">
+            {% else #}
+                <img src="{{ asset('img/noprofileimage.jpg') }}" align="left">
+            {# endif #}
+        </a>
     </div>
-    <div class="prayer-meta">
-        <p>Created by <a href="">{{ prayer.user.username }}</a> on {{ prayer.createdAt|date }}</p>
-        {% if prayer.prayerGroup %}
-            <p class="prayer-group">Message in group: <a href="{{ path('group_view', {id: prayer.prayerGroup.id}) }}">{{ prayer.prayerGroup.name }}</a></p>
-        {% endif %}
-    </div>
-    <div class="prayer-actions">
-        <a href="" class="prayer-pray">Pray for this</a>
-        | <a href="" class="prayer-archive">Archive</a>
-        | <a href="" class="prayer-inappropriate">Flag as inappropriate</a>
+    <div class="eleven right">
+        <div class="prayer-meta">
+            <div class="name eight left">
+                <a href="#">{{ prayer.user.username }}</a>{% if prayer.prayerGroup %}<span class="group">: from group <a href="{{ path('group_view', {id: prayer.prayerGroup.id}) }}">{{ prayer.prayerGroup.name }}</a></span>{% endif %}
+            </div>
+            <div class="date four right">{{ prayer.createdAt|date }}</div>
+        </div>
+        <div class="prayer-text">
+            {{ prayer.text }}
+        </div>
+        <div class="prayer-actions">
+            <a href="#" class="prayer-pray">Pray for this</a>
+            | <a href="#" class="prayer-archive">Archive</a>
+            | <a href="#" class="prayer-inappropriate">Flag as inappropriate</a>
+        </div>
     </div>
 </li>

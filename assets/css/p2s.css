@@ -6196,6 +6196,39 @@ a:hover {
   padding: 12px;
   font-size: 11px;
 }
+#body .content .prayer-feed .feed .prayer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer {
+  border-top: 1px solid #E5DFD8;
+  padding: 16px 4px;
+  font-size: 11px;
+  overflow: hidden;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer:first-child {
+  border-top: 0;
+  padding-top: 4px;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer a,
+#body .content .prayer-feed .feed .prayer-list li.prayer a:hover {
+  color: #274b5e;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-meta {
+  overflow: hidden;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-meta .name {
+  font: bold 12px Georgia, "Times New Roman", serif;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-meta .date {
+  text-align: right;
+  font-size: 10px;
+  font-weight: bold;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-text {
+  padding: 6px 0 10px;
+}
 #body .btn {
   border: none;
   color: #fff;
@@ -6582,6 +6615,9 @@ a:hover {
   text-align: center;
   color: #cc0000;
 }
+/***
+    Login / Register Styles
+***/
 .login_register {
   padding: 0 0 24px;
   margin: 0 26px;

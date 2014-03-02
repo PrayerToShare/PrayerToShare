@@ -286,6 +286,40 @@ a:hover {
                 border: 1px solid #E5DFD8;
                 padding: 12px;
                 font-size: 11px;
+                .prayer-list {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    li {
+                        &.prayer {
+                            border-top: 1px solid #E5DFD8;
+                            padding: 16px 4px;
+                            font-size: 11px;
+                            overflow: hidden;
+                            &:first-child {
+                                border-top: 0;
+                                padding-top: 4px;
+                            }
+                            a, a:hover {
+                                color: #274b5e;
+                            }
+                            .prayer-meta {
+                                overflow: hidden;
+                                .name {
+                                    font: bold 12px Georgia, "Times New Roman", serif;
+                                }
+                                .date {
+                                    text-align: right;
+                                    font-size: 10px;
+                                    font-weight: bold;
+                                }
+                            }
+                            .prayer-text {
+                                padding: 6px 0 10px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -661,6 +695,10 @@ a:hover {
     color: #cc0000;
 }
 
+
+/***
+    Login / Register Styles
+***/
 .login_register {
     padding: 0 0 24px;
     margin: 0 26px;
