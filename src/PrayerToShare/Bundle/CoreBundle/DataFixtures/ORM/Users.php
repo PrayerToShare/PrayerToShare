@@ -41,12 +41,16 @@ class Users extends AbstractFixture implements OrderedFixtureInterface, Containe
         $jsuggs->setUsername('jsuggs');
         $jsuggs->setEmail('jsuggs@prayertoshare.com');
         $jsuggs->setPlainPassword('password');
+        $jsuggs->setFirstName('Jonathon');
+        $jsuggs->setLastName('Suggs');
         $jsuggs->setEnabled(true);
 
         $jnye = new User();
         $jnye->setUsername('jnye');
         $jnye->setEmail('jnye@prayertoshare.com');
         $jnye->setPlainPassword('password');
+        $jnye->setFirstName('Joel');
+        $jnye->setLastName('Nye');
         $jnye->setEnabled(true);
 
         $admin = new User();
@@ -72,6 +76,10 @@ class Users extends AbstractFixture implements OrderedFixtureInterface, Containe
             $u->setUsername($faker->userName);
             $u->setEmail($faker->email);
             $u->setPlainPassword('password');
+            if ($idx % 2 == 0) {
+                $u->setFirstName($faker->firstName);
+                $u->setLastName($faker->lastName);
+            }
             $u->setEnabled(true);
 
             $userManager->updateUser($u);
