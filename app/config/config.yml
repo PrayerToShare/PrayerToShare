@@ -69,6 +69,9 @@ fos_user:
     registration:
         form:
             type: prayertoshare_user_registration
+    profile:
+        form:
+            type: prayertoshare_user_profile
 
 jms_serializer:
     metadata:
