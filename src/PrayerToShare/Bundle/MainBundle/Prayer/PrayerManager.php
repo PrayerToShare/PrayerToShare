@@ -7,6 +7,7 @@ use JMS\DiExtraBundle\Annotation as DI;
 use PrayerToShare\Bundle\CoreBundle\Entity\PrayerGroup;
 use PrayerToShare\Bundle\CoreBundle\Entity\User;
 use PrayerToShare\Bundle\MainBundle\Entity\Prayer;
+use PrayerToShare\Bundle\MainBundle\Entity\UserPrayerList;
 
 /**
  * @DI\Service("prayer_manager")
@@ -31,6 +32,14 @@ class PrayerManager
         $this->om->persist($prayer);
 
         return $prayer;
+    }
+
+    public function createUserPrayerList(User $user, Prayer $prayer)
+    {
+        $userPrayerList = new UserPrayerList($user, $prayer);
+        $this->om->persist($userPrayerList);
+
+        return $userPrayerList;
     }
 
     public function getNetworkPrayers(User $user)

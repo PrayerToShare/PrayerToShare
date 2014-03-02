@@ -43,12 +43,18 @@ class User extends BaseUser
      */
     protected $prayerGroups;
 
+    /**
+     * @ORM\OneToMany(targetEntity="PrayerToShare\Bundle\MainBundle\Entity\UserPrayerList", mappedBy="user")
+     */
+    protected $prayerList;
+
     public function __construct()
     {
         parent::__construct();
 
         $this->prayers = new ArrayCollection();
         $this->prayerGroups = new ArrayCollection();
+        $this->prayerList = new ArrayCollection();
     }
 
     public function getId()
