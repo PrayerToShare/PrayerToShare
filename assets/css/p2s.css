@@ -6251,6 +6251,14 @@ a:hover {
 #body .content .prayer-feed .feed .prayer-list li.prayer .prayer-meta .name {
   font: bold 12px Georgia, "Times New Roman", serif;
 }
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-meta .group {
+  font-weight: normal;
+  color: #4d788c;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-meta .group a {
+  font-size: 12px;
+  font-weight: bold;
+}
 #body .content .prayer-feed .feed .prayer-list li.prayer .prayer-meta .date {
   text-align: right;
   font-size: 10px;
