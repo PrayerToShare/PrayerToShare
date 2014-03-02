@@ -66,6 +66,9 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: PrayerToShare\Bundle\CoreBundle\Entity\User
+    registration:
+        form:
+            type: prayertoshare_user_registration
 
 jms_serializer:
     metadata:

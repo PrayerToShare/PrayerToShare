@@ -16,16 +16,15 @@
         {{ form_widget(form.plainPassword.second, {attr: {class: "register_input"}}) }}
     </div>
     <div class="block six left">
-        <label for="fname">First Name</label>
-        <input type="text" name="fname" class="register_input" />
+        {{ form_label(form.firstName) }}
+        {{ form_widget(form.firstName, {attr: {class: "register_input"}}) }}
     </div>
     <div class="block six left">
-        <label for="lname">Last Name</label>
-        <input type="text" name="lname" class="register_input" />
+        {{ form_label(form.lastName) }}
+        {{ form_widget(form.lastName, {attr: {class: "register_input"}}) }}
     </div>
     <div class="block six left log-in">
-        {# change link to use path('login') #}
-        Already a member? <a href="/login" class="toggle-login">Sign In</a>.
+        Already a member? <a href="{{ path('fos_user_security_login') }}" class="toggle-login">Sign In</a>.
     </div>
     <div class="block six left">
         <input type="submit" name="submit" value="Sign Up" class="login_submit right" />

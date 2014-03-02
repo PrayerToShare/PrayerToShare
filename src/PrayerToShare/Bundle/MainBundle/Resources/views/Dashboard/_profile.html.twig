@@ -3,7 +3,7 @@
 </div>
 <div>
     <div class="profile-name">
-        <a href="#">Name Here</a>
+        <a href="#">{{ app.user.fullName ?: 'Name Here' }}</a>
     </div>
     <a href="{{ path('fos_user_profile_edit') }}" class="profile-link">(edit profile)</a>
 </div>
