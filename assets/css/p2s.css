@@ -6225,6 +6225,10 @@ a:hover {
 #body .content .prayer-feed .feed .prayer-list li {
   position: relative;
 }
+#body .content .prayer-feed .feed .prayer-list li a,
+#body .content .prayer-feed .feed .prayer-list li a:hover {
+  color: #274b5e;
+}
 #body .content .prayer-feed .feed .prayer-list li.prayer {
   padding: 16px;
   font-size: 11px;
@@ -6232,10 +6236,6 @@ a:hover {
 }
 #body .content .prayer-feed .feed .prayer-list li.prayer:first-child {
   border-top: 0;
-}
-#body .content .prayer-feed .feed .prayer-list li.prayer a,
-#body .content .prayer-feed .feed .prayer-list li.prayer a:hover {
-  color: #274b5e;
 }
 #body .content .prayer-feed .feed .prayer-list li.prayer .image img {
   border: 1px solid #fff;
@@ -6269,8 +6269,13 @@ a:hover {
   height: 1px;
   width: 100%;
 }
-#body .content .prayer-feed .feed .prayer-list li:hover {
+#body .content .prayer-feed .feed .prayer-list li.prayer:hover {
   background: #E1E9EB;
+}
+#body .content .prayer-feed .feed .prayer-list li.show-more {
+  background: #f7f4f1;
+  padding: 12px 16px;
+  font-weight: bold;
 }
 #body .btn {
   border: none;

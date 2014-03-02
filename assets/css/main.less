@@ -305,15 +305,15 @@ a:hover {
                     padding: 0;
                     li {
                         position: relative;
+                        a, a:hover {
+                            color: #274b5e;
+                        }
                         &.prayer {
                             padding: 16px;
                             font-size: 11px;
                             overflow: hidden;
                             &:first-child {
                                 border-top: 0;
-                            }
-                            a, a:hover {
-                                color: #274b5e;
                             }
                             .image {
                                 img {
@@ -345,9 +345,14 @@ a:hover {
                                 height: 1px;
                                 width: 100%;
                             }
+                            &:hover {
+                                background: #E1E9EB;
+                            }
                         }
-                        &:hover {
-                            background: #E1E9EB;
+                        &.show-more {
+                            background: #f7f4f1;
+                            padding: 12px 16px;
+                            font-weight: bold;
                         }
                     }
                 }

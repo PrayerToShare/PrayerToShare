@@ -5,6 +5,9 @@
             {% for prayer in prayers %}
                 {% include "PrayerToShareMainBundle:Dashboard:_prayer.html.twig" %}
             {% endfor %}
+            <li class="show-more">
+            	<a href="#">View older prayer requests</a>
+            </li>
         </ol>
     {% else %}
         No prayer requests
