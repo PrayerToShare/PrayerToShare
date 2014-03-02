@@ -19,7 +19,9 @@
             {{ prayer.text }}
         </div>
         <div class="prayer-actions">
-            <a href="#" class="prayer-pray">Pray for this</a>
+            <form action="{{ path('prayer_create_user_list', {id: prayer.id}) }}" method="post" class="prayer-pray">
+                <button type="submit">Pray for this</button>
+            </form>
             | <a href="#" class="prayer-archive">Archive</a>
             | <a href="#" class="prayer-inappropriate">Flag as inappropriate</a>
         </div>
