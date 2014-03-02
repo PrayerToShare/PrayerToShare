@@ -6030,6 +6030,7 @@ a:hover {
 #body .sidebar h2.subtitle {
   font: bold 14px Georgia, "Times New Roman", serif;
   margin-top: 0;
+  color: #274b5e;
 }
 #body .sidebar h2.subtitle a,
 #body .sidebar h2.subtitle a:hover {
@@ -6043,7 +6044,7 @@ a:hover {
 }
 #body .sidebar .stats {
   padding: 0;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   border: 1px solid #fff;
   background: #f7f4f1;
   -moz-box-shadow: 0 12px 8px -10px #5c4938;
@@ -6078,6 +6079,26 @@ a:hover {
   background: #E1E9EB;
   border-left: 1px solid #fff;
   text-align: center;
+}
+#body .sidebar .quoted {
+  -moz-box-shadow: 0 12px 8px -10px #5c4938;
+  -webkit-box-shadow: 0 12px 8px -10px #5c4938;
+  -o-box-shadow: 0 12px 8px -10px #5c4938;
+  -ms-box-shadow: 0 12px 8px -10px #5c4938;
+  box-shadow: 0 12px 8px -10px #5c4938;
+  margin-bottom: 24px;
+}
+#body .sidebar .quoted > div {
+  border: 1px solid #fff;
+  overflow: hidden;
+  padding: 12px;
+  -moz-box-shadow: inset 0 0 5px #e2ded3;
+  -webkit-box-shadow: inset 0 0 5px #e2ded3;
+  -o-box-shadow: inset 0 0 5px #e2ded3;
+  -ms-box-shadow: inset 0 0 5px #e2ded3;
+  box-shadow: inset 0 0 5px #e2ded3;
+  font-size: 11px;
+  background: #E1E9EB;
 }
 #body .content {
   width: 832px;
@@ -6131,11 +6152,11 @@ a:hover {
   display: block;
 }
 #body .content .prayer-form {
-  padding: 24px 16px 36px;
+  padding: 24px 0 36px;
+  margin: 0 16px 36px;
   overflow: hidden;
   border-bottom: 1px solid #E5DFD8;
   border-left: 1px solid #fff;
-  margin-bottom: 36px;
 }
 #body .content .prayer-form label {
   font: bold 14px Georgia, "Times New Roman", serif;
@@ -6193,7 +6214,7 @@ a:hover {
 }
 #body .content .prayer-feed .feed {
   border: 1px solid #E5DFD8;
-  padding: 12px;
+  padding: 0;
   font-size: 11px;
 }
 #body .content .prayer-feed .feed .prayer-list {
@@ -6201,19 +6222,28 @@ a:hover {
   margin: 0;
   padding: 0;
 }
+#body .content .prayer-feed .feed .prayer-list li {
+  position: relative;
+}
 #body .content .prayer-feed .feed .prayer-list li.prayer {
-  border-top: 1px solid #E5DFD8;
-  padding: 16px 4px;
+  padding: 16px;
   font-size: 11px;
   overflow: hidden;
 }
 #body .content .prayer-feed .feed .prayer-list li.prayer:first-child {
   border-top: 0;
-  padding-top: 4px;
 }
 #body .content .prayer-feed .feed .prayer-list li.prayer a,
 #body .content .prayer-feed .feed .prayer-list li.prayer a:hover {
   color: #274b5e;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer .image img {
+  border: 1px solid #fff;
+  -moz-box-shadow: 0 0 5px 0 #e5dfd8;
+  -webkit-box-shadow: 0 0 5px 0 #e5dfd8;
+  -o-box-shadow: 0 0 5px 0 #e5dfd8;
+  -ms-box-shadow: 0 0 5px 0 #e5dfd8;
+  box-shadow: 0 0 5px 0 #e5dfd8;
 }
 #body .content .prayer-feed .feed .prayer-list li.prayer .prayer-meta {
   overflow: hidden;
@@ -6228,6 +6258,19 @@ a:hover {
 }
 #body .content .prayer-feed .feed .prayer-list li.prayer .prayer-text {
   padding: 6px 0 10px;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer:after {
+  content: '';
+  background: #E5DFD8;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+}
+#body .content .prayer-feed .feed .prayer-list li:hover {
+  background: #E1E9EB;
 }
 #body .btn {
   border: none;

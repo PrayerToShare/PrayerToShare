@@ -1,5 +1,7 @@
 {% set prayer = app.user.mostRecentPrayer %}
 {% if prayer %}
     <h2 class="subtitle">Recent Prayer</h2>
-    <div class="quoted">{{ prayer.text }}</div>
+    <div class="quoted">
+    	<div>{{ prayer.text }}</div>
+    </div>
 {% endif %}

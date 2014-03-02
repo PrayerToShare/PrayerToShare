@@ -151,6 +151,7 @@ a:hover {
         h2.subtitle {
             font: bold 14px Georgia, "Times New Roman", serif;
             margin-top: 0;
+            color: #274b5e;
             a, a:hover {
                 color: #274b5e;
             }
@@ -163,7 +164,7 @@ a:hover {
         }
         .stats {
             padding: 0;
-            margin-bottom: 12px;
+            margin-bottom: 24px;
             border: 1px solid #fff;
             background: #f7f4f1;
             .boxShadow(0, 12px, 8px, -10px, #5c4938);
@@ -189,6 +190,18 @@ a:hover {
                         text-align: center;
                     }
                 }
+            }
+        }
+        .quoted {
+            .boxShadow(0, 12px, 8px, -10px, #5c4938);
+            margin-bottom: 24px;
+            > div {
+                border: 1px solid #fff;
+                overflow: hidden;
+                padding: 12px;
+                .boxShadowInset(0, 0, 5px, 0, #E2DED3);
+                font-size: 11px;
+                background: #E1E9EB;
             }
         }
     }
@@ -235,11 +248,11 @@ a:hover {
             display: block;
         }
         .prayer-form {
-            padding: 24px 16px 36px;
+            padding: 24px 0 36px;
+            margin: 0 16px 36px;
             overflow: hidden;
             border-bottom: 1px solid #E5DFD8;
             border-left: 1px solid #fff;
-            margin-bottom: 36px;
             label {
                 font: bold 14px Georgia, "Times New Roman", serif;
                 color: #274b5e;
@@ -284,24 +297,29 @@ a:hover {
             color: #2d2d2d;
             .feed {
                 border: 1px solid #E5DFD8;
-                padding: 12px;
+                padding: 0;
                 font-size: 11px;
                 .prayer-list {
                     list-style: none;
                     margin: 0;
                     padding: 0;
                     li {
+                        position: relative;
                         &.prayer {
-                            border-top: 1px solid #E5DFD8;
-                            padding: 16px 4px;
+                            padding: 16px;
                             font-size: 11px;
                             overflow: hidden;
                             &:first-child {
                                 border-top: 0;
-                                padding-top: 4px;
                             }
                             a, a:hover {
                                 color: #274b5e;
+                            }
+                            .image {
+                                img {
+                                    border: 1px solid #fff;
+                                    .boxShadow(0, 0, 5px, 0, #E5DFD8);
+                                }
                             }
                             .prayer-meta {
                                 overflow: hidden;
@@ -317,6 +335,19 @@ a:hover {
                             .prayer-text {
                                 padding: 6px 0 10px;
                             }
+                            &:after {
+                                content: '';
+                                background: #E5DFD8;
+                                display: block;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                height: 1px;
+                                width: 100%;
+                            }
+                        }
+                        &:hover {
+                            background: #E1E9EB;
                         }
                     }
                 }
