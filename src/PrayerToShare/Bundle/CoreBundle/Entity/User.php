@@ -23,6 +23,16 @@ class User extends BaseUser
     protected $id;
 
     /**
+     * @ORM\Column(type="string", length=32, nullable=true)
+     */
+    protected $firstName;
+
+    /**
+     * @ORM\Column(type="string", length=32, nullable=true)
+     */
+    protected $lastName;
+
+    /**
      * @ORM\OneToMany(targetEntity="PrayerToShare\Bundle\MainBundle\Entity\Prayer", mappedBy="user")
      * @ORM\OrderBy({"createdAt" = "DESC"})
      */
@@ -39,6 +49,36 @@ class User extends BaseUser
 
         $this->prayers = new ArrayCollection();
         $this->prayerGroups = new ArrayCollection();
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+    }
+
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+    }
+
+    public function getFullName()
+    {
+        return sprintf(
+            '%s%s%s',
+            $this->firstName,
+            strlen($this->firstName) && strlen($this->lastName) ? ' ' : '',
+            $this->lastName
+        );
     }
 
     public function addPrayer(Prayer $prayer)
