@@ -11,8 +11,8 @@ class Version20140302000034 extends AbstractMigration
 CREATE TABLE user_prayer_list (
     user_id INT NOT NULL
   , prayer_id INT NOT NULL
-  , INDEX IDX_76AED0E5A76ED395 (user_id)
-  , INDEX IDX_76AED0E5F0D7D6C6 (prayer_id)
+  , INDEX IDX_USER_PRAYER_LIST_USER_ID (user_id)
+  , INDEX IDX_USER_PRAYER_LIST_PRAYER_ID (prayer_id)
   , PRIMARY KEY(user_id, prayer_id)
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB
 SQL;
