@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 use JMS\Serializer\Annotation as Serialize;
 use PrayerToShare\Bundle\MainBundle\Entity\Prayer;
+use PrayerToShare\Bundle\MainBundle\Entity\UserPrayerList;
 
 /**
  * @ORM\Entity
@@ -43,12 +44,18 @@ class User extends BaseUser
      */
     protected $prayerGroups;
 
+    /**
+     * @ORM\OneToMany(targetEntity="PrayerToShare\Bundle\MainBundle\Entity\UserPrayerList", mappedBy="user")
+     */
+    protected $prayerList;
+
     public function __construct()
     {
         parent::__construct();
 
         $this->prayers = new ArrayCollection();
         $this->prayerGroups = new ArrayCollection();
+        $this->prayerList = new ArrayCollection();
     }
 
     public function getId()
@@ -111,5 +118,12 @@ class User extends BaseUser
     public function getPrayerGroups()
     {
         return $this->prayerGroups;
+    }
+
+    public function isPrayingFor(Prayer $prayer)
+    {
+        return $this->prayerList->exists(function($idx, UserPrayerList $upl) use ($prayer) {
+            return $upl->getPrayer()->getId() == $prayer->getId();
+        });
     }
 }

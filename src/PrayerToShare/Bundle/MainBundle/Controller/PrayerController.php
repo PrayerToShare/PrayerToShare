@@ -57,6 +57,35 @@ class PrayerController extends BaseController
     }
 
     /**
+     * @Route("/{id}/user-list/create", name="prayer_create_user_list")
+     * @Secure(roles="ROLE_USER")
+     * @Method({"POST"})
+     */
+    public function createUserPrayerList(Prayer $prayer)
+    {
+        $user = $this->getUser();
+        $prayer = $this->getPrayerManager()->createUserPrayerList($user, $prayer);
+        $this->getEntityManager()->flush();
+
+        return $this->returnJson(array('success' => true));
+    }
+
+    /**
+     * @Route("/{id}/user-list/delete", name="prayer_remove_user_list")
+     * @Secure(roles="ROLE_USER")
+     * @Method({"POST"})
+     */
+    public function removeUserPrayerList(Prayer $prayer)
+    {
+        $user = $this->getUser();
+        $userPrayerList = $this->getPrayerManager()->getUserPrayerList($user, $prayer);
+        $this->getEntityManager()->remove($userPrayerList);
+        $this->getEntityManager()->flush();
+
+        return $this->returnJson(array('success' => true));
+    }
+
+    /**
      * @Route("/", name="prayer_list")
      * @Secure(roles="ROLE_USER")
      * @Method({"GET"})

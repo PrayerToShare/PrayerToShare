@@ -36,6 +36,11 @@ class Prayer
     protected $prayerGroup;
 
     /**
+     * @ORM\OneToMany(targetEntity="UserPrayerList", mappedBy="prayer")
+     */
+    protected $prayerList;
+
+    /**
      * @ORM\Column(type="text")
      * @Serialize\Expose
      */
