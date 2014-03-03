@@ -756,8 +756,10 @@ a:hover {
         width: 2036px;
         border-top: 1px solid #C3AF97;
         border-bottom: 1px solid #C3AF97;
+        .gradient(#fff 20%, #f0ebe6);
         > div {
             width: 1018px;
+            overflow: hidden;
         }
     }
     .block {
@@ -772,13 +774,67 @@ a:hover {
         }
     }
     .login-copy, .register-copy {
-        background: #E1E9EB;
         min-height: 360px;
+        position: relative;
+        .opacity-bg {
+            background: #4d788c;
+            .opacity(1);
+            border: 1px solid #C3AF97;
+            height: 295px;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 98%;
+            z-index: 4;
+        }
+        .copy {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 98%;
+            z-index: 5;
+            height: 295px;
+            padding: 24px;
+            h1.title {
+                font: normal 36px/36px Georgia, "Times New Roman", serif;
+                font-weight: 100;
+                text-shadow: 1px 1px #000;
+                color: #f0ebe6;
+            }
+            .text {
+                font: normal 20px/26px Arial, Helvetica, Sans-serif;
+                padding-bottom: 36px;
+                font-weight: 100;
+                color: #d7cab9;
+                text-shadow: 1px 1px #274b5e;
+            }
+            .verse {
+                font: italic 12px/17px Georgia, "Times New Roman", serif;
+                color: #E1E9EB;
+            }
+        }
+    }
+    .login-copy {
+        .opacity-bg {
+            left: auto;
+            right: 0;
+            border-right: 0;
+            .boxShadow(7px, 6px, 8px, -5px, #5c4938);
+        }
+        .copy {
+            left: auto;
+            right: 0;
+        }
+    }
+    .register-copy {
+        .opacity-bg {
+            border-left: 0;
+            .boxShadow(-7px, 6px, 8px, -5px, #5c4938);
+        }
     }
     .login, .register {
         padding: 15px 18px;
         display: inline-block;
-        .gradient(#fff 20%, #f0ebe6);
         overflow: hidden;
         min-height: 360px;
         label {

@@ -59,3 +59,7 @@
     background: -ms-linear-gradient(top, @color2, @color1);
     background: -o-linear-gradient(top, @color2, @color1);
 }
+.opacity (@opacity) {
+    opacity: @opacity / 100;
+    filter: alpha(opacity=@opacity);
+}

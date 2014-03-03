@@ -11,7 +11,8 @@
     <div class="eleven right">
         <div class="prayer-meta">
             <div class="name eight left">
-                <a href="#">{{ prayer.user.username }}</a>{% if prayer.prayerGroup %}<span class="group"> posted from group <a href="{{ path('group_view', {id: prayer.prayerGroup.id}) }}">{{ prayer.prayerGroup.name }}</a></span>{% endif %}
+                <a href="#">
+                    {% if prayer.user.firstName and prayer.user.lastName %}{{ prayer.user.firstName ~ ' ' ~ prayer.user.lastName }}{% else %}{{ prayer.user.username }}{% endif %}</a>{% if prayer.prayerGroup %}<span class="group"> posted from group <a href="{{ path('group_view', {id: prayer.prayerGroup.id}) }}">{{ prayer.prayerGroup.name }}</a></span>{% endif %}
             </div>
             <div class="date four right">{{ prayer.createdAt|date }}</div>
         </div>
