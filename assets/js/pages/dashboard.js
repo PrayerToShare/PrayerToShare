@@ -53,10 +53,32 @@ define(['jquery', 'domReady', 'modules/Prayer'], function($, domReady, Prayer) {
             });
         },
 
+        initPrayerListAjax: function() {
+            $('form.prayer-pray').on('submit', function(e) {
+                e.preventDefault();
+                var $form = $(this);
+
+                $.ajax({
+                    type: $form.attr('method'),
+                    url: $form.attr('action'),
+                    data: $form.serialize(),
+                    dataType: 'json',
+                    success: function(data, textStatus, jqXHR) {
+                        if (data.success) {
+                            // Do something here
+                        } else {
+                            // Do something else
+                        }
+                    }
+                });
+            });
+        },
+
         init: function() {
             domReady(function() {
                 page.initPostBehavior($('.new-post'));
                 page.initMenuSlide();
+                page.initPrayerListAjax();
             });
         }
     };
