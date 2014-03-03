@@ -2,6 +2,7 @@
 
 namespace PrayerToShare\Bundle\StorageBundle\Upload;
 
+use Gaufrette\Adapter\AwsS3;
 use Gaufrette\Filesystem;
 use JMS\DiExtraBundle\Annotation as DI;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -17,7 +18,7 @@ class PhotoUploader
 
     /**
      * @DI\InjectParams({
-     *      "filesystem" = @DI\Inject("photo_storage_filesystem"),
+     *      "filesystem" = @DI\Inject("profile_storage_filesystem"),
      * })
      */
     public function __construct(Filesystem $filesystem)
@@ -41,7 +42,10 @@ class PhotoUploader
     public function uploadNamedFile(UploadedFile $file, $filename)
     {
         $adapter = $this->filesystem->getAdapter();
-        $adapter->setMetadata($filename, array('contentType' => $file->getClientMimeType()));
+
+        if ($adapter instanceof AwsS3) {
+            $adapter->setMetadata($filename, array('contentType' => $file->getClientMimeType()));
+        }
         $adapter->write($filename, file_get_contents($file->getPathname()));
 
         return $filename;

@@ -30,3 +30,8 @@ doctrine:
 
 bazinga_faker:
     orm: doctrine
+
+knp_gaufrette:
+    filesystems:
+        profile_storage:
+            adapter:    local_profile_storage
