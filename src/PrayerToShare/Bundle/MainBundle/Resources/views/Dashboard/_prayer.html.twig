@@ -19,9 +19,15 @@
             {{ prayer.text }}
         </div>
         <div class="prayer-actions">
-            <form action="{{ path('prayer_create_user_list', {id: prayer.id}) }}" method="post" class="prayer-pray">
-                <button type="submit">Pray for this</button>
-            </form>
+            {% if app.user.isPrayingFor(prayer) %}
+                <form action="{{ path('prayer_remove_user_list', {id: prayer.id}) }}" method="post" class="prayer-pray">
+                    <button type="submit">Stop Praying</button>
+                </form>
+            {% else %}
+                <form action="{{ path('prayer_create_user_list', {id: prayer.id}) }}" method="post" class="prayer-pray">
+                    <button type="submit">Pray for this</button>
+                </form>
+            {% endif %}
             | <a href="#" class="prayer-archive">Archive</a>
             | <a href="#" class="prayer-inappropriate">Flag as inappropriate</a>
         </div>

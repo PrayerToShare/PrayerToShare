@@ -42,6 +42,11 @@ class PrayerManager
         return $userPrayerList;
     }
 
+    public function getUserPrayerList(User $user, Prayer $prayer)
+    {
+        return $this->getUserPrayerListRepository()->findUserPrayerList($user, $prayer);
+    }
+
     public function getNetworkPrayers(User $user)
     {
         return $this->getPrayerRepository()->findNetworkPrayers($user);
@@ -50,5 +55,10 @@ class PrayerManager
     protected function getPrayerRepository()
     {
         return $this->om->getRepository('PrayerToShareMainBundle:Prayer');
+    }
+
+    protected function getUserPrayerListRepository()
+    {
+        return $this->om->getRepository('PrayerToShareMainBundle:UserPrayerList');
     }
 }

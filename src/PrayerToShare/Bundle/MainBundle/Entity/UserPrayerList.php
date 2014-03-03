@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use PrayerToShare\Bundle\CoreBundle\Entity\User;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UserPrayerListRepository")
  * @ORM\Table(name="user_prayer_list")
  */
 class UserPrayerList
