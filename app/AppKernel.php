@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new PrayerToShare\Bundle\CoreBundle\PrayerToShareCoreBundle(),
             new PrayerToShare\Bundle\MainBundle\PrayerToShareMainBundle(),
             new PrayerToShare\Bundle\UserBundle\PrayerToShareUserBundle(),
+            new PrayerToShare\Bundle\StorageBundle\PrayerToShareStorageBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

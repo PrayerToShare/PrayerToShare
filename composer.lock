@@ -3,8 +3,61 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "31ced7f86336c4ab12ee39b7f777aa9a",
+    "hash": "ea809c9f80cc2264fc1777046c3be6a7",
     "packages": [
+        {
+            "name": "amazonwebservices/aws-sdk-for-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amazonwebservices/aws-sdk-for-php.git",
+                "reference": "aab09f6dac35e5e9a263fb7311bb4e71de95b0ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amazonwebservices/aws-sdk-for-php/zipball/aab09f6dac35e5e9a263fb7311bb4e71de95b0ba",
+                "reference": "aab09f6dac35e5e9a263fb7311bb4e71de95b0ba",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "You should consider upgrading to version 2 of the AWS SDK for PHP"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "authentication/",
+                    "extensions/",
+                    "lib/",
+                    "services/",
+                    "utilities/",
+                    "sdk.class.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Amazon Web Services",
+                    "homepage": "http://aws.amazon.com"
+                }
+            ],
+            "description": "AWS SDK for PHP",
+            "homepage": "http://aws.amazon.com/sdkforphp/",
+            "keywords": [
+                "amazon",
+                "aws",
+                "dynamodb",
+                "ec2",
+                "s3",
+                "sdk"
+            ],
+            "time": "2013-11-15 21:43:51"
+        },
         {
             "name": "doctrine/annotations",
             "version": "dev-master",
@@ -2778,6 +2831,7 @@
     "stability-flags": {
         "doctrine/doctrine-migrations-bundle": 20,
         "knplabs/knp-gaufrette-bundle": 20,
+        "amazonwebservices/aws-sdk-for-php": 20,
         "willdurand/faker-bundle": 0
     },
     "platform": {
