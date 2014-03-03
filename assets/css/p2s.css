@@ -6743,6 +6743,11 @@ a:hover {
   left: 0;
   width: 98%;
   z-index: 4;
+  -moz-border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
+  -o-border-radius: 3px 0 0 3px;
+  -ms-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
 }
 .login_register .login-copy .copy,
 .login_register .register-copy .copy {
@@ -6795,6 +6800,11 @@ a:hover {
   -o-box-shadow: -7px 6px 8px -5px #5c4938;
   -ms-box-shadow: -7px 6px 8px -5px #5c4938;
   box-shadow: -7px 6px 8px -5px #5c4938;
+  -moz-border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 0 3px 3px 0;
+  -o-border-radius: 0 3px 3px 0;
+  -ms-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
 }
 .login_register .login,
 .login_register .register {
