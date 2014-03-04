@@ -7,20 +7,20 @@
         <div>{{ error|trans }}</div>
     {% endif %}
 
-    {% set use_csrf_token = true %}
-
     <div class="login_register">
         <div class="slide-container">
             <div class="right">
-                <div class="login four left">
-                    <h2 class="box_headline">Sign In</h2>
-                    <div class="login_form">
-                        {% include "PrayerToShareMainBundle:Homepage:_login-form.html.twig" %}
-                    </div>
-                </div>
-                <div class="login-copy eight right">
+                <div class="register-copy five left">
                     <div class="opacity-bg"></div>
                     {% include "PrayerToShareMainBundle:Homepage:_copy.html.twig" %}
+                </div>
+                <div class="register seven right">
+                    <h2 class="box_headline">Sign Up</h2>
+                    <div class="login_form">
+
+                        {% include "PrayerToShareUserBundle:Registration:register_content.html.twig" with {form: regForm}%}
+
+                    </div>
                 </div>
             </div>
         </div>

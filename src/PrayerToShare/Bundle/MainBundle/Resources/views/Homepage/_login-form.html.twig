@@ -24,5 +24,5 @@
         Not a member? <a href="/register" class="toggle-register">Sign Up</a>.
     </div>
     <input type="hidden" name="pts_action" value="log_in" />
-    <input type="hidden" name="_csrf_token" value="{{ auth_csrf_token }}" />
+    <input type="hidden" name="_csrf_token" value="{{ use_csrf_token ? csrf_token : auth_csrf_token }}" />
 </form>

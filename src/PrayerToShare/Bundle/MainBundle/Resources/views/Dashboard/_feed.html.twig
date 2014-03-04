@@ -2,12 +2,16 @@
 <div class="feed">
     {% if prayers|length %}
         <ol class="prayer-list">
-            {% for prayer in prayers %}
+            {% for prayer in prayers|slice(0, 25) %}
                 {% include "PrayerToShareMainBundle:Dashboard:_prayer.html.twig" %}
             {% endfor %}
-            <li class="show-more">
-            	<a href="#">View older prayer requests</a>
-            </li>
+            {% if prayers|length > 25 %}
+                <li class="show-more">
+                	<a href="#">View older prayer requests</a>
+                </li>
+            {% else %}
+                <li class="show-more">No older prayer requests</li>
+            {% endif %}
         </ol>
     {% else %}
         No prayer requests
