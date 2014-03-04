@@ -2,7 +2,6 @@
 
 namespace PrayerToShare\Bundle\StorageBundle\EventListener;
 
-use Doctrine\Common\EventSubscriber;
 use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
 use JMS\DiExtraBundle\Annotation as DI;
 use PrayerToShare\Bundle\CoreBundle\Entity\User;
@@ -13,7 +12,7 @@ use PrayerToShare\Bundle\StorageBundle\Upload\PhotoUploader;
  *     events = {"prePersist", "preUpdate"},
  * )
  */
-class UserProfileImageListener implements EventSubscriber
+class UserProfileImageListener
 {
     protected $uploader;
 
@@ -25,11 +24,6 @@ class UserProfileImageListener implements EventSubscriber
     public function __construct(PhotoUploader $photoUploader)
     {
         $this->uploader = $photoUploader;
-    }
-
-    public function getSubscribedEvents()
-    {
-        return array('prePersist');
     }
 
     public function prePersist(LifecycleEventArgs $args)
