@@ -6158,6 +6158,10 @@ a:hover {
 #body .content .profile .groups .profile-image img {
   display: block;
 }
+#body .content .profile-image {
+  width: 50px;
+  height: 50px;
+}
 #body .content label {
   font: bold 10px Arial, Helvetica, Sans-serif;
   text-transform: uppercase;
@@ -6258,10 +6262,6 @@ a:hover {
   -o-box-shadow: 0 0 5px 0 #e5dfd8;
   -ms-box-shadow: 0 0 5px 0 #e5dfd8;
   box-shadow: 0 0 5px 0 #e5dfd8;
-}
-#body .content .prayer-feed .feed .prayer-list li.prayer .profile-image {
-  width: 50px;
-  height: 50px;
 }
 #body .content .prayer-feed .feed .prayer-list li.prayer .prayer-meta {
   overflow: hidden;
