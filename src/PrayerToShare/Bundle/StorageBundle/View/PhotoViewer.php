@@ -31,7 +31,7 @@ class PhotoViewer
         $imagePath = $user->getProfileImage();
         $path = $this->filesystem->has($imagePath)
             ? $imagePath
-            : 'noimg.jpg';
+            : 'noprofileimage.jpg';
 
         $adapter = $this->filesystem->getAdapter();
 

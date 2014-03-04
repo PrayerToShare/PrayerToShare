@@ -9,7 +9,7 @@ use PrayerToShare\Bundle\StorageBundle\Upload\PhotoUploader;
 
 /**
  * @DI\DoctrineListener(
- *     events = {"prePersist", "preUpdate"},
+ *     events = {"preUpdate"},
  * )
  */
 class UserProfileImageListener
