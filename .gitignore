@@ -5,3 +5,4 @@ app/logs
 web/bundles/
 web/assets/
 web/compiled/
+web/uploads/local/
