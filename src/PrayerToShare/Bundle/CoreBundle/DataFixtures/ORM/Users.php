@@ -76,6 +76,7 @@ class Users extends AbstractFixture implements OrderedFixtureInterface, Containe
             $u->setUsername($faker->userName);
             $u->setEmail($faker->email);
             $u->setPlainPassword('password');
+            $u->setProfileImage(sprintf('profile-%d.jpg', rand(1, 20)));
             if ($idx % 2 == 0) {
                 $u->setFirstName($faker->firstName);
                 $u->setLastName($faker->lastName);

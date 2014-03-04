@@ -1,0 +1,5 @@
+services:
+    p2s_storage.amazon_s3:
+        class: AmazonS3
+        arguments:
+            options: { key: %prayer_to_share_storage.amazon_s3.aws_key%, secret: %prayer_to_share_storage.amazon_s3.aws_secret_key%, certificate_authority: "%kernel.root_dir%/cacert.pem"}

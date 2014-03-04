@@ -23,9 +23,11 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
             new PrayerToShare\Bundle\CoreBundle\PrayerToShareCoreBundle(),
             new PrayerToShare\Bundle\MainBundle\PrayerToShareMainBundle(),
             new PrayerToShare\Bundle\UserBundle\PrayerToShareUserBundle(),
+            new PrayerToShare\Bundle\StorageBundle\PrayerToShareStorageBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

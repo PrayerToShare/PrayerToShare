@@ -79,3 +79,26 @@ jms_serializer:
             fosuserbundle:
                 namespace_prefix: "FOS\\UserBundle"
                 path: "%kernel.root_dir%/serializer/FOSUserBundle"
+
+knp_gaufrette:
+    adapters:
+        s3_profile_storage:
+            amazon_s3:
+                amazon_s3_id: p2s_storage.amazon_s3
+                bucket_name:  %amazon_s3_bucket_name%
+                create:       false
+                options:
+                    create: true
+        local_profile_storage:
+            local:
+                directory: %local_file_path%
+    filesystems:
+        profile_storage:
+            adapter:    s3_profile_storage
+            alias:      profile_storage_filesystem
+
+prayer_to_share_storage:
+    amazon_s3:
+        aws_key: %amazon_aws_key%
+        aws_secret_key: %amazon_aws_secret_key%
+        base_url: %amazon_s3_base_url%
