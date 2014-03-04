@@ -9,6 +9,7 @@ use JMS\Serializer\Annotation as Serialize;
 use PrayerToShare\Bundle\MainBundle\Entity\Prayer;
 use PrayerToShare\Bundle\MainBundle\Entity\UserPrayerList;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity
@@ -95,9 +96,15 @@ class User extends BaseUser
         return $this->lastName;
     }
 
-    public function setProfileImage($filePath)
+    public function setProfileImage(File $file)
     {
-        $this->profileImage = $filePath;
+        // Filepath will be set via listener
+        $this->profileImage = $file;
+    }
+
+    public function setProfileImagePath($filepath)
+    {
+        $this->profileImage = $filepath;
     }
 
     public function getProfileImage()

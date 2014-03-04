@@ -35,6 +35,10 @@ class ProfileFormType extends BaseType
                 'required' => false,
                 'label' => 'Last Name',
             ))
+            ->add('profileImage', 'file', array(
+                'required' => false,
+                'label' => 'Profile Image',
+            ))
         ;
     }
 
