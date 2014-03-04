@@ -91,7 +91,7 @@ knp_gaufrette:
                     create: true
         local_profile_storage:
             local:
-                directory: "%kernel.root_dir%/../web/uploads/local"
+                directory: %local_file_path%
     filesystems:
         profile_storage:
             adapter:    s3_profile_storage

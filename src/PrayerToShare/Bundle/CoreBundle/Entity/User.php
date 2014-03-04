@@ -8,6 +8,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 use JMS\Serializer\Annotation as Serialize;
 use PrayerToShare\Bundle\MainBundle\Entity\Prayer;
 use PrayerToShare\Bundle\MainBundle\Entity\UserPrayerList;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -32,6 +33,17 @@ class User extends BaseUser
      * @ORM\Column(type="string", length=32, nullable=true)
      */
     protected $lastName;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Image(
+     *      minWidth=300,
+     *      minHeight=300,
+     *      allowLandscape=false,
+     *      allowPortrait=false,
+     * )
+     */
+    protected $profileImage;
 
     /**
      * @ORM\OneToMany(targetEntity="PrayerToShare\Bundle\MainBundle\Entity\Prayer", mappedBy="user")
@@ -81,6 +93,16 @@ class User extends BaseUser
     public function getLastName()
     {
         return $this->lastName;
+    }
+
+    public function setProfileImage($filePath)
+    {
+        $this->profileImage = $filePath;
+    }
+
+    public function getProfileImage()
+    {
+        return $this->profileImage;
     }
 
     public function getFullName()

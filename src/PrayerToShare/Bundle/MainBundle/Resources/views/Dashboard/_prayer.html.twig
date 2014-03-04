@@ -1,11 +1,7 @@
 <li class="prayer">
     <div class="one left image">
         <a href="#">
-            {# if prayer.user.image %}
-                <img src="{{ asset('img/noprofileimage.jpg') }}" align="left">
-            {% else #}
-                <img src="{{ asset('img/noprofileimage.jpg') }}" align="left">
-            {# endif #}
+            <img src="{{ asset(profile_image(prayer.user)) }}" align="left" class="profile-image" title="{{ prayer.user.username }}">
         </a>
     </div>
     <div class="eleven right">
