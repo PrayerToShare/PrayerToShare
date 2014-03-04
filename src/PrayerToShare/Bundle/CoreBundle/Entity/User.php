@@ -8,8 +8,8 @@ use FOS\UserBundle\Model\User as BaseUser;
 use JMS\Serializer\Annotation as Serialize;
 use PrayerToShare\Bundle\MainBundle\Entity\Prayer;
 use PrayerToShare\Bundle\MainBundle\Entity\UserPrayerList;
-use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
