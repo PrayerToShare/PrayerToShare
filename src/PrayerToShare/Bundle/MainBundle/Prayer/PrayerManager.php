@@ -6,6 +6,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use JMS\DiExtraBundle\Annotation as DI;
 use PrayerToShare\Bundle\CoreBundle\Entity\PrayerGroup;
 use PrayerToShare\Bundle\CoreBundle\Entity\User;
+use PrayerToShare\Bundle\MainBundle\Entity\ArchivedPrayer;
 use PrayerToShare\Bundle\MainBundle\Entity\Prayer;
 use PrayerToShare\Bundle\MainBundle\Entity\UserPrayerList;
 
@@ -45,6 +46,14 @@ class PrayerManager
     public function getUserPrayerList(User $user, Prayer $prayer)
     {
         return $this->getUserPrayerListRepository()->findUserPrayerList($user, $prayer);
+    }
+
+    public function archivePrayer(User $user, Prayer $prayer)
+    {
+        $archivedPrayer = new ArchivedPrayer($user, $prayer);
+        $this->om->persist($archivedPrayer);
+
+        return $archivedPrayer;
     }
 
     public function getNetworkPrayers(User $user)

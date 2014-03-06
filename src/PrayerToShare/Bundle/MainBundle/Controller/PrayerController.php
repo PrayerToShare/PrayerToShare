@@ -86,6 +86,20 @@ class PrayerController extends BaseController
     }
 
     /**
+     * @Route("/{id}/archive", name="prayer_archive")
+     * @Secure(roles="ROLE_USER")
+     * @Method({"POST"})
+     */
+    public function archiveAction(Prayer $prayer)
+    {
+        $user = $this->getUser();
+        $this->getPrayerManager()->archivePrayer($user, $prayer);
+        $this->getEntityManager()->flush();
+
+        return $this->returnJson(array('success' => true));
+    }
+
+    /**
      * @Route("/", name="prayer_list")
      * @Secure(roles="ROLE_USER")
      * @Method({"GET"})

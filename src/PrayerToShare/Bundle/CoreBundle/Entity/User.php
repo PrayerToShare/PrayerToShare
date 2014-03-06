@@ -53,6 +53,11 @@ class User extends BaseUser
     protected $prayers;
 
     /**
+     * @ORM\OneToMany(targetEntity="PrayerToShare\Bundle\MainBundle\Entity\ArchivedPrayer", mappedBy="user")
+     */
+    protected $archivedPrayers;
+
+    /**
      * @ORM\OneToMany(targetEntity="PrayerGroupMember", mappedBy="user")
      */
     protected $prayerGroups;

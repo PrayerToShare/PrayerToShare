@@ -25,7 +25,10 @@
                     <button type="submit">Pray for this</button>
                 </form>
             {% endif %}
-            | <a href="#" class="prayer-archive">Archive</a>
+            |
+            <form action="{{ path('prayer_archive', {id: prayer.id}) }}" method="post" class="prayer-archive">
+                <button type="submit">Archive</button>
+            </form>
             | <a href="#" class="prayer-inappropriate">Flag as inappropriate</a>
         </div>
     </div>
