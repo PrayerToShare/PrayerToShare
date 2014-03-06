@@ -29,15 +29,13 @@ class PhotoViewer
     public function getUserProfileImage($user)
     {
         $imagePath = $user->getProfileImage();
-        $path = $this->filesystem->has($imagePath)
-            ? $imagePath
-            : 'noprofileimage.jpg';
+        $imagePath = $imagePath ?: 'noprofileimage.jpg';
 
         $adapter = $this->filesystem->getAdapter();
 
         return $adapter instanceof AwsS3
-            ? $adapter->getUrl($path)
-            : sprintf('%s/%s', '/uploads/local', $path);
+            ? $adapter->getUrl($imagePath)
+            : sprintf('%s/%s', '/uploads/local', $imagePath);
     }
 }
 
