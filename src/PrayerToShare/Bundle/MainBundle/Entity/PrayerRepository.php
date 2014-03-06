@@ -25,7 +25,7 @@ WHERE
         SELECT 1
         FROM PrayerToShare\Bundle\MainBundle\Entity\ArchivedPrayer ap2
         WHERE ap2.prayer = p
-        AND p.user = :user
+        AND ap2.user = :user
     )
 DQL;
 
