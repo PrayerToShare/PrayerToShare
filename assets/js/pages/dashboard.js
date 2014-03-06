@@ -74,11 +74,33 @@ define(['jquery', 'domReady', 'modules/Prayer'], function($, domReady, Prayer) {
             });
         },
 
+        initArchivePrayer: function() {
+            $('form.prayer-archive').on('submit', function(e) {
+                e.preventDefault();
+                var $form = $(this);
+
+                $.ajax({
+                    type: $form.attr('method'),
+                    url: $form.attr('action'),
+                    data: $form.serialize(),
+                    dataType: 'json',
+                    success: function(data, textStatus, jqXHR) {
+                        if (data.success) {
+                            $form.closest('.prayer').hide('slow');
+                        } else {
+                            // Do something else
+                        }
+                    }
+                });
+            });
+        },
+
         init: function() {
             domReady(function() {
                 page.initPostBehavior($('.new-post'));
                 page.initMenuSlide();
                 page.initPrayerListAjax();
+                page.initArchivePrayer();
             });
         }
     };
