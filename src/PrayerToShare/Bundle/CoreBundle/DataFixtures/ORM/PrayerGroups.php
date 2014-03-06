@@ -63,6 +63,12 @@ class PrayerGroups extends AbstractFixture implements OrderedFixtureInterface, C
         // Add some members to the groups
         $prayerGroupManager->createPrayerGroupMember($this->getReference('user-jsuggs'), $firstBaptist);
         $prayerGroupManager->createPrayerGroupMember($this->getReference('user-jnye'), $firstBaptist);
+        foreach (range(1, self::NUM_PRAYER_GROUPS) as $idx) {
+            if ($idx % 2 == 0) {
+                $prayerGroupManager->createPrayerGroupMember($this->getReference('user-jsuggs'), $this->getReference(sprintf('group-misc-%d', $idx)));
+                $prayerGroupManager->createPrayerGroupMember($this->getReference('user-jnye'), $this->getReference(sprintf('group-misc-%d', $idx)));
+            }
+        }
         foreach (range(1, 50) as $idx) {
             $prayerGroupManager->createPrayerGroupMember($this->getReference(sprintf('user-misc-%d', $idx)), $firstBaptist);
             $prayerGroupManager->createPrayerGroupMember($this->getReference(sprintf('user-misc-%d', $idx)), $this->getReference(sprintf('group-misc-%d', rand(1, self::NUM_PRAYER_GROUPS))));
