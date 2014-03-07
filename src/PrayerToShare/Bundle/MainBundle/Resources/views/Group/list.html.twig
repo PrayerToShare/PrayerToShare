@@ -16,7 +16,12 @@
     <h3>Public Prayer Groups</h3>
     <ul>
         {% for group in publicGroups %}
-            <li><a href="{{ path('group_view', {id: group.id}) }}">{{ group.name }}</a></li>
+            <li>
+                <a href="{{ path('group_view', {id: group.id}) }}">{{ group.name }}</a>
+                <form action="{{ path('group_join', {id: group.id}) }}" method="post">
+                    <button type="submit">Join Group</button>
+                </form>
+            </li>
         {% endfor %}
     </ul>
 

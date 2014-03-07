@@ -139,10 +139,23 @@ class GroupController extends BaseController
     }
 
     /**
+     * @Route("/join/{id}", name="group_join")
+     * @Secure(roles="ROLE_USER")
+     * @Method({"POST"})
+     */
+    public function joinAction(PrayerGroup $prayerGroup)
+    {
+        $user = $this->getUser();
+        $this->getPrayerGroupManager()->createPrayerGroupMember($user, $prayerGroup);
+        $this->getEntityManager()->flush();
+
+        return $this->redirect($this->generateUrl('group_list'));
+    }
+
+    /**
      * @Route("/leave/{id}", name="group_leave")
      * @Secure(roles="ROLE_USER")
      * @Method({"POST"})
-     * @Template("PrayerToShareMainBundle:Group:edit.html.twig")
      */
     public function leaveAction(PrayerGroup $prayerGroup)
     {
