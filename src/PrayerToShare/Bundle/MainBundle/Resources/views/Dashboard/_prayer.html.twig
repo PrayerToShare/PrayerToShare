@@ -3,7 +3,7 @@
         {% if prayer.anonymous %}
             <img src="{{ asset('img/anonymous.png') }}" class="profile-image" title="Anonymous Prayer">
         {% else %}
-            <a href="#">
+            <a href="{{ path('user_profile', {username: prayer.user.username}) }}">
                 <img src="{{ asset(profile_image(prayer.user)) }}" align="left" class="profile-image" title="{{ prayer.user.username }}">
             </a>
         {% endif %}
@@ -14,7 +14,7 @@
                 {% if prayer.anonymous %}
                     Anonymous
                 {% else %}
-                    <a href="#">
+                    <a href="{{ path('user_profile', {username: prayer.user.username}) }}">
                         {% if prayer.user.firstName and prayer.user.lastName %}
                             {{ prayer.user.firstName ~ ' ' ~ prayer.user.lastName }}
                         {% else %}
