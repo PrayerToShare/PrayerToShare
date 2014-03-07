@@ -22,7 +22,7 @@ class GroupController extends BaseController
     public function listAction()
     {
         $user = $this->getUser();
-        $publicGroups = $this->getRepository('PrayerToShareCoreBundle:PrayerGroup')->findAllPublicGroups();
+        $publicGroups = $this->getRepository('PrayerToShareCoreBundle:PrayerGroup')->getAvailablePublicGroups($user);
 
         return array(
             'groups' => $user->getPrayerGroups(),
