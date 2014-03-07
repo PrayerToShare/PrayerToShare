@@ -4,7 +4,12 @@
     <h2>My Prayer Groups</h2>
     <ol>
         {% for membership in groups %}
-            <li><a href="{{ path('group_view', {id: membership.prayerGroup.id}) }}">{{ membership.prayerGroup.name }}</a></li>
+            <li>
+                <a href="{{ path('group_view', {id: membership.prayerGroup.id}) }}">{{ membership.prayerGroup.name }}</a>
+                <form action="{{ path('group_leave', {id: membership.prayerGroup.id}) }}" method="post">
+                    <button type="submit">Leave Group</button>
+                </form>
+            </li>
         {% endfor %}
     </ol>
 

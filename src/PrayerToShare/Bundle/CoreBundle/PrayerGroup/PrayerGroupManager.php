@@ -40,4 +40,11 @@ class PrayerGroupManager
 
         return $prayerGroupMember;
     }
+
+    public function getPrayerGroupMember(User $user, PrayerGroup $prayerGroup)
+    {
+        $prayerGroupMember = $this->om->getRepository('PrayerToShareCoreBundle:PrayerGroupMember')->getPrayerGroupMember($user, $prayerGroup);
+
+        return $prayerGroupMember;
+    }
 }

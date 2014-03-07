@@ -6,7 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="PrayerGroupMemberRepository")
  * @ORM\Table(name="prayer_group_members")
  */
 class PrayerGroupMember
