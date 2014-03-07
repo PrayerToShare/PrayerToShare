@@ -38,6 +38,9 @@ class Prayers extends AbstractFixture implements OrderedFixtureInterface, Contai
 
             $p = $prayerManager->createPrayer($this->getReference(sprintf('user-misc-%d', rand(1, Users::NUM_USERS))), $prayerGroup);
             $p->setText($faker->paragraph(rand(1, 3)));
+            if ($idx % 7 == 0) {
+                $p->setAnonymous(true);
+            }
         }
 
         $manager->flush();

@@ -11,6 +11,10 @@ class PrayerFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('anonymous', 'checkbox', array(
+                'label' => 'Post Anonymously',
+                'required' => false,
+            ))
             ->add('text', 'textarea')
             ->add('submit', 'submit')
         ;

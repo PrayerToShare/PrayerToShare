@@ -47,6 +47,12 @@ class Prayer
     protected $text;
 
     /**
+     * @ORM\Column(type="boolean", options={"default": 0})
+     * @Serialize\Expose
+     */
+    protected $anonymous = false;
+
+    /**
      * @ORM\Column(type="datetime")
      * @Serialize\Expose
      */
@@ -82,6 +88,16 @@ class Prayer
     public function getText()
     {
         return $this->text;
+    }
+
+    public function setAnonymous($anonymous)
+    {
+        $this->anonymous = $anonymous;
+    }
+
+    public function isAnonymous()
+    {
+        return $this->anonymous;
     }
 
     public function getCreatedAt()

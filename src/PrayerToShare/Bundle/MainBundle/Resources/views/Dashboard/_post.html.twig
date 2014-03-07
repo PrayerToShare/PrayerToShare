@@ -3,6 +3,8 @@
     {{ form_errors(form.text) }}
     {{ form_widget(form.text, { attr: { 'class': 'new-post', 'placeholder': 'What is on your heart?' } }) }}
     <div class="actions is-hidden">
+        {{ form_label(form.anonymous) }}
+        {{ form_widget(form.anonymous) }}
         {{ form_widget(form.submit, { attr: { 'class': 'btn' } }) }}
     </div>
     {{ form_rest(form) }}
