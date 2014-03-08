@@ -31,6 +31,29 @@ class InviteController extends BaseController
         );
     }
 
+    /**
+     * @Route("/send", name="invite_send")
+     * @Secure(roles="ROLE_USER")
+     * @Method({"POST"})
+     * @Template
+     */
+    public function sendAction()
+    {
+        $form = $this->getInviteForm();
+        $form->bind($this->getRequest());
+
+        if ($form->isValid()) {
+            $data = $form->getData();
+            $emails = $this->getEmailInputParser()->parseEmails($data['emails']);
+
+            die('send invite emails');
+        }
+
+        return array(
+            'form' => $form->createView(),
+        );
+    }
+
     protected function getInviteForm()
     {
         return $this->createForm(new InviteFormType());

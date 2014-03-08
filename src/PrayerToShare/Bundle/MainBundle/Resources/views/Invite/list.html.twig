@@ -8,7 +8,9 @@
     </ol>
 
     <h3>Send more invites</h3>
-    <form>
+    <form action="{{ path('invite_send') }}" method="post">
         {{ form_widget(form) }}
+
+        <button type="submit">Send Invites</button>
     </form>
 {% endblock %}
