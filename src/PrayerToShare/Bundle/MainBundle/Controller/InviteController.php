@@ -46,7 +46,10 @@ class InviteController extends BaseController
             $data = $form->getData();
             $emails = $this->getEmailInputParser()->parseEmails($data['emails']);
 
-            die('send invite emails');
+            $user = $this->getUser();
+            $this->getInviteManager()->sendInvitesToEmails($user, $emails);
+
+            return $this->redirectToRoute('invite_list');
         }
 
         return array(

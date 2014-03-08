@@ -21,6 +21,11 @@ class CoreController extends Controller
         return $this->get('email.input_parser');
     }
 
+    public function getInviteManager()
+    {
+        return $this->get('invite_manager');
+    }
+
     /**
      * getEntityManager
      *
