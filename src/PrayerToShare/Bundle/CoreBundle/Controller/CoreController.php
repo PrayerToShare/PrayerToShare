@@ -16,6 +16,11 @@ class CoreController extends Controller
         return $this->get('prayergroup_manager');
     }
 
+    public function getEmailInputParser()
+    {
+        return $this->get('email.input_parser');
+    }
+
     /**
      * getEntityManager
      *
