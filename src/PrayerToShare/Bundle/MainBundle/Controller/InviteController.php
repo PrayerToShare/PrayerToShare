@@ -46,6 +46,8 @@ class InviteController extends BaseController
             $data = $form->getData();
             $emails = $this->getEmailInputParser()->parseEmails($data['emails']);
 
+            $this->addMessage('info', sprintf('Sending %d invites', count($emails)));
+
             $user = $this->getUser();
             $this->getInviteManager()->sendInvitesToEmails($user, $emails);
 
