@@ -6216,7 +6216,7 @@ a:hover {
 }
 #body .content .prayer-form .btn {
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: middle;
   width: 90px;
   padding: 8px 0;
   text-align: center;
@@ -6233,6 +6233,17 @@ a:hover {
   -o-box-shadow: 0 9px 10px -7px #5c4938;
   -ms-box-shadow: 0 9px 10px -7px #5c4938;
   box-shadow: 0 9px 10px -7px #5c4938;
+}
+#body .content .prayer-form .actions label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 10px;
+  margin: 0;
+}
+#body .content .prayer-form .actions input {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 12px 0 0;
 }
 #body .content .prayer-feed {
   padding: 0 16px 24px;

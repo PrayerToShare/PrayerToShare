@@ -1,9 +1,9 @@
 <div class="profile-image">
-    <img src="{{ asset(profile_image(app.user)) }}" align="left" class="profile-image" title="{{ app.user.username }}">
+    <img src="{{ asset(profile_image(app.user)) }}" align="left" class="profile-image" title="{{ app.user.firstName and app.user.lastName ? app.user.firstName ~ ' ' ~ app.user.lastName : app.user.username }}">
 </div>
 <div>
     <div class="profile-name">
-        <a href="#">{{ app.user.firstName and app.user.lastName ? app.user.firstName ~ ' ' ~ app.user.lastName : 'Name Here' }}</a>
+        <a href="#">{{ app.user.firstName and app.user.lastName ? app.user.firstName ~ ' ' ~ app.user.lastName : app.user.username }}</a>
     </div>
     <a href="{{ path('fos_user_profile_edit') }}" class="profile-link">(edit profile)</a>
 </div>
