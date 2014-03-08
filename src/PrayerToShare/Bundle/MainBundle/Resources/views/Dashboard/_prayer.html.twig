@@ -4,7 +4,7 @@
             <img src="{{ asset('img/anonymous.png') }}" class="profile-image" title="Anonymous Prayer">
         {% else %}
             <a href="{{ path('user_profile', {username: prayer.user.username}) }}">
-                <img src="{{ asset(profile_image(prayer.user)) }}" align="left" class="profile-image" title="{{ prayer.user.username }}">
+                <img src="{{ asset(profile_image(prayer.user)) }}" align="left" class="profile-image" title="{{ prayer.user.firstName and prayer.user.lastName ? prayer.user.firstName ~ ' ' ~ prayer.user.lastName : prayer.user.username }}">
             </a>
         {% endif %}
     </div>
@@ -26,7 +26,7 @@
                     {% endif %}
                 {% endif %}
             </div>
-            <div class="date four right">{{ prayer.createdAt|date }}</div>
+            <div class="date four right">{{ prayer.createdAt|date('F j, Y g:i a') }}</div>
         </div>
         <div class="prayer-text">
             {{ prayer.text }}

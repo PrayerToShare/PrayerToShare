@@ -6356,6 +6356,17 @@ a:hover {
   padding: 12px 16px;
   font-weight: bold;
 }
+#body .fos_user_profile_edit {
+  margin: 0 24px;
+  border-top: 1px solid #C3AF97;
+  padding: 24px;
+  background-color: #ffffff 20%;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff 20%), to(#f0ebe6));
+  background: -webkit-linear-gradient(top, #f0ebe6, #ffffff 20%);
+  background: -moz-linear-gradient(top, #f0ebe6, #ffffff 20%);
+  background: -ms-linear-gradient(top, #f0ebe6, #ffffff 20%);
+  background: -o-linear-gradient(top, #f0ebe6, #ffffff 20%);
+}
 #body .btn {
   border: none;
   color: #fff;
