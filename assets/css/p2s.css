@@ -6285,15 +6285,34 @@ a:hover {
 #body .content .prayer-feed .feed .prayer-list li.prayer .prayer-text {
   padding: 6px 0 10px;
 }
-#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions .prayer-pray {
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions .prayer-pray,
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions .prayer-archive {
   display: inline-block;
   vertical-align: middle;
 }
-#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions .prayer-pray button {
-  padding: 3px 0 3px 22px;
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions .prayer-pray button,
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions .prayer-archive button {
+  padding: 3px 3px 3px 22px;
   display: inline-block;
   background: url('/img/prayicon.jpg') no-repeat 0 0;
   border: 0;
+  height: 18px;
+  color: #274b5e;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions .prayer-pray button.active,
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions .prayer-archive button.active {
+  background-position: 0 100%;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions .prayer-pray button:hover,
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions .prayer-archive button:hover {
+  text-decoration: underline;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions .prayer-archive button {
+  padding-left: 3px;
+  background: none;
+}
+#body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions .prayer-inappropriate {
+  padding: 3px;
 }
 #body .content .prayer-feed .feed .prayer-list li.prayer .prayer-actions a {
   display: inline-block;

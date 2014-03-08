@@ -348,15 +348,30 @@ a:hover {
                                 padding: 6px 0 10px;
                             }
                             .prayer-actions {
-                                .prayer-pray {
+                                .prayer-pray, .prayer-archive {
                                     display: inline-block;
                                     vertical-align: middle;
                                     button {
-                                        padding: 3px 0 3px 22px;
+                                        padding: 3px 3px 3px 22px;
                                         display: inline-block;
                                         background: url('/img/prayicon.jpg') no-repeat 0 0;
                                         border: 0;
+                                        height: 18px;
+                                        color: #274b5e;
+                                        &.active {
+                                            background-position: 0 100%;
+                                        }
+                                        &:hover {
+                                            text-decoration: underline;
+                                        }
                                     }
+                                }
+                                .prayer-archive button {
+                                    padding-left: 3px;
+                                    background: none;
+                                }
+                                .prayer-inappropriate {
+                                    padding: 3px;
                                 }
                                 a {
                                     display: inline-block;

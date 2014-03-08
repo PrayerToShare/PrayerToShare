@@ -65,9 +65,15 @@ define(['jquery', 'domReady', 'modules/Prayer'], function($, domReady, Prayer) {
                     dataType: 'json',
                     success: function(data, textStatus, jqXHR) {
                         if (data.success) {
-                            // Do something here
+                            if ($form.attr('action').match('create')) {
+                                $form.attr('action', $form.closest('.prayer-actions').data('unpray'));
+                                $form.find('button').addClass('active').text('Stop praying');
+                            } else {
+                                $form.attr('action', $form.closest('.prayer-actions').data('pray'));
+                                $form.find('button').removeClass('active').text('Pray for this');
+                            }
                         } else {
-                            // Do something else
+                            
                         }
                     }
                 });
