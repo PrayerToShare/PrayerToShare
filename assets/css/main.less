@@ -220,8 +220,11 @@ a:hover {
                 float: left;
                 font: normal 11px Arial, Helvetica, Sans-serif;
                 a, a:hover {
-                    font: bold 10px Arial, Helvetica, Sans-serif;
+                    font: normal 10px Arial, Helvetica, Sans-serif;
                     color: #274b5e;
+                    &.view-all {
+                        font: bold 10px Arial, Helvetica, Sans-serif;
+                    }
                 }
                 .profile-name {
                     padding-top: 3px;
@@ -238,6 +241,9 @@ a:hover {
                         display: block;
                     }
                 }
+            }
+            .groups > div {
+                padding: 2px 0;        
             }
         }
         .profile-image {

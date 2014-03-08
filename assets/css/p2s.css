@@ -6136,8 +6136,14 @@ a:hover {
 #body .content .profile .groups a,
 #body .content .profile .info a:hover,
 #body .content .profile .groups a:hover {
-  font: bold 10px Arial, Helvetica, Sans-serif;
+  font: normal 10px Arial, Helvetica, Sans-serif;
   color: #274b5e;
+}
+#body .content .profile .info a.view-all,
+#body .content .profile .groups a.view-all,
+#body .content .profile .info a:hover.view-all,
+#body .content .profile .groups a:hover.view-all {
+  font: bold 10px Arial, Helvetica, Sans-serif;
 }
 #body .content .profile .info .profile-name,
 #body .content .profile .groups .profile-name {
@@ -6157,6 +6163,9 @@ a:hover {
 #body .content .profile .info .profile-image img,
 #body .content .profile .groups .profile-image img {
   display: block;
+}
+#body .content .profile .groups > div {
+  padding: 2px 0;
 }
 #body .content .profile-image {
   width: 50px;
