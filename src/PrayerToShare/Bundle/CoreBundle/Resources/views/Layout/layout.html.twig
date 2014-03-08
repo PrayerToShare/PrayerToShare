@@ -18,10 +18,11 @@
             {% for message in messages %}
                 <div class="alert alert-{{ type }}">
                     <strong>{{ message }}</strong>
-                    <button type="button" class="close" data-dismiss="alert" href="#">×</a>
+                    <button type="button" class="close" data-dismiss="alert" href="#">×</button>
                 </div>
             {% endfor %}
         {% endfor %}
+
 
         {% block content %}Default Content{% endblock %}
     </div>

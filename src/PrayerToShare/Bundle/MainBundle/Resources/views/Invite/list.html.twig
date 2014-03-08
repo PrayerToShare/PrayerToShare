@@ -14,3 +14,7 @@
         <button type="submit">Send Invites</button>
     </form>
 {% endblock %}
+
+{% block requirejs %}
+    {{ include('PrayerToShareCoreBundle:Layout:requirejs.html.twig', {module: 'pages/dashboard'}) }}
+{% endblock %}
