@@ -50,6 +50,7 @@ class InviteController extends BaseController
 
             $user = $this->getUser();
             $this->getInviteManager()->sendInvitesToEmails($user, $emails);
+            $this->getEntityManager()->flush();
 
             return $this->redirectToRoute('invite_list');
         }
