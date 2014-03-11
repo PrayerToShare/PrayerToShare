@@ -23,16 +23,22 @@ class EmailManager
      */
     public function __construct(ObjectManager $om, LoggerInterface $logger)
     {
-        $this->om = $em;
+        $this->om = $om;
         $this->logger = $logger;
     }
 
-    public function createEmailMessage($template, array $data = array())
+    public function createEmailMessage($template, $email, array $data = null)
     {
-        $emailMessage = new EmailMessage($template, $data);
+        $emailMessage = new EmailMessage($template, $email);
+        $emailMessage->setData($data);
         $this->om->persist($emailMessage);
-        $this->logger->info(sprintf('EmailMessage - Creating Message - %s %s', $message->getTemplate(), $message->getJsonData()));
 
         return $emailMessage;
+    }
+
+    public function sendEmailMessage(EmailMessage $message)
+    {
+        // TODO
+        $this->logger->info(sprintf('EmailMessage - Creating Message - %s %s', $message->getTemplate(), $message->getJsonData()));
     }
 }

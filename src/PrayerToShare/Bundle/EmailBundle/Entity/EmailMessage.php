@@ -36,7 +36,7 @@ class EmailMessage
     protected $template;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     protected $data;
 
@@ -50,10 +50,10 @@ class EmailMessage
      */
     protected $createdAt;
 
-    public function __construct($template, array $data = array())
+    public function __construct($template, $email)
     {
         $this->template = $template;
-        $this->setData($data);
+        $this->email = $email;
         $this->createdAt = new \DateTime();
     }
 
@@ -88,7 +88,7 @@ class EmailMessage
         return $this->template;
     }
 
-    public function setData(array $data)
+    public function setData(array $data = null)
     {
         $this->data = json_encode($data);
     }
