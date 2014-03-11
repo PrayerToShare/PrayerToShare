@@ -4,6 +4,7 @@ namespace PrayerToShare\Bundle\EmailBundle\Email;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use JMS\DiExtraBundle\Annotation as DI;
+use PrayerToShare\Bundle\EmailBundle\Email\EmailSenderInterface;
 use PrayerToShare\Bundle\EmailBundle\Entity\EmailMessage;
 use Symfony\Component\HttpKernel\Log\LoggerInterface;
 
@@ -13,17 +14,20 @@ use Symfony\Component\HttpKernel\Log\LoggerInterface;
 class EmailManager
 {
     protected $om;
+    protected $sender;
     protected $logger;
 
     /**
      * @DI\InjectParams({
      *      "om" = @DI\Inject("doctrine.orm.default_entity_manager"),
+     *      "sender" = @DI\Inject("email_sender"),
      *      "logger" = @DI\Inject("logger"),
      * })
      */
-    public function __construct(ObjectManager $om, LoggerInterface $logger)
+    public function __construct(ObjectManager $om, EmailSenderInterface $sender, LoggerInterface $logger)
     {
         $this->om = $om;
+        $this->sender = $sender;
         $this->logger = $logger;
     }
 
@@ -38,7 +42,7 @@ class EmailManager
 
     public function sendEmailMessage(EmailMessage $message)
     {
-        // TODO
-        $this->logger->info(sprintf('EmailMessage - Creating Message - %s %s', $message->getTemplate(), $message->getJsonData()));
+        $this->logger->info(sprintf('EmailManager::sendEmailMessage - %s %s', $message->getTemplate(), $message->getJsonData()));
+        $this->sender->send($message);
     }
 }
