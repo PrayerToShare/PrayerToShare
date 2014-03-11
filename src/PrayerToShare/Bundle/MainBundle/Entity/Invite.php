@@ -15,8 +15,13 @@ class Invite
 {
     /**
      * @ORM\Id
+     * @ORM\Column(type="string", length=32)
+     */
+    protected $code;
+
+    /**
      * @ORM\ManyToOne(targetEntity="PrayerToShare\Bundle\CoreBundle\Entity\User", inversedBy="invites")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     protected $user;
 
@@ -42,6 +47,12 @@ class Invite
         $this->user = $user;
         $this->email = $email;
         $this->createdAt = new \DateTime();
+        $this->code = hash('md5', sprintf('%s.%s.%s', $user->getId(), $email, $this->getCreatedAt()->format('c')));
+    }
+
+    public function getCode()
+    {
+        return $this->code;
     }
 
     public function getUser()
