@@ -60,6 +60,17 @@ class InviteController extends BaseController
         );
     }
 
+    /**
+     * @Route("/join/{code}", name="invite_join")
+     * @ParamConverter("invite", options={"mapping": {"code": "code"}})
+     * @Method({"GET"})
+     * @Template
+     */
+    public function joinAction(Invite $invite)
+    {
+        // TODO - Track the invite back to the user
+    }
+
     protected function getInviteForm()
     {
         return $this->createForm(new InviteFormType());
