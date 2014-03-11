@@ -13,6 +13,11 @@ class FilesystemEmailSender extends AbstractEmailSender
 {
     private $directory;
 
+    /**
+     * @DI\InjectParams({
+     *      "directory" = @DI\Inject("%local_email_path%"),
+     * })
+     */
     public function __construct($directory)
     {
         $this->directory = $directory;
@@ -20,7 +25,7 @@ class FilesystemEmailSender extends AbstractEmailSender
 
     protected function _send(EmailMessage $emailMessage)
     {
-        $file = sprintf('%s/%s', $this->directory, $emailMessage->getCode());
+        $file = sprintf('%s/%s', $this->directory, $emailMessage->getId());
         $data = array(
             'template' => $emailMessage->getTemplate(),
             'data' => $emailMessage->getData(),

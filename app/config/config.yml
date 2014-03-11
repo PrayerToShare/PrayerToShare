@@ -2,6 +2,9 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
 
+services:
+    email_sender: @email_sender.file_system
+
 framework:
     #esi:             ~
     translator: { fallback: en }
