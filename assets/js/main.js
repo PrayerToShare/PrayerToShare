@@ -3,9 +3,15 @@ requirejs.config({
     baseUrl: '/assets/js',
     paths: {
         'jquery': '../vendor/jquery/dist/jquery',
-        'domReady': '../vendor/requirejs-domready/domReady'
+        'domReady': '../vendor/requirejs-domready/domReady',
+        'bootstrap.alert': "../vendor/bootstrap/js/alert"
+    },
+    shim: {
+        'bootstrap.alert': {
+            deps: ['jquery']
+        }
     }
 });
 
 // Make these libs available on ALL pages
-require(['jquery'], function() {});
+require(['jquery', 'bootstrap.alert'], function() {});

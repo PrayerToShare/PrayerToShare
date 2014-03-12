@@ -1,0 +1,20 @@
+{% extends "PrayerToShareCoreBundle:Layout:layout.html.twig" %}
+
+{% block content %}
+    <h1>My Invites</h1>
+
+    <p>Here are you invites</p>
+    <ol>
+    </ol>
+
+    <h3>Send more invites</h3>
+    <form action="{{ path('invite_send') }}" method="post">
+        {{ form_widget(form) }}
+
+        <button type="submit">Send Invites</button>
+    </form>
+{% endblock %}
+
+{% block requirejs %}
+    {{ include('PrayerToShareCoreBundle:Layout:requirejs.html.twig', {module: 'pages/dashboard'}) }}
+{% endblock %}
