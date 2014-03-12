@@ -105,3 +105,7 @@ prayer_to_share_storage:
         aws_key: %amazon_aws_key%
         aws_secret_key: %amazon_aws_secret_key%
         base_url: %amazon_s3_base_url%
+
+
+prayer_to_share_mandrill:
+    api_key: %mandrill_api_key%

@@ -19,3 +19,4 @@ parameters:
     amazon_s3_bucket_name:  "bucket-name"
 
     local_file_path: %kernel.root_dir%/../web/uploads/local"
+    mandrill_api_key: "abc123"
