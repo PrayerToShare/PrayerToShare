@@ -28,7 +28,8 @@
         "jms/serializer-bundle": "*",
         "friendsofsymfony/user-bundle": "*",
         "fzaninotto/faker": "~1.2",
-        "willdurand/faker-bundle": "@stable"
+        "willdurand/faker-bundle": "@stable",
+        "mandrill/mandrill": "dev-master"
     },
     "config": {
         "bin-dir": "bin"
