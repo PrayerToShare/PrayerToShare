@@ -9,7 +9,7 @@ use PrayerToShare\Bundle\EmailBundle\Entity\EmailMessage;
 /**
  * @DI\Service("email_sender.file_system")
  */
-class FilesystemEmailSender extends AbstractEmailSender
+class FilesystemSender extends AbstractEmailSender
 {
     private $directory;
 
