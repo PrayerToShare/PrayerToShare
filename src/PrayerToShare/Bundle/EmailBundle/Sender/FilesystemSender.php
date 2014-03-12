@@ -20,6 +20,9 @@ class FilesystemEmailSender extends AbstractEmailSender
      */
     public function __construct($directory)
     {
+        if (!file_exists($directory)) {
+            mkdir($directory, 0755, true);
+        }
         $this->directory = $directory;
     }
 
