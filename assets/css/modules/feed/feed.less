@@ -1,0 +1,114 @@
+.prayer-feed {
+    padding: 0 16px 24px;
+    overflow: hidden;
+    color: #2d2d2d;
+
+    .feed {
+        border: 1px solid #E5DFD8;
+        padding: 0;
+        font-size: 11px;
+
+        .prayer-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                position: relative;
+
+                a,
+                a:hover {
+                    color: #274b5e;
+                }
+
+                &.prayer {
+                    padding: 16px;
+                    font-size: 11px;
+                    overflow: hidden;
+
+                    &:first-child { border-top: 0; }
+
+                    .image img {
+                        border: 1px solid #fff;
+                        .boxShadow(0, 0, 5px, 0, #E5DFD8);
+                    }
+
+                    .prayer-meta {
+                        overflow: hidden;
+
+                        .name { font: bold 12px Georgia, "Times New Roman", serif; }
+
+                        .group {
+                            font-weight: normal;
+                            color: #4d788c;
+
+                            a {
+                                font-size: 12px;
+                                font-weight: bold;
+                            }
+                        }
+
+                        .date {
+                            text-align: right;
+                            font-size: 10px;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .prayer-text { padding: 6px 0 10px; }
+
+                    .prayer-actions {
+                        .prayer-pray,
+                        .prayer-archive {
+                            display: inline-block;
+                            vertical-align: middle;
+
+                            button {
+                                padding: 3px 3px 3px 22px;
+                                display: inline-block;
+                                background: url('/img/prayicon.jpg') no-repeat 0 0;
+                                border: 0;
+                                height: 18px;
+                                color: #274b5e;
+
+                                &.active { background-position: 0 100%; }
+                                &:hover { ext-decoration: underline; }
+                            }
+                        }
+
+                        .prayer-archive button {
+                            padding-left: 3px;
+                            background: none;
+                        }
+
+                        .prayer-inappropriate { padding: 3px; }
+
+                        a {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    &:after {
+                        content: '';
+                        background: #E5DFD8;
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        height: 1px;
+                        width: 100%;
+                    }
+
+                    &:hover { background: #E1E9EB; }
+                }
+
+                &.show-more {
+                    background: #f7f4f1;
+                    padding: 12px 16px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

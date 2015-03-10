@@ -1,0 +1,117 @@
+// Widths
+.one    { width: 8.33333%; }
+.two    { width: 16.66667%; }
+.three  { width: 25%; }
+.four   { width: 33.33333%; }
+.five   { width: 41.66667%; }
+.six    { width: 50%; }
+.seven  { width: 58.33333%; }
+.eight  { width: 66.66667%; }
+.nine   { width: 75%; }
+.ten    { width: 83.33333%; }
+.eleven { width: 91.66667%; }
+.twelve { width: 100%; }
+
+// Floats
+.left  { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+
+// Fonts
+#font {
+    .straight-flush  { font-size: 30px; }
+    .four-of-a-kind  { font-size: 24px; }
+    .full-house      { font-size: 20px; }
+    .flush           { font-size: 18px; }
+    .straight        { font-size: 16px; }
+    .three-of-a-kind { font-size: 14px; }
+    .two-pair        { font-size: 12px; }
+    .pair            { font-size: 11px; }
+    .high-card       { font-size: 10px; }
+}
+
+// Mixins
+.boxShadow (@x: 0, @y: 3px, @blur: 17px, @spread: 0, @color: #ddd) {
+    -moz-box-shadow:    @x @y @blur @spread @color;
+    -webkit-box-shadow: @x @y @blur @spread @color;
+    -o-box-shadow:      @x @y @blur @spread @color;
+    -ms-box-shadow:     @x @y @blur @spread @color;
+    box-shadow:         @x @y @blur @spread @color;
+}
+.boxShadowInset (@x: 0, @y: 3px, @blur: 17px, @spread: 0, @color: #ddd) {
+    -moz-box-shadow:    inset @x @y @blur @color;
+    -webkit-box-shadow: inset @x @y @blur @color;
+    -o-box-shadow:      inset @x @y @blur @color;
+    -ms-box-shadow:     inset @x @y @blur @color;
+    box-shadow:         inset @x @y @blur @color;
+}
+.border-radius (@radius) {
+    -moz-border-radius:    @radius;
+    -webkit-border-radius: @radius;
+    -o-border-radius:      @radius;
+    -ms-border-radius:     @radius;
+    border-radius:         @radius;
+}
+.gradient (@color1: #1a82f7, @color2: #2F2727) {
+    background-color: @color1;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@color1), to(@color2));
+    background: -webkit-linear-gradient(top, @color2, @color1);
+    background: -moz-linear-gradient(top, @color2, @color1);
+    background: -ms-linear-gradient(top, @color2, @color1);
+    background: -o-linear-gradient(top, @color2, @color1);
+}
+.opacity (@opacity) {
+    opacity: @opacity / 100;
+    filter: alpha(opacity=@opacity);
+}
+
+// Globals
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+html { background: #274b5e; }
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font: normal 13px Arial, Helvetica, Sans-serif;
+    background: #4d788c;
+    color: #2d2d2d;
+}
+
+a {
+    color: #2d2d2d;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+}
+
+.is-hidden { display: none !important; }
+
+#container {
+    width: 1070px;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.top-verse,
+.bottom-verse {
+    padding: 5px 0;
+    text-align: center;
+}
+
+.error_msg {
+    border: 1px solid #C3AF97;
+    margin: 24px 26px 0;
+    overflow: hidden;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #cc0000;
+}

@@ -1,0 +1,110 @@
+#header {
+    .gradient(#3c2918, #604329);
+    position: relative;
+    height: 102px;
+    padding-top: 12px;
+    border-bottom: 1px solid #604329;
+    .boxShadow(0, 3px, 17px, 0, #3c2918);
+
+    .header-inner {
+        width: 1070px;
+        background: #fff;
+        position: relative;
+        margin: 0 auto;
+        height: 75px;
+        z-index: 3;
+        .border-radius(5px 5px 0 0);
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 8px;
+        }
+
+        .header_links {
+            padding-left: 30px;
+            position: absolute;
+            top: 0px;
+            right: 24px;
+
+            ul {
+                margin: 0;
+                padding: 0 10px;
+                list-style: none;
+                float: left;
+                display: inline;
+                .gradient(#4d788c, #274b5e);
+                .border-radius(0 0 5px 5px);
+                .boxShadow(0, 12px, 8px, -10px, #5c4938);
+
+                li {
+                    float: left;
+                    display: inline;
+                    position: relative;
+                    height: 26px;
+
+                    &:first-child { border-left: 0; }
+
+                    &:hover {
+                        text-decoration: none;
+                        background: #055166;
+
+                        .menu { display: block; }
+                    }
+
+                    a {
+                        float: left;
+                        display: inline;
+                        font: normal 10px Arial, Helvetica, Sans-serif;
+                        text-transform: uppercase;
+                        color: #fff;
+                        text-decoration: none;
+                        padding: 7px 0;
+                        width: 100px;
+                        height: 26px;
+                        text-align: center;
+
+                        &:hover,
+                        &:active {
+                            text-decoration: none;
+                            background: #055166;
+                        }
+                    }
+
+                    .menu {
+                        position: absolute;
+                        top: 26px;
+                        right: 0px;
+                        display: none;
+                        padding: 10px 0;
+                        width: 190px;
+                        background: #055166;
+                        .boxShadow(0, 12px, 8px, -10px, #5c4938);
+                        .border-radius(0 0 3px 3px);
+
+                        a {
+                            padding: 5px 10px;
+                            margin: 0 10px;
+                            display: block;
+                            font-size: 10px;
+                            font-weight: bold;
+                            color: #fff;
+                            width: auto;
+                            float: none;
+                            border: 0;
+                            text-align: right;
+
+                            &:hover { color: #79a8b6; }
+                        }
+                        
+                        .sep {
+                            height: 1px;
+                            margin: 5px 10px;
+                            background: #79a8b6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
