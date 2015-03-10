@@ -16,31 +16,43 @@
         </div>
 
         <div class="page-content">
-            <a href="{{ path('group_new') }}" class="btn right">Create a New Prayer Group</a>
+            <a href="{{ path('group_new') }}" class="btn right group-add-btn">Create a New Prayer Group</a>
 
-            <h2 class="subtitle">My Prayer Groups</h2>
-            <ol>
-                {% for membership in groups %}
-                    <li>
-                        <a href="{{ path('group_view', {id: membership.prayerGroup.id}) }}">{{ membership.prayerGroup.name }}</a>
-                        <form action="{{ path('group_leave', {id: membership.prayerGroup.id}) }}" method="post">
-                            <button type="submit">Leave Group</button>
-                        </form>
-                    </li>
-                {% endfor %}
-            </ol>
+            {% if groups|length %}
+                <div class="group-list">
+                    <h2 class="subtitle">My Prayer Groups</h2>
+                    <ul class="list-group">
+                        {% for membership in groups %}
+                            <li class="list-group-item">
+                                <form action="{{ path('group_leave', {id: membership.prayerGroup.id}) }}" method="post" class="right">
+                                    <button type="submit" class="btn btn-sm">Leave Group</button>
+                                </form>
+                                <a href="{{ path('group_view', {id: membership.prayerGroup.id}) }}" class="group-name">{{ membership.prayerGroup.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            {% endif %}
 
-            <h3 class="subtitle">Public Prayer Groups</h3>
-            <ul>
-                {% for group in publicGroups %}
-                    <li>
-                        <a href="{{ path('group_view', {id: group.id}) }}">{{ group.name }}</a>
-                        <form action="{{ path('group_join', {id: group.id}) }}" method="post">
-                            <button type="submit">Join Group</button>
-                        </form>
-                    </li>
-                {% endfor %}
-            </ul>
+            {% if publicGroups|length %}
+                <div class="group-list">
+                    <h3 class="subtitle">Public Prayer Groups</h3>
+                    <ul>
+                        {% for group in publicGroups %}
+                            <li>
+                                <a href="{{ path('group_view', {id: group.id}) }}">{{ group.name }}</a>
+                                <form action="{{ path('group_join', {id: group.id}) }}" method="post">
+                                    <button type="submit" class="btn btn-sm">Join Group</button>
+                                </form>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            {% if not groups|length and not publicGroups|length %}
+                <div class="note">No groups. Create one!</div>
+            {% endif %}
         </div>
     </div>
 

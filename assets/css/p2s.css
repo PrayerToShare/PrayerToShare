@@ -6056,6 +6056,40 @@ a:hover {
   border-top: 1px solid #C3AF97;
   padding: 0;
 }
+#body .content .page-content {
+  padding: 0 16px 24px;
+}
+#body .content .page-content h2.subtitle {
+  font: 700 24px/30px Georgia, "Times New Roman", serif;
+}
+#body .content .page-content h3.subtitle {
+  font: 700 18px/24px Georgia, "Times New Roman", serif;
+}
+#body .content .page-content .group-add-btn {
+  margin-top: 20px;
+}
+#body .content .page-content .group-list {
+  padding: 20px 0 0;
+}
+#body .content .page-content .group-list h3 {
+  margin-top: 10px;
+}
+#body .content .page-content .group-list .list-group-item {
+  padding: 10px 120px 10px 15px;
+  position: relative;
+}
+#body .content .page-content .group-list .list-group-item .group-name {
+  font-size: 14px;
+  color: #274b5e;
+}
+#body .content .page-content .group-list .list-group-item .btn-sm {
+  position: absolute;
+  top: 50%;
+  right: 3px;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+}
 #body .content .profile {
   background: #E1E9EB;
   padding: 12px 16px;
@@ -6066,20 +6100,20 @@ a:hover {
 #body .content .profile .groups {
   width: 50%;
   float: left;
-  font: normal 11px Arial, Helvetica, Sans-serif;
+  font: normal 12px Arial, Helvetica, Sans-serif;
 }
 #body .content .profile .info a,
 #body .content .profile .groups a,
 #body .content .profile .info a:hover,
 #body .content .profile .groups a:hover {
-  font: normal 10px Arial, Helvetica, Sans-serif;
+  font: normal 12px Arial, Helvetica, Sans-serif;
   color: #274b5e;
 }
 #body .content .profile .info a.view-all,
 #body .content .profile .groups a.view-all,
 #body .content .profile .info a:hover.view-all,
 #body .content .profile .groups a:hover.view-all {
-  font: bold 10px Arial, Helvetica, Sans-serif;
+  font: bold 12px Arial, Helvetica, Sans-serif;
 }
 #body .content .profile .info .profile-name,
 #body .content .profile .groups .profile-name {
@@ -6087,7 +6121,11 @@ a:hover {
 }
 #body .content .profile .info .profile-name a,
 #body .content .profile .groups .profile-name a {
-  font: bold 12px Georgia, "Times New Roman", serif;
+  font: bold 14px Georgia, "Times New Roman", serif;
+}
+#body .content .profile .info .profile-link,
+#body .content .profile .groups .profile-link {
+  font-size: 11px;
 }
 #body .content .profile .info .profile-image,
 #body .content .profile .groups .profile-image {
@@ -6225,7 +6263,7 @@ h2.box_headline {
   float: left;
   padding: 5px 8px;
   text-align: left;
-  font: bold 11px/20px Arial, Helvetica, Sans-serif;
+  font: normal 11px/20px Arial, Helvetica, Sans-serif;
   color: #000;
   -moz-box-shadow: inset 0 0 5px #e2ded3;
   -webkit-box-shadow: inset 0 0 5px #e2ded3;
@@ -6234,7 +6272,7 @@ h2.box_headline {
   box-shadow: inset 0 0 5px #e2ded3;
 }
 .sidebar .stats > div > span.count {
-  font: bold 14px/20px Georgia, "Times New Roman", serif;
+  font: bold 16px/20px Georgia, "Times New Roman", serif;
   background: #E1E9EB;
   border-left: 1px solid #fff;
   text-align: center;
@@ -6256,7 +6294,7 @@ h2.box_headline {
   -o-box-shadow: inset 0 0 5px #e2ded3;
   -ms-box-shadow: inset 0 0 5px #e2ded3;
   box-shadow: inset 0 0 5px #e2ded3;
-  font-size: 11px;
+  font-size: 12px;
   background: #E1E9EB;
 }
 /***
@@ -6483,10 +6521,8 @@ h2.box_headline {
   text-align: center;
   display: inline-block;
   cursor: pointer;
-  margin-top: 15px;
-  margin-bottom: 0;
   font: normal 11px Arial, Helvetica, Sans-serif;
-  width: auto;
+  margin: 0;
   background-color: #4d788c;
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4d788c), to(#274b5e));
   background: -webkit-linear-gradient(top, #274b5e, #4d788c);
@@ -6500,7 +6536,11 @@ h2.box_headline {
   border-radius: 3px;
 }
 .btn:hover {
-  background: #4d788c !important;
+  background: #4d788c;
+  color: #fff;
+}
+.btn.btn-sm {
+  padding: 8px 20px;
 }
 .prayer-feed {
   padding: 0 16px 24px;
@@ -6613,19 +6653,19 @@ h2.box_headline {
   padding: 12px 16px;
   font-weight: bold;
 }
-.prayer-form {
+#body .content .prayer-form {
   padding: 24px 0 36px;
   margin: 0 16px 36px;
   overflow: hidden;
   border-bottom: 1px solid #E5DFD8;
   border-left: 1px solid #fff;
 }
-.prayer-form label {
+#body .content .prayer-form label {
   font: bold 14px Georgia, "Times New Roman", serif;
   color: #274b5e;
   text-transform: capitalize;
 }
-.prayer-form .new-post {
+#body .content .prayer-form .new-post {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #C3AF97;
@@ -6641,7 +6681,7 @@ h2.box_headline {
   -ms-box-shadow: 0 9px 10px -7px #5c4938;
   box-shadow: 0 9px 10px -7px #5c4938;
 }
-.prayer-form .new-post.active {
+#body .content .prayer-form .new-post.active {
   min-height: 84px;
   -moz-box-shadow: 0 0 0 0 #ffffff;
   -webkit-box-shadow: 0 0 0 0 #ffffff;
@@ -6649,7 +6689,7 @@ h2.box_headline {
   -ms-box-shadow: 0 0 0 0 #ffffff;
   box-shadow: 0 0 0 0 #ffffff;
 }
-.prayer-form .btn {
+#body .content .prayer-form .btn {
   display: inline-block;
   vertical-align: middle;
   width: 90px;
@@ -6657,7 +6697,7 @@ h2.box_headline {
   text-align: center;
   margin-top: 0;
 }
-.prayer-form .actions {
+#body .content .prayer-form .actions {
   border: 1px solid #C3AF97;
   border-top: 0;
   padding: 5px;
@@ -6669,13 +6709,13 @@ h2.box_headline {
   -ms-box-shadow: 0 9px 10px -7px #5c4938;
   box-shadow: 0 9px 10px -7px #5c4938;
 }
-.prayer-form .actions label {
+#body .content .prayer-form .actions label {
   display: inline-block;
   vertical-align: middle;
   font-size: 10px;
   margin: 0;
 }
-.prayer-form .actions input {
+#body .content .prayer-form .actions input {
   display: inline-block;
   vertical-align: middle;
   margin: 0 12px 0 0;

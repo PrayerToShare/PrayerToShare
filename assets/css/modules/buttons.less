@@ -6,12 +6,15 @@
     text-align: center;
     display: inline-block;
     cursor: pointer;
-    margin-top: 15px;
-    margin-bottom: 0;
     font: normal 11px Arial, Helvetica, Sans-serif;
-    width: auto;
+    margin: 0;
     .gradient(#4d788c, #274b5e);
     .border-radius(3px);
 
-    &:hover { background: #4d788c !important; }
+    &:hover {
+        background: #4d788c;
+        color: #fff;
+    }
+
+    &.btn-sm { padding: 8px 20px; }
 }
