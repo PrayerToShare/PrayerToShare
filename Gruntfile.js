@@ -97,7 +97,7 @@ module.exports = function(grunt) {
 
             },
             less: {
-                files: 'assets/css/*.less',
+                files: 'assets/css/**',
                 tasks: ['clean:build', 'less', 'copy'],
                 options: {
                     spawn: true
