@@ -1,5 +1,5 @@
 <div class="profile-image">
-    <img src="{{ asset(profile_image(app.user)) }}" align="left" class="profile-image" title="{{ app.user.firstName and app.user.lastName ? app.user.firstName ~ ' ' ~ app.user.lastName : app.user.username }}">
+    <img src="{{ asset(profile_image(app.user)) }}" align="left" title="{{ app.user.firstName and app.user.lastName ? app.user.firstName ~ ' ' ~ app.user.lastName : app.user.username }}">
 </div>
 <div>
     <div class="profile-name">

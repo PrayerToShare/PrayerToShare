@@ -6344,10 +6344,10 @@ h2.box_headline {
 .login_register .login-copy .opacity-bg,
 .login_register .register-copy .opacity-bg {
   background: #4d788c;
+  opacity: 100;
+  filter: alpha(opacity=10000);
   opacity: 1;
   filter: alpha(opacity=100);
-  opacity: 0.01;
-  filter: alpha(opacity=1);
   border: 1px solid #C3AF97;
   height: 295px;
   position: absolute;

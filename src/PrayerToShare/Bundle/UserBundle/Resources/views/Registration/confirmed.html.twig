@@ -1,0 +1,13 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+	<div class="login_register">
+	    <h3 class="subtitle">{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</h3>
+	    {% if app.session is not empty %}
+	        {% set targetUrl = app.session.get('_security.' ~ app.security.token.providerKey ~ '.target_path') %}
+	        <p><a href="{{ path('home') }}">Get started</a></p>
+	    {% endif %}
+	</div>
+{% endblock fos_user_content %}

@@ -1,0 +1,28 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    {# if error %}
+        <div>{{ error|trans }}</div>
+    {% endif #}
+
+    <div class="login_register">
+        <div class="slide-container">
+            <div class="right">
+                <div class="register-copy five left">
+                    <div class="opacity-bg"></div>
+                    {% include "PrayerToShareMainBundle:Homepage:_copy.html.twig" %}
+                </div>
+                <div class="register seven right">
+                    <h2 class="box_headline">Sign Up</h2>
+                    <div class="login_form">
+
+                        {% include "PrayerToShareUserBundle:Registration:register_content.html.twig" %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock fos_user_content %}
