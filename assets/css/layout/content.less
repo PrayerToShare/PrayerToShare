@@ -1,21 +1,30 @@
 #body {
-    width: 1070px;
-    margin-top: -15px;
-    background: #fff;
+    max-width: 1070px;
     overflow: hidden;
     z-index: 2;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
 
     .content {
         width: 832px;
         margin-right: 24px;
-        border-top: 1px solid #C3AF97;
         padding: 0;
 
         .page-content {
             padding: 0 16px 24px;
 
-            h2.subtitle { font: 700 24px/30px Georgia, "Times New Roman", serif; }
-            h3.subtitle { font: 700 18px/24px Georgia, "Times New Roman", serif; }
+            h2.subtitle {
+                font-weight: 700;
+                line-height: 30px;
+                font-size: 24px;
+            }
+
+            h3.subtitle {
+                font-weight: 700;
+                line-height: 24px;
+                font-size: 18px;
+            }
 
             .group-add-btn { margin-top: 20px; }
 
@@ -55,20 +64,25 @@
             .groups {
                 width: 50%;
                 float: left;
-                font: normal 12px Arial, Helvetica, Sans-serif;
+                font-size: 12px;
 
                 a,
                 a:hover {
-                    font: normal 12px Arial, Helvetica, Sans-serif;
+                    font-size: 12px;
                     color: #274b5e;
 
-                    &.view-all { font: bold 12px Arial, Helvetica, Sans-serif; }
+                    &.view-all {
+                        font-weight: bold;
+                    }
                 }
 
                 .profile-name {
                     padding-top: 3px;
 
-                    a { font: bold 14px Georgia, "Times New Roman", serif; }
+                    a {
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
                 }
 
                 .profile-link { font-size: 11px; }
@@ -92,7 +106,8 @@
         }
 
         label {
-            font: bold 10px Arial, Helvetica, Sans-serif;
+            font-size: 10px;
+            font-weight: bold;
             text-transform: uppercase;
             padding: 0 3px;
             color: #BFAA90;
@@ -102,9 +117,7 @@
 
     .fos_user_profile_edit {
         margin: 0 24px;
-        border-top: 1px solid #C3AF97;
         padding: 24px;
-        .gradient(#fff 20%, #f0ebe6);
     }
 
     .comingsoon {
@@ -114,9 +127,9 @@
 }
 
 h2.box_headline {
-    font-size: 24px;
-    color: #2d2d2d;
-    margin: 0 0 15px;
+    color: #018692;
+    margin: 0 0 30px;
     padding-left: 10px;
-    font: normal 24px Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    font-weight: 200;
 }

@@ -2,40 +2,12 @@
     Login / Register Styles
 ***/
 .login_register {
-    padding: 0 0 24px;
+    padding: 24px 0;
     margin: 0 26px;
     overflow: hidden;
-    height: 384px;
+    height: 440px;
     position: relative;
 
-    .slide-container {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 2036px;
-        border-top: 1px solid #C3AF97;
-        border-bottom: 1px solid #C3AF97;
-        .gradient(#fff 20%, #f0ebe6);
-
-        > div {
-            width: 1018px;
-            overflow: hidden;
-        }
-    }
-
-    .block {
-        display: inline-block;
-        padding: 0 10px;
-
-        &.log-in {
-            padding: 24px 10px;
-            font: bold 14px Georgia, "Times New Roman", serif;
-
-            a { color: #4d788c; }
-        }
-    }
-
-    .login-copy,
     .register-copy {
         min-height: 360px;
         position: relative;
@@ -50,7 +22,9 @@
             left: 0;
             width: 98%;
             z-index: 4;
-            .border-radius(3px 0 0 3px);
+            border-left: 0;
+            .boxShadow(-7px, 6px, 8px, -5px, #5c4938);
+            .border-radius(0 3px 3px 0);
         }
 
         .copy {
@@ -59,93 +33,77 @@
             left: 0;
             width: 98%;
             z-index: 5;
-            height: 295px;
-            padding: 24px;
+            padding: 24px 24px 24px 0;
 
             h1.title {
-                font: normal 36px/36px Georgia, "Times New Roman", serif;
+                font-size: 30px;
+                line-height: 30px;
                 font-weight: 100;
-                text-shadow: 1px 1px #000;
-                color: #f0ebe6;
+                color: #018692;
+                padding-bottom: 16px;
+                margin-bottom: 20px;
+                display: inline-block;
+                border-bottom: 2px solid #018692;
+
+                > div {
+                    line-height: 36px;
+                    font-size: 42px;
+                    display: inline-block;
+                    vertical-align: baseline;
+                }
             }
 
             .text {
-                font: normal 20px/26px Arial, Helvetica, Sans-serif;
+                font-size: 18px;
+                line-height: 30px;
                 padding-bottom: 36px;
-                font-weight: 100;
-                color: #d7cab9;
-                text-shadow: 1px 1px #274b5e;
+                font-weight: 200;
+                color: #2d2d2d;
             }
 
             .verse {
-                font: italic 12px/17px Georgia, "Times New Roman", serif;
-                color: #E1E9EB;
+                font-style: italic;
+                font-size: 14px;
+                line-height: 22px;
+                color: #999;
+                font-weight: 200;
+
+                > div {
+                    font-weight: 400;
+                    text-align: right;
+                    padding-right: 12px;
+                    padding-top: 4px;
+                }
             }
         }
     }
 
-    .login-copy {
-        .opacity-bg {
-            left: auto;
-            right: 0;
-            border-right: 0;
-            .boxShadow(7px, 6px, 8px, -5px, #5c4938);
-        }
-
-        .copy {
-            left: auto;
-            right: 0;
-        }
-    }
-
-    .register-copy {
-        .opacity-bg {
-            border-left: 0;
-            .boxShadow(-7px, 6px, 8px, -5px, #5c4938);
-            .border-radius(0 3px 3px 0);
-        }
-    }
-
-    .login, .register {
-        padding: 15px 18px;
+    .register {
+        padding: 16px 0 16px 24px;
         display: inline-block;
         overflow: hidden;
         min-height: 360px;
+        border-left: 1px solid #e6e6e6;
 
         label {
-            #font .pair;
-            color: #274b5e;
-            font-weight: bold;
-            padding: 3px 0;
+            color: #2d2d2d;
+            font-weight: 400;
+            padding: 3px 0 0;
             display: block;
+            font-size: 14px;
         }
 
-        .login_submit {
-            border: none;
-            color: #fff;
-            padding: 12px 30px;
-            text-transform: uppercase;
-            text-align: center;
-            display: inline-block;
-            cursor: pointer;
+        .login_submit.btn {
             margin-top: 15px;
-            margin-bottom: 0;
-            font: normal 11px Arial, Helvetica, Sans-serif;
-            width: auto;
-            .gradient(#4d788c, #274b5e);
-            .border-radius(3px);
         }
 
-        input {
-            .boxShadowInset(0, 3px, 7px, 0, #ddd);
+        input:not(.btn) {
             padding: 10px;
             #font .straight;
-            border: 1px solid #C3AF97;
+            border: 1px solid #e6e6e6;
             margin-bottom: 10px;
             width: 100%;
             .border-radius(3px);
-
-            &.login_submit { .boxShadow(0, 2px, 3px, 0, #ededed); }
         }
 
         .remember-me {
@@ -158,26 +116,27 @@
         }
     }
 
-    .login.retrieve_password {
-        height: 180px;
-    }
-
     .reg-container {
         padding-left: 24px;
     }
+}
 
-    .forgot_password {
-        float: right;
-        display: inline;
-        margin-top: 5px;
-        padding-right: 10px;
+.block {
+    display: inline-block;
+    padding: 0 10px;
+    vertical-align: middle;
+
+    &.log-in {
+        padding: 24px 10px;
+        font-weight: 400;
+        font-size: 14px;
 
         a {
-            color: #075267;
-            font-size: 10px;
+            color: #018692;
+            font-weight: 500;
+            font-size: 16px;
+            margin-left: 5px;
             text-decoration: underline;
-
-            &:hover { text-decoration: none; }
         }
     }
 }

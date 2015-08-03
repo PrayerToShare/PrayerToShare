@@ -1,27 +1,106 @@
 #header {
-    .gradient(#3c2918, #604329);
     position: relative;
-    height: 102px;
-    padding-top: 12px;
-    border-bottom: 1px solid #604329;
-    .boxShadow(0, 3px, 17px, 0, #3c2918);
+    height: 80px;
+    background: #b6e8e6;
 
     .header-inner {
-        width: 1070px;
-        background: #fff;
+        max-width: 1070px;
         position: relative;
         margin: 0 auto;
-        height: 75px;
         z-index: 3;
-        .border-radius(5px 5px 0 0);
+        width: 100%;
+        height: 80px;
 
         .logo {
             position: absolute;
-            top: 10px;
-            left: 8px;
+            top: 4px;
+            left: 24px;
+            font-family: 'Waiting for the Sunrise';
+            color: #2d2d2d;
+            height: 76px;
+            overflow: hidden;
+
+            a {
+                color: #2d2d2d;
+
+                div {
+                    display: inline-block;
+                    vertical-align: middle;
+
+                    &:first-child {
+                        font-size: 60px;
+                        line-height: 80px;
+                        padding-right: 40px;
+
+                        > span {
+                            vertical-align: baseline;
+                            font-size: 90px;
+                        }
+                    }
+
+                    &:last-child {
+                        font-size: 24px;
+                        line-height: 14px;
+                        .opacity(70);
+
+                        > span {
+                            display: block;
+                            text-align: center;
+                            width: 55px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                img {
+                    z-index: -1;
+                    position: absolute;
+                    left: 82px;
+                    top: -4px;
+                }
+
+                &:hover {
+                    color: #2d2d2d;
+                    text-decoration: none;
+                }
+            }
         }
 
-        .header_links {
+        .account-links {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 80px;
+            padding: 10px 20px 10px 0;
+            overflow: hidden;
+
+            .block {
+                label {
+                    display: block;
+                    margin: 0;
+                    font-weight: normal;
+
+                    &.forgot-password, &.remember-me {
+                        padding-top: 2px;
+                        font-size: 11px;
+
+                        input {
+                            vertical-align: baselone;
+                            margin: 0 3px 0 0;
+                        }
+                    }
+                }
+
+                input:not(.btn) {
+                    border: 1px solid #5fc8d1;
+                    .border-radius(3px);
+                    font-size: 13px;
+                    padding: 3px 5px;
+                }
+            }
+        }
+
+        .header-links {
             padding-left: 30px;
             position: absolute;
             top: 0px;
@@ -55,7 +134,7 @@
                     a {
                         float: left;
                         display: inline;
-                        font: normal 10px Arial, Helvetica, Sans-serif;
+                        font-size: 10px;
                         text-transform: uppercase;
                         color: #fff;
                         text-decoration: none;

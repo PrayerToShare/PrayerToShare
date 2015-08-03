@@ -2,11 +2,19 @@
     <div class="header-inner">
         <div class="logo">
             <a href="/">
-                <img src="{{ asset('/img/logo.png') }}" border="0" alt="Prayer to Share" title="Prayer to Share" />
+                <div>P<span>t</span>S</div>
+                <img src="{{ asset('img/logo-bg.png') }}" height="80" />
+                <div>prayer <span>to</span> share</div>
             </a>
         </div>
+        {% if not is_granted('ROLE_USER') %}
+            <div class="account-links">
+                {% set use_csrf_token = false %}
+                {% include "PrayerToShareMainBundle:Homepage:_login-form.html.twig" %}
+            </div>
+        {% endif %}
         {% if is_granted('ROLE_USER') %}
-            <div class="header_links">
+            <div class="header-links">
                 <ul>
                     <li><a href="{{ path('home') }}" class="lvl1">Home</a></li>
                     <li><a href="{{ path('fos_user_profile_edit') }}" class="lvl1">Profile</a></li>
