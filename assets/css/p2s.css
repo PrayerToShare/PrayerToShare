@@ -5953,11 +5953,11 @@ a:hover {
 }
 #header .header-inner .logo {
   position: absolute;
-  top: 4px;
+  top: 0;
   left: 24px;
   font-family: 'Waiting for the Sunrise';
   color: #2d2d2d;
-  height: 76px;
+  height: 80px;
   overflow: hidden;
 }
 #header .header-inner .logo a {
@@ -5994,7 +5994,7 @@ a:hover {
   z-index: -1;
   position: absolute;
   left: 82px;
-  top: -4px;
+  top: 0;
 }
 #header .header-inner .logo a:hover {
   color: #2d2d2d;
@@ -6005,7 +6005,7 @@ a:hover {
   right: 0;
   top: 0;
   height: 80px;
-  padding: 10px 20px 10px 0;
+  padding: 10px 24px 10px 0;
   overflow: hidden;
 }
 #header .header-inner .account-links .block label {
@@ -6399,10 +6399,15 @@ h2.box_headline {
   height: 440px;
   position: relative;
 }
+.login_register .slide-container {
+  width: 100%;
+}
+.login_register .login-copy,
 .login_register .register-copy {
   min-height: 360px;
   position: relative;
 }
+.login_register .login-copy .opacity-bg,
 .login_register .register-copy .opacity-bg {
   background: #4d788c;
   opacity: 100;
@@ -6428,6 +6433,7 @@ h2.box_headline {
   -ms-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
+.login_register .login-copy .copy,
 .login_register .register-copy .copy {
   position: absolute;
   top: 20px;
@@ -6436,6 +6442,7 @@ h2.box_headline {
   z-index: 5;
   padding: 24px 24px 24px 0;
 }
+.login_register .login-copy .copy h1.title,
 .login_register .register-copy .copy h1.title {
   font-size: 30px;
   line-height: 30px;
@@ -6446,12 +6453,14 @@ h2.box_headline {
   display: inline-block;
   border-bottom: 2px solid #018692;
 }
+.login_register .login-copy .copy h1.title > div,
 .login_register .register-copy .copy h1.title > div {
   line-height: 36px;
   font-size: 42px;
   display: inline-block;
   vertical-align: baseline;
 }
+.login_register .login-copy .copy .text,
 .login_register .register-copy .copy .text {
   font-size: 18px;
   line-height: 30px;
@@ -6459,6 +6468,7 @@ h2.box_headline {
   font-weight: 200;
   color: #2d2d2d;
 }
+.login_register .login-copy .copy .verse,
 .login_register .register-copy .copy .verse {
   font-style: italic;
   font-size: 14px;
@@ -6466,12 +6476,14 @@ h2.box_headline {
   color: #999;
   font-weight: 200;
 }
+.login_register .login-copy .copy .verse > div,
 .login_register .register-copy .copy .verse > div {
   font-weight: 400;
   text-align: right;
   padding-right: 12px;
   padding-top: 4px;
 }
+.login_register .login,
 .login_register .register {
   padding: 16px 0 16px 24px;
   display: inline-block;
@@ -6479,6 +6491,7 @@ h2.box_headline {
   min-height: 360px;
   border-left: 1px solid #e6e6e6;
 }
+.login_register .login label,
 .login_register .register label {
   color: #2d2d2d;
   font-weight: 400;
@@ -6486,9 +6499,11 @@ h2.box_headline {
   display: block;
   font-size: 14px;
 }
+.login_register .login .login_submit.btn,
 .login_register .register .login_submit.btn {
   margin-top: 15px;
 }
+.login_register .login input:not(.btn),
 .login_register .register input:not(.btn) {
   padding: 10px;
   font-size: 16px;
@@ -6501,7 +6516,8 @@ h2.box_headline {
   -ms-border-radius: 3px;
   border-radius: 3px;
 }
-.login_register .register .remember-me {
+.login_register .login input[type="checkbox"].remember-me,
+.login_register .register input[type="checkbox"].remember-me {
   margin: 0;
   margin-left: 5px;
   width: auto;
@@ -6511,6 +6527,16 @@ h2.box_headline {
 }
 .login_register .reg-container {
   padding-left: 24px;
+}
+.login_register .login-copy .copy {
+  left: auto;
+  right: 0;
+  padding: 24px 0 24px 24px;
+}
+.login_register .login {
+  padding: 16px 24px 16px 0;
+  border-left: 0;
+  border-right: 1px solid #e6e6e6;
 }
 .block {
   display: inline-block;
@@ -6528,6 +6554,30 @@ h2.box_headline {
   font-size: 16px;
   margin-left: 5px;
   text-decoration: underline;
+}
+.login_form .block {
+  display: block;
+}
+.login_form .block .login-button {
+  text-align: right;
+  clear: both;
+}
+.login_form .block input[type="checkbox"].remember-me {
+  float: none;
+  width: auto !important;
+  margin: 0 5px 0 0 !important;
+  display: inline-block;
+  vertical-align: baseline;
+}
+.login_form .block label.remember-me {
+  float: left;
+  font-size: 12px;
+}
+.login_form .block label.forgot-password {
+  float: right;
+  text-align: right;
+  font-size: 12px;
+  clear: right;
 }
 .prayer-feed {
   padding: 0 16px 24px;

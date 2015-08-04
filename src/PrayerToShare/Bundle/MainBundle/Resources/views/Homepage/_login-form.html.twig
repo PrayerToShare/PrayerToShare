@@ -2,21 +2,38 @@
     <div class="block">
         <label for="_email">Email</label>
         <input type="text" name="_email" class="login_input" tabindex="1" />
-        <label class="remember-me clear">
-            <input type="checkbox" name="_remember_me" value="on" class="remember-me">
-            Remember me
-        </label>
+        {% if not loginPage is defined or (loginPage is defined and not loginPage) %}
+            <label class="remember-me clear">
+                <input type="checkbox" name="_remember_me" value="on" class="remember-me">
+                Remember me
+            </label>
+        {% endif %}
     </div>
     <div class="block">
         <label for="password">Password</label>
         <input type="password" name="_password" class="login_input" tabindex="2" />
-        <label class="forgot-password clear">
-            <a href="forgot_password.php">Forgot Password?</a>
-        </label>
-    </div>   
-    <div class="block login-button">
-        <input type="submit" name="_submit" value="Sign In" class="login_submit btn btn-sm" tabindex="3" />
+        {% if not loginPage is defined or (loginPage is defined and not loginPage) %}
+            <label class="forgot-password clear">
+                <a href="forgot_password.php">Forgot Password?</a>
+            </label>
+        {% endif %}
     </div>
+    {% if loginPage is defined and loginPage %}
+        <div class="block">
+            <label class="remember-me clear">
+                <input type="checkbox" name="_remember_me" value="on" class="remember-me">
+                Remember me
+            </label>
+            <label class="forgot-password clear">
+                <a href="forgot_password.php">Forgot Password?</a>
+            </label>
+        </div>
+    {% endif %}
+
+    <div class="block login-button">
+        <input type="submit" name="_submit" value="Sign In" class="login_submit btn{% if not loginPage is defined or (loginPage is defined and not loginPage) %} btn-sm{% endif %}" tabindex="3" />
+    </div>
+
     <input type="hidden" name="pts_action" value="log_in" />
-    <input type="hidden" name="_csrf_token" value="{{ use_csrf_token ? csrf_token : auth_csrf_token }}" />
+    <input type="hidden" name="_csrf_token" value="{{ app.request.get('_route') == 'home' ? auth_csrf_token : csrf_token }}" />
 </form>

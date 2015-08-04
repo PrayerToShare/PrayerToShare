@@ -8,6 +8,11 @@
     height: 440px;
     position: relative;
 
+    .slide-container {
+        width: 100%;
+    }
+
+    .login-copy,
     .register-copy {
         min-height: 360px;
         position: relative;
@@ -78,6 +83,7 @@
         }
     }
 
+    .login,
     .register {
         padding: 16px 0 16px 24px;
         display: inline-block;
@@ -106,7 +112,7 @@
             .border-radius(3px);
         }
 
-        .remember-me {
+        input[type="checkbox"].remember-me {
             margin: 0;
             margin-left: 5px;
             width: auto;
@@ -118,6 +124,18 @@
 
     .reg-container {
         padding-left: 24px;
+    }
+
+    .login-copy .copy {
+        left: auto;
+        right: 0;
+        padding: 24px 0 24px 24px;
+    }
+
+    .login {
+        padding: 16px 24px 16px 0;
+        border-left: 0;
+        border-right: 1px solid #e6e6e6;
     }
 }
 
@@ -137,6 +155,37 @@
             font-size: 16px;
             margin-left: 5px;
             text-decoration: underline;
+        }
+    }
+
+    .login_form & {
+        display: block;
+
+        .login-button {
+            text-align: right;
+            clear: both;
+        }
+
+        input[type="checkbox"].remember-me {
+            float: none;
+            width: auto !important;
+            margin: 0 5px 0 0 !important;
+            display: inline-block;
+            vertical-align: baseline;
+        }
+
+        label {
+            &.remember-me {
+                float: left;
+                font-size: 12px;
+            }
+
+            &.forgot-password {
+                float: right;
+                text-align: right;
+                font-size: 12px;
+                clear: right;
+            }
         }
     }
 }

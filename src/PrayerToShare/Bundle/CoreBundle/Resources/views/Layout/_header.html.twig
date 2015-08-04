@@ -7,12 +7,13 @@
                 <div>prayer <span>to</span> share</div>
             </a>
         </div>
-        {% if not is_granted('ROLE_USER') %}
+
+        {% if not is_granted('ROLE_USER') and (csrf_token is defined or auth_csrf_token is defined) %}
             <div class="account-links">
-                {% set use_csrf_token = false %}
                 {% include "PrayerToShareMainBundle:Homepage:_login-form.html.twig" %}
             </div>
         {% endif %}
+
         {% if is_granted('ROLE_USER') %}
             <div class="header-links">
                 <ul>

@@ -8,20 +8,19 @@
     {% endif %}
 
     {% set use_csrf_token = true %}
+    {% set loginPage = true %}
 
     <div class="login_register">
         <div class="slide-container">
-            <div class="right">
-                <div class="login four left">
-                    <h2 class="box_headline">Sign In</h2>
-                    <div class="login_form">
-                        {% include "PrayerToShareMainBundle:Homepage:_login-form.html.twig" %}
-                    </div>
+            <div class="login four left">
+                <h2 class="box_headline">Sign In</h2>
+                <div class="login_form">
+                    {% include "PrayerToShareMainBundle:Homepage:_login-form.html.twig" %}
                 </div>
+            </div>
 
-                <div class="login-copy eight right">
-                    {% include "PrayerToShareMainBundle:Homepage:_copy.html.twig" %}
-                </div>
+            <div class="login-copy eight right">
+                {% include "PrayerToShareMainBundle:Homepage:_copy.html.twig" %}
             </div>
         </div>
     </div>
