@@ -13,6 +13,7 @@ if (!in_array($_SERVER['HTTP_HOST'], array('beta.prayer-to-share.com')) && !in_a
     exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
 }
 
+require_once __DIR__.'/../app/autoload.php';
 require_once __DIR__.'/../app/bootstrap.php.cache';
 Debug::enable();
 
