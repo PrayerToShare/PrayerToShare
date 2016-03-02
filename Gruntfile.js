@@ -2,13 +2,8 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        // vars
-        srcDir: 'assets',
-        webDir: 'web',
-        targetDir: '<%= webDir %>/<%= srcDir %>',
-
         jshint: {
-            files: ['Gruntfile.js', '<%= targetDir %>/js/**/*.js'],
+            files: ['Gruntfile.js', 'web/js/**/*.js'],
             options: {
                 // options here to override JSHint defaults
                 globals: {
@@ -22,10 +17,10 @@ module.exports = function(grunt) {
         requirejs: {
             compile: {
                 options: {
-                    mainConfigFile: '<%= targetDir %>/js/main.js',
-                    appDir: '<%= srcDir %>',
+                    mainConfigFile: 'web/js/main.js',
+                    appDir: 'assets',
                     baseUrl: './js',
-                    dir: '<%= targetDir %>',
+                    dir: 'web',
                     modules: [
                         {
                             name: "main",
@@ -45,29 +40,18 @@ module.exports = function(grunt) {
                 }
             }
         },
-        copy: {
-            main: {
-                files: [
-                    {
-                        expand: true,
-                        src: ['<%= srcDir %>/**'],
-                        dest: '<%= webDir %>'
-                    }
-                ]
-            }
-        },
         clean: {
             build: {
-                src: ['<%= targetDir %>/**']
+                src: ['web/**']
             }
         },
         less: {
             development: {
                 options: {
-                    paths: ["assets/css"]
+                    paths: ["web/css"]
                 },
                 files: {
-                    "assets/css/p2s.css": "assets/css/main.less"
+                    "web/css/p2s.css": "web/css/main.less"
                 }
             }
         },
@@ -89,7 +73,7 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ['assets/js/**'],
+                files: ['web/js/**'],
                 tasks: ['clean:build', 'copy', 'jshint'],
                 options: {
                     spawn: true
@@ -97,7 +81,7 @@ module.exports = function(grunt) {
 
             },
             less: {
-                files: 'assets/css/**',
+                files: 'web/css/**',
                 tasks: ['clean:build', 'less', 'copy'],
                 options: {
                     spawn: true
@@ -116,7 +100,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
-    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks("grunt-phplint");
@@ -124,6 +107,4 @@ module.exports = function(grunt) {
 
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('default', ['jshint']);
-
-    grunt.registerTask('copy:assets', ['clean:build', 'copy']);
 };
