@@ -6940,9 +6940,10 @@ header .header-inner .logo a div.logo-text {
   font-weight: 600;
   color: #fff;
   text-shadow: 0 0 3px #018692;
+  letter-spacing: 2px;
 }
 header .header-inner .logo a div.logo-text span {
-  padding: 0 6px;
+  padding: 0 6px 0 10px;
 }
 header .header-inner .logo a div.logo-text span i {
   font-size: 60px;
