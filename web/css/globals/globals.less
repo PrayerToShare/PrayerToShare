@@ -73,16 +73,25 @@
 }
 
 html {
-    background: #b6e8e6;
+    background: white;
 }
 
 body {
-    margin: 0;
+    margin: 0 0 60px;
     padding: 0;
     position: relative;
     font: normal 13px 'Open Sans', 'Trebuchet MS', Helvetica, Sans-serif;
-    background: #fff;
+    background: white;
     color: #2d2d2d;
+
+    &.has-sidebar {
+        header,
+        main,
+        section.verse,
+        footer {
+            padding-left: 220px;
+        }
+    }
 }
 
 a {
@@ -97,13 +106,14 @@ a {
 
 .is-hidden { display: none !important; }
 
-#container {
+.main-container {
     position: relative;
     margin: 0 auto;
     padding-bottom: 20px;
-    background: #f9f7f3;
+    padding-top: 20px;
     clear: both;
 }
+
 
 .top-verse,
 .bottom-verse {

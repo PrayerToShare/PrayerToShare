@@ -1,27 +1,38 @@
 <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="post" role="form">
     <div class="block twelve left">
-        {{ form_label(form.email, 'Email') }}
-        {{ form_widget(form.email, {attr: {class: "register_input"}}) }}
+        {{ form_label(form.username, 'Username') }}
+        {{ form_widget(form.username, {attr: {class: "register_input"}}) }}
     </div>
-    <div class="block six left">
-        {{ form_label(form.plainPassword.first, 'Password') }}
-        {{ form_widget(form.plainPassword.first, {attr: {class: "register_input"}}) }}
-    </div>
-    <div class="block six left">
-        {{ form_label(form.plainPassword.second, 'Re-enter Password') }}
-        {{ form_widget(form.plainPassword.second, {attr: {class: "register_input"}}) }}
-    </div>
+
     <div class="block six left">
         {{ form_label(form.firstName) }}
         {{ form_widget(form.firstName, {attr: {class: "register_input"}}) }}
     </div>
+
     <div class="block six left">
         {{ form_label(form.lastName) }}
         {{ form_widget(form.lastName, {attr: {class: "register_input"}}) }}
     </div>
+
+    <div class="block twelve left">
+        {{ form_label(form.email, 'Email') }}
+        {{ form_widget(form.email, {attr: {class: "register_input"}}) }}
+    </div>
+
+    <div class="block six left">
+        {{ form_label(form.plainPassword.first, 'Password') }}
+        {{ form_widget(form.plainPassword.first, {attr: {class: "register_input"}}) }}
+    </div>
+
+    <div class="block six left">
+        {{ form_label(form.plainPassword.second, 'Re-enter Password') }}
+        {{ form_widget(form.plainPassword.second, {attr: {class: "register_input"}}) }}
+    </div>
+
     <div class="block twelve left">
         <input type="submit" name="submit" value="Sign Up" class="login_submit btn right" />
     </div>
+
     <input type="hidden" name="pts_action" value="register" />
     {{ form_rest(form) }}
 </form>

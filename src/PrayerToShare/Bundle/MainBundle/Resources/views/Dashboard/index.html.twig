@@ -1,20 +1,13 @@
 {% extends "PrayerToShareCoreBundle:Layout:layout.html.twig" %}
 
-{% block content %}
-    <div class="left sidebar">
+{% block nav %}
+    <nav class="sidebar">
         {% include "PrayerToShareMainBundle:Dashboard:_sidebar.html.twig" %}
-    </div>
+    </nav>
+{% endblock %}
 
-    <div class="left content">
-        <div class="profile">
-            <div class="info">
-                {% include "PrayerToShareMainBundle:Dashboard:_profile.html.twig" %}
-            </div>
-            <div class="groups">
-                {% include "PrayerToShareMainBundle:Dashboard:_groups.html.twig" %}
-            </div>
-        </div>
-
+{% block content %}
+    <div class="content">
         <div class="prayer-form">
             {% include "PrayerToShareMainBundle:Dashboard:_post.html.twig" %}
         </div>

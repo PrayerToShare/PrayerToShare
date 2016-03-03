@@ -1,53 +1,55 @@
-#body .content .prayer-form {
-    padding: 24px 0 36px;
-    margin: 0 16px 36px;
-    overflow: hidden;
-    border-bottom: 1px solid #E5DFD8;
-    border-left: 1px solid #fff;
+.main-container {
+    .content {
+        .prayer-form {
+            padding: 24px 0 36px;
+            margin: 0 16px 36px;
+            overflow: hidden;
+            border-bottom: 1px solid #E5DFD8;
 
-    label {
-        font: bold 14px Georgia, "Times New Roman", serif;
-        color: #274b5e;
-        text-transform: capitalize;
-    }
+            label {
+                font: 400 16px 'Josefin Sans';
+                color: #274b5e;
+                text-transform: capitalize;
+            }
 
-    .new-post {
-        width: 100%;
-        padding: 10px 12px;
-        border: 1px solid #C3AF97;
-        min-height: 54px;
-        font-size: 12px;
-        line-height: 16px;
-        color: #2d2d2d;
-        vertical-align: bottom;
-        display: inline-block;
-        .boxShadow(0, 9px, 10px, -7px, #5c4938);
+            .new-post {
+                .boxShadow(0, 5px, 10px, -7px, #E5DFD8);
+                width: 100%;
+                padding: 10px 12px;
+                border: 1px solid #E5DFD8;
+                min-height: 54px;
+                font-size: 12px;
+                line-height: 16px;
+                color: #2d2d2d;
+                vertical-align: bottom;
+                display: inline-block;
 
-        &.active {
-            min-height: 84px;
-            .boxShadow(0, 0, 0, 0, #fff);
-        }
-    }
+                &.active {
+                    .boxShadow(0, 0, 0, 0, #fff);
+                    min-height: 84px;
+                }
+            }
 
-    .actions {
-        border: 1px solid #C3AF97;
-        border-top: 0;
-        padding: 5px;
-        background: #F4F0EB;
-        text-align: right;
-        .boxShadow(0, 9px, 10px, -7px, #5c4938);
+            .actions {
+                .boxShadow(0, 9px, 10px, -7px, #5c4938);
+                border: 1px solid #C3AF97;
+                border-top: 0;
+                padding: 5px;
+                background: #F4F0EB;
+                text-align: right;
 
-        label {
-            display: inline-block;
-            vertical-align: middle;
-            font-size: 10px;
-            margin: 0;
-        }
+                label {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin: 0;
+                }
 
-        input {
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 12px 0 0;
+                input {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin: 0 12px 0 0;
+                }
+            }
         }
     }
 }

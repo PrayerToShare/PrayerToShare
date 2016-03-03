@@ -1,10 +1,13 @@
-<div id="header">
+<header class="header-placeholder"></header>
+
+<header id="header" class="header">
     <div class="header-inner">
         <div class="logo">
             <a href="/">
-                <div>P<span>t</span>S</div>
-                <img src="{{ asset('img/logo-bg.png') }}" height="80" />
-                <div>prayer <span>to</span> share</div>
+                {#<div>P<span>t</span>S</div>#}
+                <div class="logo-text">prayer<span><i>t</i>o</span>share</div>
+                <img src="{{ asset('img/logo-bg.png') }}" height="60" />
+                {#<div>prayer <span>to</span> share</div>#}
             </a>
         </div>
 
@@ -33,4 +36,4 @@
             </div>
         {% endif %}
     </div>
-</div>
+</header>

@@ -1,4 +1,9 @@
-{% for membership in app.user.prayerGroups|slice(0, 3) %}
-    <div><a href="{{ path('group_view', {id: membership.prayerGroup.id}) }}">{{ membership.prayerGroup.name }}</a></div>
-{% endfor %}
-<div><a href="{{ path('group_list') }}" class="view-all">View All Groups</a></div>
+<div class="prayer-groups">
+    <h2 class="subtitle">Prayer Groups</h2>
+
+    {% for membership in app.user.prayerGroups|slice(0, 3) %}
+        <div><a href="{{ path('group_view', {id: membership.prayerGroup.id}) }}">{{ membership.prayerGroup.name }}</a></div>
+    {% endfor %}
+
+    <div><a href="{{ path('group_list') }}" class="view-all">View All Groups</a></div>
+</div>

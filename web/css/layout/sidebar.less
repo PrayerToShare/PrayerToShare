@@ -1,49 +1,111 @@
 .sidebar {
-    width: 190px;
-    background: #E5DFD8;
+    width: 220px;
+    background: #018692;
     padding: 12px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 4;
+    overflow-y: auto;
+    color: white;
 
     h2.subtitle {
-        font: bold 14px Georgia, "Times New Roman", serif;
-        margin-top: 0;
+        font: 400 20px 'Josefin Sans';
+        color: white;
 
         a,
         a:hover {
-            color: #000;
+            color: white;
         }
     }
 
-    &.left { margin-left: 24px; }
-    &.right { margin-right: 24px; }
+    .btn {
+        width: 100%;
+        background: #38a8b2;
+        padding: 5px 8px;
+        color: white;
+    }
+
+    .profile {
+        overflow: hidden;
+        font-size: 12px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid #38a8b2;
+
+        .profile-image {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border: 1px solid #fff;
+            overflow: hidden;
+            float: left;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        .profile-name {
+            padding-top: 3px;
+
+            a {
+                font: 400 20px 'Josefin Sans';
+            }
+        }
+
+        .profile-link {
+            font-size: 11px;
+        }
+    }
+
+    .prayer-groups {
+        font-size: 12px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #38a8b2;
+
+         > div {
+            padding: 2px 0;
+        }
+    }
+
+    .prayer-groups,
+    .profile {
+        margin-bottom: 24px;
+        font-size: 12px;
+
+        a,
+        a:hover {
+            color: white;
+
+            &.view-all {
+                font-weight: bold;
+            }
+        }
+    }
 
     .stats {
-        padding: 0;
+        padding: 5px 0;
         margin-bottom: 24px;
-        border: 1px solid #fff;
-        background: #f7f4f1;
-        .boxShadow(0, 12px, 8px, -10px, #5c4938);
+        background: #f9f7f3;
 
         > div {
             padding: 0;
-            border-top: 1px solid #fff;
             overflow: hidden;
-
-            &:first-child { border-top: 0; }
 
             > span {
                 width: 50%;
                 float: left;
-                padding: 5px 8px;
+                padding: 3px 10px;
                 text-align: left;
-                font: normal 11px/20px Arial, Helvetica, Sans-serif;
-                color: #000;
-                .boxShadowInset(0, 0, 5px, 0, #E2DED3);
+                font: normal 12px/20px 'Open Sans';
+                color: black;
 
                 &.count {
-                    font: bold 16px/20px Georgia, "Times New Roman", serif;
-                    background: #E1E9EB;
-                    border-left: 1px solid #fff;
-                    text-align: center;
+                    font-weight: 600;
+                    text-align: right;
                 }
             }
         }

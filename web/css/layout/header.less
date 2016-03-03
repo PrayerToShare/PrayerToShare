@@ -1,7 +1,16 @@
-#header {
-    position: relative;
-    height: 80px;
+header {
+    position: fixed;
+    height: 62px;
     background: #b6e8e6;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+
+    &.header-placeholder {
+        height: 60px;
+        position: relative;
+    }
 
     .header-inner {
         max-width: 1070px;
@@ -9,54 +18,49 @@
         margin: 0 auto;
         z-index: 3;
         width: 100%;
-        height: 80px;
+        height: 100%;
 
         .logo {
             position: absolute;
             top: 0;
-            left: 24px;
+            left: 0;
             font-family: 'Waiting for the Sunrise';
             color: #2d2d2d;
-            height: 80px;
             overflow: hidden;
+            line-height: 60px;
+            padding-left: 16px;
 
             a {
                 color: #2d2d2d;
 
-                div {
+                div.logo-text {
                     display: inline-block;
                     vertical-align: middle;
+                    font-family: 'Josefin Sans';
+                    font-size: 46px;
+                    line-height: 56px;
+                    padding: 2px 10px 0 0;
+                    font-weight: 600;
+                    color: #fff;
+                    text-shadow: 0 0 3px #018692;
 
-                    &:first-child {
-                        font-size: 60px;
-                        line-height: 80px;
-                        padding-right: 40px;
+                    span {
+                        padding: 0 6px;
 
-                        > span {
-                            vertical-align: baseline;
-                            font-size: 90px;
-                        }
-                    }
-
-                    &:last-child {
-                        font-size: 24px;
-                        line-height: 14px;
-                        .opacity(70);
-
-                        > span {
-                            display: block;
-                            text-align: center;
-                            width: 55px;
-                            font-size: 16px;
+                        i {
+                            font-size: 60px;
+                            font-family: 'Waiting for the Sunrise';
+                            font-style: normal;
+                            text-shadow: 0 0 3px #9c8e7e;
                         }
                     }
                 }
 
                 img {
                     z-index: -1;
-                    position: absolute;
-                    left: 82px;
-                    top: 0;
+                    opacity: 0.6;
+                    margin-left: -35px;
+                    position: relative;
                 }
 
                 &:hover {
@@ -70,19 +74,26 @@
             position: absolute;
             right: 0;
             top: 0;
-            height: 80px;
-            padding: 10px 24px 10px 0;
+            height: 62px;
+            padding: 3px 16px 0 0;
             overflow: hidden;
 
             .block {
+                padding: 0 5px;
+
+                &.login-button {
+                    margin-top: -1px;
+                }
+
                 label {
                     display: block;
                     margin: 0;
                     font-weight: normal;
+                    font-size: 10px;
 
                     &.forgot-password, &.remember-me {
-                        padding-top: 2px;
-                        font-size: 11px;
+                        padding-top: 1px;
+                        font-size: 10px;
 
                         input {
                             vertical-align: baselone;
@@ -101,85 +112,91 @@
         }
 
         .header-links {
-            padding-left: 30px;
             position: absolute;
-            top: 0px;
-            right: 24px;
+            top: 32px;
+            right: 0;
 
             ul {
                 margin: 0;
-                padding: 0 10px;
+                padding: 0;
                 list-style: none;
                 float: left;
                 display: inline;
-                .gradient(#4d788c, #274b5e);
-                .border-radius(0 0 5px 5px);
-                .boxShadow(0, 12px, 8px, -10px, #5c4938);
 
                 li {
                     float: left;
                     display: inline;
                     position: relative;
-                    height: 26px;
+                    height: 30px;
 
-                    &:first-child { border-left: 0; }
+                    &:first-child {
+                        border-left: 0;
+                    }
 
                     &:hover {
                         text-decoration: none;
-                        background: #055166;
+                        background: #018692;
 
-                        .menu { display: block; }
+                        > a {
+                            color: white;
+                        }
+
+                        .menu {
+                            display: block;
+                        }
                     }
 
-                    a {
+                    > a {
                         float: left;
                         display: inline;
-                        font-size: 10px;
-                        text-transform: uppercase;
-                        color: #fff;
+                        font-size: 12px;
+                        color: #018692;
                         text-decoration: none;
-                        padding: 7px 0;
-                        width: 100px;
-                        height: 26px;
+                        width: 80px;
+                        height: 30px;
                         text-align: center;
+                        line-height: 30px;
 
                         &:hover,
                         &:active {
                             text-decoration: none;
-                            background: #055166;
+                            color: white;
                         }
                     }
 
                     .menu {
                         position: absolute;
-                        top: 26px;
+                        top: 30px;
                         right: 0px;
                         display: none;
                         padding: 10px 0;
                         width: 190px;
-                        background: #055166;
+                        background: #018692;
                         .boxShadow(0, 12px, 8px, -10px, #5c4938);
                         .border-radius(0 0 3px 3px);
 
-                        a {
-                            padding: 5px 10px;
-                            margin: 0 10px;
+                        > a {
+                            padding: 5px 16px;
+                            margin: 0;
                             display: block;
-                            font-size: 10px;
-                            font-weight: bold;
+                            font-size: 12px;
                             color: #fff;
                             width: auto;
                             float: none;
                             border: 0;
                             text-align: right;
+                            line-height: 20px;
 
-                            &:hover { color: #79a8b6; }
+                            &:hover {
+                                color: #E5DFD8;
+                                text-decoration: none;
+                            }
                         }
-                        
-                        .sep {
+
+                        > .sep {
                             height: 1px;
-                            margin: 5px 10px;
-                            background: #79a8b6;
+                            margin: 5px 16px;
+                            background: #38a8b2;
                         }
                     }
                 }

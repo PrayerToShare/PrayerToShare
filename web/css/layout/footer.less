@@ -1,11 +1,21 @@
-#footer {
-    position: relative;
-    border-top: 1px solid #e6e6e6;
-    background: #fff;
+footer {
+    position: fixed;
+    background: #b6e8e6;
+    height: 60px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
 
-    .footer-bottom {
-        background: #b6e8e6;
-        border-top: 1px solid #e6e6e6;
+    &.footer-placeholder {
+        height: 200px;
+        width: 100%;
+        position: relative;
+        bottom: auto;
+        background: white;
+    }
+
+    &:not(.footer-placeholder) {
+        z-index: 3;
     }
 
     .footer-inner {
@@ -15,40 +25,10 @@
         margin: 0 auto;
         width: 100%;
 
-        .affiliates {
-            padding: 7px;
-
-            .title-sm {
-                color: #BFAA90;
-                font-size: 10px;
-                padding: 3px;
-            }
-
-            .badges {
-                padding: 20px;
-            }
-        }
-
         .copyright {
             color: #2d2d2d;
             padding: 24px;
-            font-size: 13px;
-            font-weight: 200;
-        }
-        
-        .bottom-verse {
-            padding: 20px 24px 16px;
-            font-family: 'Bad Script';
-            font-size: 20px;
-            line-height: 30px;
-            text-align: left;
-
-            > .passage {
-                text-align: right;
-                padding-right: 16px;
-                font-weight: bold;
-                font-size: 18px;
-            }
+            font-size: 12px;
         }
     }
 }
