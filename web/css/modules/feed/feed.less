@@ -23,10 +23,12 @@
 
                 &.prayer {
                     padding: 16px;
-                    font-size: 11px;
+                    font-size: 12px;
                     overflow: hidden;
 
-                    &:first-child { border-top: 0; }
+                    &:first-child {
+                        border-top: 0;
+                    }
 
                     .image img {
                         border: 1px solid #fff;
@@ -36,7 +38,9 @@
                     .prayer-meta {
                         overflow: hidden;
 
-                        .name { font: bold 12px Georgia, "Times New Roman", serif; }
+                        .name {
+                            font: 600 16px 'Josefin Sans';
+                        }
 
                         .group {
                             font-weight: normal;
@@ -64,7 +68,7 @@
                             vertical-align: middle;
 
                             button {
-                                padding: 3px 3px 3px 22px;
+                                padding: 0 3px 3px 22px;
                                 display: inline-block;
                                 background: url('/img/prayicon.jpg') no-repeat 0 0;
                                 border: 0;
@@ -81,7 +85,9 @@
                             background: none;
                         }
 
-                        .prayer-inappropriate { padding: 3px; }
+                        .prayer-inappropriate {
+                            padding: 3px;
+                        }
 
                         a {
                             display: inline-block;
@@ -100,11 +106,13 @@
                         width: 100%;
                     }
 
-                    &:hover { background: #E1E9EB; }
+                    &:hover {
+                        background: #E1E9EB;
+                    }
                 }
 
                 &.show-more {
-                    background: #f7f4f1;
+                    background: #f9f7f3;
                     padding: 12px 16px;
                     font-weight: bold;
                 }

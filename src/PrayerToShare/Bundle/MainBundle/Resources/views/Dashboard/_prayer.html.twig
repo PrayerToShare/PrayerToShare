@@ -34,11 +34,11 @@
         <div class="prayer-actions" data-pray="{{ path('prayer_create_user_list', {id: prayer.id}) }}" data-unpray="{{ path('prayer_remove_user_list', {id: prayer.id}) }}">
             {% if app.user.isPrayingFor(prayer) %}
                 <form action="{{ path('prayer_remove_user_list', {id: prayer.id}) }}" method="post" class="prayer-pray">
-                    <button type="submit" class="active">Stop praying</button>
+                    <button type="submit" class="active">Praying</button>
                 </form>
             {% else %}
                 <form action="{{ path('prayer_create_user_list', {id: prayer.id}) }}" method="post" class="prayer-pray">
-                    <button type="submit">Pray for this</button>
+                    <button type="submit">Pray</button>
                 </form>
             {% endif %}
             |

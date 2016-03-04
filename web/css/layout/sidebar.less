@@ -61,12 +61,16 @@
         }
     }
 
+    .prayer-book {
+        padding-bottom: 24px;
+    }
+
     .prayer-groups {
         font-size: 12px;
         padding-bottom: 24px;
         border-bottom: 1px solid #38a8b2;
 
-         > div {
+        > div {
             padding: 2px 0;
         }
     }
@@ -79,10 +83,6 @@
         a,
         a:hover {
             color: white;
-
-            &.view-all {
-                font-weight: bold;
-            }
         }
     }
 
@@ -111,17 +111,29 @@
         }
     }
 
-    .quoted {
-        .boxShadow(0, 12px, 8px, -10px, #5c4938);
-        margin-bottom: 24px;
+    .prayer-recent {
+        border-top: 1px solid #38a8b2;
 
-        > div {
-            border: 1px solid #fff;
-            overflow: hidden;
-            padding: 12px;
-            .boxShadowInset(0, 0, 5px, 0, #E2DED3);
-            font-size: 12px;
-            background: #E1E9EB;
+        h2.subtitle {
+            margin-bottom: 0;
+        }
+
+        .date {
+            padding-bottom: 10px;
+            font-size: 10px;
+            font-weight: 400;
+        }
+
+        .quoted {
+            margin-bottom: 24px;
+
+            > div {
+                overflow: hidden;
+                padding: 12px;
+                font-size: 12px;
+                background: #f9f7f3;
+                color: black;
+            }
         }
     }
 }

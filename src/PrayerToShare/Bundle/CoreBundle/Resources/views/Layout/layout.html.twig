@@ -7,38 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/ico" sizes="16x16">
     <link rel="stylesheet" href="{{ asset('css/p2s.css') }}">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,700italic,800,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700italic,700,600italic,600,400italic,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    {% include "PrayerToShareCoreBundle:Layout:_fonts.html.twig" %}
     {% block requirejs '' %}
 </head>
+
 {% set nav = block('nav') %}
 <body class="{{ nav is not empty ? 'has-sidebar' : 'no-sidebar' }}">
+    {% include "PrayerToShareCoreBundle:Layout:_header.html.twig" %}
 
-{% include "PrayerToShareCoreBundle:Layout:_header.html.twig" %}
-
-<main id="container" class="main-container">
-    <div class="section-inner">
-        {% for type, messages in app.session.flashbag.all() %}
-            {% for message in messages %}
-                <div class="alert alert-{{ type }}">
-                    <strong>{{ message }}</strong>
-                    <button type="button" class="close" data-dismiss="alert" href="#">×</button>
-                </div>
+    <main id="container" class="main-container">
+        <div class="section-inner">
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ type }}">
+                        <strong>{{ message }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" href="#">×</button>
+                    </div>
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
 
-        {% block content %}Default Content{% endblock %}
-    </div>
-</main>
+            {% block content %}Default Content{% endblock %}
+        </div>
+    </main>
 
-{% block nav '' %}
+    {% block nav '' %}
 
-{% include "PrayerToShareCoreBundle:Layout:_verse.html.twig" %}
+    {% include "PrayerToShareCoreBundle:Layout:_verse.html.twig" %}
 
-{% include "PrayerToShareCoreBundle:Layout:_footer.html.twig" %}
+    {% include "PrayerToShareCoreBundle:Layout:_footer.html.twig" %}
 
+    {% include "PrayerToShareCoreBundle:Layout:requirejs.html.twig" %}
 </body>
 </html>

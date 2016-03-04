@@ -19,5 +19,8 @@
 {% endblock %}
 
 {% block requirejs %}
-    {{ include('PrayerToShareCoreBundle:Layout:requirejs.html.twig', {module: 'pages/dashboard'}) }}
+    <script type="text/javascript">
+        var requirejsModule = 'pages/dashboard';
+        var pageOptions = {};
+    </script>
 {% endblock %}
