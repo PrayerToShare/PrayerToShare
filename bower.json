@@ -1,10 +1,11 @@
 {
-    "name": "Prayer To Share",
-    "version": "0.0.2",
-    "dependencies": {
-        "jquery": "latest",
-        "bootstrap": "3.*",
-        "requirejs": "latest",
-        "requirejs-domready": "latest"
-    }
+  "name": "Prayer To Share",
+  "version": "0.0.2",
+  "dependencies": {
+    "jquery": "latest",
+    "bootstrap": "3.*",
+    "requirejs": "latest",
+    "requirejs-domready": "latest",
+    "lodash": "~4.6.1"
+  }
 }

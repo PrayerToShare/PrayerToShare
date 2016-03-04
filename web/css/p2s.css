@@ -7333,9 +7333,6 @@ footer .footer-inner .copyright {
   background: #f9f7f3;
   color: black;
 }
-/***
-    Login / Register Styles
-***/
 .login_register {
   padding: 24px 16px;
   margin: 0;
@@ -7553,12 +7550,7 @@ footer .footer-inner .copyright {
   border-top: 0;
 }
 .prayer-feed .feed .prayer-list li.prayer .image img {
-  border: 1px solid #fff;
-  -moz-box-shadow: 0 0 5px 0 #e5dfd8;
-  -webkit-box-shadow: 0 0 5px 0 #e5dfd8;
-  -o-box-shadow: 0 0 5px 0 #e5dfd8;
-  -ms-box-shadow: 0 0 5px 0 #e5dfd8;
-  box-shadow: 0 0 5px 0 #e5dfd8;
+  border: 1px solid #f9f7f3;
 }
 .prayer-feed .feed .prayer-list li.prayer .prayer-meta {
   overflow: hidden;
@@ -7625,9 +7617,6 @@ footer .footer-inner .copyright {
   height: 1px;
   width: 100%;
 }
-.prayer-feed .feed .prayer-list li.prayer:hover {
-  background: #E1E9EB;
-}
 .prayer-feed .feed .prayer-list li.show-more {
   background: #f9f7f3;
   padding: 12px 16px;
@@ -7669,12 +7658,12 @@ footer .footer-inner .copyright {
   min-height: 84px;
 }
 .main-container .content .prayer-form .actions {
-  -moz-box-shadow: 0 9px 10px -7px #5c4938;
-  -webkit-box-shadow: 0 9px 10px -7px #5c4938;
-  -o-box-shadow: 0 9px 10px -7px #5c4938;
-  -ms-box-shadow: 0 9px 10px -7px #5c4938;
-  box-shadow: 0 9px 10px -7px #5c4938;
-  border: 1px solid #C3AF97;
+  -moz-box-shadow: 0 5px 10px -7px #e5dfd8;
+  -webkit-box-shadow: 0 5px 10px -7px #e5dfd8;
+  -o-box-shadow: 0 5px 10px -7px #e5dfd8;
+  -ms-box-shadow: 0 5px 10px -7px #e5dfd8;
+  box-shadow: 0 5px 10px -7px #e5dfd8;
+  border: 1px solid #E5DFD8;
   border-top: 0;
   padding: 5px;
   background: #f9f7f3;
@@ -7684,6 +7673,7 @@ footer .footer-inner .copyright {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
+  font-size: 14px;
 }
 .main-container .content .prayer-form .actions input {
   display: inline-block;
