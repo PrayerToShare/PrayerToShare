@@ -26,12 +26,20 @@
                     font-size: 12px;
                     overflow: hidden;
 
+                    > div {
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+
                     &:first-child {
                         border-top: 0;
                     }
 
                     .image img {
                         border: 1px solid #f9f7f3;
+                        float: none;
+                        max-width: 100%;
+                        height: auto;
                     }
 
                     .prayer-meta {

@@ -7515,11 +7515,18 @@ footer .footer-inner .copyright {
   font-size: 12px;
   overflow: hidden;
 }
+.prayer-feed .feed .prayer-list li.prayer > div {
+  display: inline-block;
+  vertical-align: top;
+}
 .prayer-feed .feed .prayer-list li.prayer:first-child {
   border-top: 0;
 }
 .prayer-feed .feed .prayer-list li.prayer .image img {
   border: 1px solid #f9f7f3;
+  float: none;
+  max-width: 100%;
+  height: auto;
 }
 .prayer-feed .feed .prayer-list li.prayer .prayer-meta {
   overflow: hidden;

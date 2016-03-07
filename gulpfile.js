@@ -90,8 +90,6 @@ function lessTask(key, task) {
     // Task
     gulp.task(key, function() {
         return gulp.src(src)
-            // Do not enable for now
-            //.pipe(plugins.changed(task.dest, { extension: '.css'}))
             .pipe(plugins.less({ paths: [config.stylesDir] }))
             .on('error', config.handleError)
             .pipe(plugins.rename({ extname: '.less' }))
